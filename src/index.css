@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: #141414;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+  color: #fff;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: #141414;
+  position: relative;
+}
+
+.pt-safe {
+  padding-top: max(16px, env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
