@@ -33,7 +33,7 @@ export const TRICKS: Trick[] = [
   // ─── HOPP – KANTHOPP ────────────────────────────────────────────────────────
   {
     id: 'waltz',
-    name: 'Valshoppet',
+    name: 'Trehopp',
     englishName: 'Waltz Jump',
     category: 'hopp',
     subcategory: 'övningshopp',
@@ -194,7 +194,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'loop-1',
-    name: 'Enkel Loop',
+    name: 'Ögel',
     englishName: 'Single Loop',
     category: 'hopp',
     subcategory: 'kanthopp',
@@ -218,7 +218,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'loop-2',
-    name: 'Dubbel Loop',
+    name: 'Dubbel Ögel',
     englishName: 'Double Loop',
     category: 'hopp',
     subcategory: 'kanthopp',
@@ -239,7 +239,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'loop-3',
-    name: 'Trippel Loop',
+    name: 'Trippel Ögel',
     englishName: 'Triple Loop',
     category: 'hopp',
     subcategory: 'kanthopp',
@@ -502,7 +502,7 @@ export const TRICKS: Trick[] = [
   // ─── SNURRAR – STÅENDE ──────────────────────────────────────────────────────
   {
     id: 'uppright-basic',
-    name: 'Stående piruett',
+    name: 'Framåt ståpiruett',
     englishName: 'Upright Spin',
     category: 'piruetter',
     subcategory: 'stående-piruett',
@@ -571,7 +571,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'layback-spin',
-    name: 'Liggande bakåtpiruett',
+    name: 'Liggpiruett',
     englishName: 'Layback Spin',
     category: 'piruetter',
     subcategory: 'stående-piruett',
@@ -705,7 +705,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'cannonball-spin',
-    name: 'Kanonbollspiruett',
+    name: 'Broken leg',
     englishName: 'Cannonball Spin',
     category: 'piruetter',
     subcategory: 'sittpiruett',
@@ -752,7 +752,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'layover-camel',
-    name: 'Liggande kamelpiruett',
+    name: 'Liggande liggpiruett',
     englishName: 'Layover Camel Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -773,7 +773,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'donut-spin',
-    name: 'Munkpiruett',
+    name: 'Bilman piruett',
     englishName: 'Doughnut Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -794,7 +794,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'illusion-spin',
-    name: 'Illusionspiruett',
+    name: 'Dip piruett',
     englishName: 'Illusion Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -931,7 +931,7 @@ export const TRICKS: Trick[] = [
   // ─── SVÄNGAR – ETTFOTSSVÄNGAR ────────────────────────────────────────────────
   {
     id: 'three-turn',
-    name: 'Tresväng',
+    name: 'Ytterskärstrea',
     englishName: 'Three-Turn',
     category: 'svängar',
     subcategory: 'ettfotssvängar',
@@ -954,7 +954,7 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'bracket',
-    name: 'Bracket-sväng',
+    name: 'Innerskärs trea',
     englishName: 'Bracket Turn',
     category: 'svängar',
     subcategory: 'ettfotssvängar',
