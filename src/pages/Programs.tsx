@@ -48,12 +48,20 @@ export function Programs() {
                 className="w-full flex items-center gap-3 px-4 py-4 rounded-2xl text-left active:scale-[0.98] transition-transform"
                 style={{ background: '#1E1E1E' }}
               >
-                <div
-                  className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ background: '#262626' }}
-                >
-                  <Music2 size={16} strokeWidth={1.8} style={{ color: '#C8F500' }} />
-                </div>
+                {p.spotifyMeta?.thumbnailUrl ? (
+                  <img
+                    src={p.spotifyMeta.thumbnailUrl}
+                    alt=""
+                    className="shrink-0 w-10 h-10 rounded-xl object-cover"
+                  />
+                ) : (
+                  <div
+                    className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: '#262626' }}
+                  >
+                    <Music2 size={16} strokeWidth={1.8} style={{ color: '#C8F500' }} />
+                  </div>
+                )}
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-white text-[15px] truncate">{p.name}</p>
                   <p className="text-xs mt-0.5" style={{ color: '#555' }}>
