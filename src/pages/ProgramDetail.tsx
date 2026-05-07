@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Pencil, Trash2, ChevronUp, ChevronDown, Music, Plus, X, AlignLeft, Play } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import type { SpotifyMeta } from '../store/useStore';
@@ -11,17 +11,24 @@ export function ProgramDetail() {
   const {
     programs, selectedProgramId, selectProgram, deleteProgram,
     renameProgram, setSpotifyUrl, setSpotifyMeta, addElement, addNote, removeItem, moveItem, setNoteText,
+    openInEditMode, clearOpenInEditMode,
   } = useStore();
 
   const program = programs.find((p) => p.id === selectedProgramId);
-  const [editing, setEditing] = useState(false);
-  const [nameVal, setNameVal] = useState('');
-  const [spotifyVal, setSpotifyVal] = useState('');
-  const [artistVal, setArtistVal] = useState('');
-  const [durationVal, setDurationVal] = useState('');
+
+  const getProgram = () => programs.find((p) => p.id === selectedProgramId);
+  const [editing, setEditing] = useState(() => openInEditMode);
+  const [nameVal, setNameVal] = useState(() => openInEditMode ? (getProgram()?.name ?? '') : '');
+  const [spotifyVal, setSpotifyVal] = useState(() => openInEditMode ? (getProgram()?.spotifyUrl ?? '') : '');
+  const [artistVal, setArtistVal] = useState(() => openInEditMode ? (getProgram()?.spotifyMeta?.artist ?? '') : '');
+  const [durationVal, setDurationVal] = useState(() => openInEditMode ? (getProgram()?.spotifyMeta?.duration ?? '') : '');
   const [saving, setSaving] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const itemRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  useEffect(() => {
+    if (openInEditMode) clearOpenInEditMode();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!program) return null;
 

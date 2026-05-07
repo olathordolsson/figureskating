@@ -52,6 +52,8 @@ type Store = {
   removeItem: (programId: string, itemId: string) => void;
   moveItem: (programId: string, itemId: string, dir: 'up' | 'down') => void;
   setNoteText: (programId: string, itemId: string, text: string) => void;
+  openInEditMode: boolean;
+  clearOpenInEditMode: () => void;
 };
 
 export const useStore = create<Store>()(
@@ -64,6 +66,7 @@ export const useStore = create<Store>()(
       selectedTrickId: null,
       selectedProgramId: null,
       activeCategory: null,
+      openInEditMode: false,
 
       toggleFavorite: (id) =>
         set((s) => {
@@ -88,9 +91,12 @@ export const useStore = create<Store>()(
         const id = uid();
         set((s) => ({
           programs: [...s.programs, { id, name, items: [], createdAt: Date.now() }],
+          openInEditMode: true,
         }));
         return id;
       },
+
+      clearOpenInEditMode: () => set({ openInEditMode: false }),
 
       deleteProgram: (id) =>
         set((s) => ({ programs: s.programs.filter((p) => p.id !== id), selectedProgramId: null })),
