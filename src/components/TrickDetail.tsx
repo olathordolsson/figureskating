@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered } from 'lucide-react';
+import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered, Play, Info, Link } from 'lucide-react';
 import { TRICKS, type Trick } from '../data/tricks';
 import { TRICK_VIDEOS } from '../data/trickVideos';
 import { TRICK_PHOTOS } from '../data/trickPhotos';
@@ -83,6 +83,7 @@ export function TrickDetail() {
           background: '#141414',
           maxWidth: 480,
           maxHeight: '85dvh',
+          overflow: 'hidden',
           transform: visible ? 'translateY(0)' : 'translateY(100%)',
           transition: 'transform 520ms cubic-bezier(0.32, 0.72, 0, 1)',
           display: 'flex',
@@ -163,98 +164,112 @@ export function TrickDetail() {
           </div>
 
           {/* Description */}
-          <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
-            <p className="text-[10px] font-semibold uppercase tracking-widest mb-3" style={{ color: '#6B7280' }}>
-              Om tricket
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
-              {trick.description}
-            </p>
+          <div>
+            <div className="flex items-center gap-1.5 mb-3 px-1">
+              <Info size={13} strokeWidth={2} style={{ color: '#555' }} />
+              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
+                Om tricket
+              </p>
+            </div>
+            <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
+                {trick.description}
+              </p>
+            </div>
           </div>
 
           {/* Steps */}
           {TRICK_STEPS[trick.id] && (
-            <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
-              <div className="flex items-center gap-1.5 mb-4">
-                <ListOrdered size={13} strokeWidth={2} style={{ color: '#1D4ED8' }} />
-                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#6B7280' }}>
+            <div>
+              <div className="flex items-center gap-1.5 mb-3 px-1">
+                <ListOrdered size={13} strokeWidth={2} style={{ color: '#555' }} />
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
                   Så här gör du
                 </p>
               </div>
-              <ol className="space-y-4">
-                {TRICK_STEPS[trick.id].map((step, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span
-                      className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
-                      style={{ background: '#DBEAFE', color: '#1D4ED8' }}
-                    >
-                      {i + 1}
-                    </span>
-                    <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
-                      {step}
-                    </span>
-                  </li>
-                ))}
-              </ol>
+              <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
+                <ol className="space-y-4">
+                  {TRICK_STEPS[trick.id].map((step, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span
+                        className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
+                        style={{ background: '#DBEAFE', color: '#1D4ED8' }}
+                      >
+                        {i + 1}
+                      </span>
+                      <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
+                        {step}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           )}
 
           {/* Tips */}
-          <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
-            <div className="flex items-center gap-1.5 mb-4">
-              <Lightbulb size={13} strokeWidth={2} style={{ color: '#92400E' }} />
-              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#6B7280' }}>
+          <div>
+            <div className="flex items-center gap-1.5 mb-3 px-1">
+              <Lightbulb size={13} strokeWidth={2} style={{ color: '#555' }} />
+              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
                 Tänk på
               </p>
             </div>
-            <ul className="space-y-4">
-              {trick.tips.map((tip, i) => (
-                <li key={i} className="flex gap-3">
-                  <span
-                    className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
-                    style={{ background: '#FEF9C3', color: '#92400E' }}
-                  >
-                    {i + 1}
-                  </span>
-                  <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
-                    {tip}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
+              <ul className="space-y-4">
+                {trick.tips.map((tip, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span
+                      className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
+                      style={{ background: '#FEF9C3', color: '#92400E' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
+                      {tip}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Pitfalls */}
-          <div className="rounded-2xl p-5" style={{ background: '#fff', border: '1px solid #FFD5C8' }}>
-            <div className="flex items-center gap-1.5 mb-4">
-              <TriangleAlert size={13} strokeWidth={2} style={{ color: '#C2410C' }} />
-              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#C2410C' }}>
+          <div>
+            <div className="flex items-center gap-1.5 mb-3 px-1">
+              <TriangleAlert size={13} strokeWidth={2} style={{ color: '#555' }} />
+              <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
                 Vanliga misstag
               </p>
             </div>
-            <ul className="space-y-4">
-              {trick.pitfalls.map((p, i) => (
-                <li key={i} className="flex gap-3">
-                  <span
-                    className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
-                    style={{ background: '#FFD5C8', color: '#9A3412' }}
-                  >
-                    !
-                  </span>
-                  <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
-                    {p}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="rounded-2xl p-5" style={{ background: '#fff', border: '1px solid #FFD5C8' }}>
+              <ul className="space-y-4">
+                {trick.pitfalls.map((p, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span
+                      className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
+                      style={{ background: '#FFD5C8', color: '#9A3412' }}
+                    >
+                      !
+                    </span>
+                    <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
+                      {p}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Video */}
           {TRICK_VIDEOS[trick.id] && (
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 px-1" style={{ color: '#555' }}>
-                Se tekniken
-              </p>
+              <div className="flex items-center gap-1.5 mb-3 px-1">
+                <Play size={13} strokeWidth={2} style={{ color: '#555' }} />
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
+                  Se tekniken
+                </p>
+              </div>
               <VideoPlayer
                 videoId={TRICK_VIDEOS[trick.id]}
                 title={`${trick.name} — video`}
@@ -266,9 +281,12 @@ export function TrickDetail() {
           {/* Related */}
           {related.length > 0 && (
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-2 px-1" style={{ color: '#555' }}>
-                Relaterade trick
-              </p>
+              <div className="flex items-center gap-1.5 mb-3 px-1">
+                <Link size={13} strokeWidth={2} style={{ color: '#555' }} />
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
+                  Relaterade trick
+                </p>
+              </div>
               <div className="space-y-1">
                 {related.map((r) => (
                   <button

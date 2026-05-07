@@ -49,7 +49,7 @@ export function VideoPlayer({ videoId, title, thumbnail }: Props) {
             src={thumbnailSrc}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: 'brightness(0.75)' }}
+            style={{ filter: 'grayscale(1) contrast(1.5) brightness(0.75)' }}
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div
