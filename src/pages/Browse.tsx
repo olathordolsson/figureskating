@@ -1,8 +1,17 @@
 import { useMemo, useState } from 'react';
-import { Search, X } from 'lucide-react';
-import { CATEGORIES, TRICKS, type Difficulty } from '../data/tricks';
+import heroImage from '../assets/hero.jpg';
+import { Search, X, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight } from 'lucide-react';
+import { HeroHeader } from '../components/HeroHeader';
+import { CATEGORIES, TRICKS, type CategoryId, type Difficulty } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
+
+const categoryIcon: Record<CategoryId, React.ReactNode> = {
+  hopp:         <ArrowUpFromLine size={13} strokeWidth={2} />,
+  snurrar:      <IterationCw size={13} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
+  svängar:      <LineSquiggle size={13} strokeWidth={2} />,
+  glidövningar: <PilcrowRight size={13} strokeWidth={2} />,
+};
 
 const DIFFICULTIES: { id: Difficulty; label: string; bg: string; color: string }[] = [
   { id: 'nybörjare',     label: 'Nybörjare',     bg: '#0D2B1A', color: '#22C55E' },
@@ -16,7 +25,6 @@ export function Browse() {
   const { activeCategory, setCategory } = useStore();
   const [selectedDifficulties, setSelectedDifficulties] = useState<Set<Difficulty>>(new Set());
   const [query, setQuery] = useState('');
-
   const toggleDifficulty = (d: Difficulty) => {
     setSelectedDifficulties((prev) => {
       const next = new Set(prev);
@@ -49,11 +57,11 @@ export function Browse() {
 
   return (
     <div className="pb-28">
-      {/* Header */}
-      <div className="px-4 pt-12 pb-5">
-        <h1 className="text-3xl font-bold text-white tracking-tight">Konståkning</h1>
-        <p className="text-sm text-app-sub mt-1">Utforska trick och tekniker</p>
-      </div>
+      <HeroHeader
+        image={heroImage}
+        title="Min konståkning"
+        subtitle="Utforska trick och tekniker"
+      />
 
       {/* Search */}
       <div className="px-4 mb-4">
@@ -94,12 +102,13 @@ export function Browse() {
           <button
             key={cat.id}
             onClick={() => setCategory(cat.id)}
-            className="shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"
             style={{
               background: activeCategory === cat.id ? '#F05A28' : '#1E1E1E',
               color: activeCategory === cat.id ? '#fff' : '#8A8A8A',
             }}
           >
+            {categoryIcon[cat.id]}
             {cat.label}
           </button>
         ))}
@@ -126,7 +135,7 @@ export function Browse() {
       </div>
 
       {/* List */}
-      <div className="px-4 mt-5 space-y-6">
+      <div className="px-4 mt-6 space-y-8">
         {Object.entries(grouped).length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <p className="text-white font-medium">Inga trick matchar filtret</p>
@@ -135,10 +144,10 @@ export function Browse() {
         ) : (
           Object.entries(grouped).map(([subcatLabel, tricks]) => (
             <div key={subcatLabel}>
-              <h2 className="text-[10px] font-semibold text-app-muted uppercase tracking-widest mb-3">
+              <h2 className="text-[10px] font-semibold uppercase tracking-widest mb-3" style={{ color: '#666' }}>
                 {subcatLabel}
               </h2>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {tricks.map((trick) => (
                   <TrickCard key={trick.id} trick={trick} />
                 ))}

@@ -2,6 +2,8 @@ import { Heart } from 'lucide-react';
 import { TRICKS } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
+import { HeroHeader } from '../components/HeroHeader';
+import heroImage from '../assets/heart.jpg';
 
 export function Favorites() {
   const { favorites } = useStore();
@@ -9,12 +11,13 @@ export function Favorites() {
 
   return (
     <div className="pb-28">
-      <div className="px-4 pt-12 pb-5">
-        <h1 className="text-3xl font-bold text-white tracking-tight">Favoriter</h1>
-        <p className="text-sm text-app-sub mt-1">Dina sparade trick</p>
-      </div>
+      <HeroHeader
+        image={heroImage}
+        title="Favoriter"
+        subtitle="Dina sparade trick"
+      />
 
-      <div className="px-4 space-y-1">
+      <div className="px-4 mt-5 space-y-2">
         {tricks.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
             <div className="w-14 h-14 rounded-full bg-app-card flex items-center justify-center mb-4">

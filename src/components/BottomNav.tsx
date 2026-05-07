@@ -1,8 +1,8 @@
-import { LayoutGrid, Heart, CheckCircle } from 'lucide-react';
+import { StretchHorizontal, Heart, CheckCircle } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 const tabs = [
-  { id: 'utforska'  as const, label: 'Utforska',  Icon: LayoutGrid },
+  { id: 'utforska'  as const, label: 'Tricklista', Icon: StretchHorizontal },
   { id: 'favoriter' as const, label: 'Favoriter',  Icon: Heart },
   { id: 'lärt-mig' as const, label: 'Lärt mig',   Icon: CheckCircle },
 ];

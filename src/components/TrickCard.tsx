@@ -1,13 +1,13 @@
-import { Heart, ArrowUp, RefreshCw, CornerRightDown, Wind } from 'lucide-react';
+import { Heart, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight, CheckCircle } from 'lucide-react';
 import type { CategoryId, Trick } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
 
 const categoryIcon: Record<CategoryId, React.ReactNode> = {
-  hopp:          <ArrowUp size={16} strokeWidth={2} />,
-  snurrar:       <RefreshCw size={15} strokeWidth={2} />,
-  svängar:       <CornerRightDown size={15} strokeWidth={2} />,
-  glidövningar:  <Wind size={15} strokeWidth={2} />,
+  hopp:          <ArrowUpFromLine size={16} strokeWidth={2} />,
+  snurrar:       <IterationCw size={15} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
+  svängar:       <LineSquiggle size={15} strokeWidth={2} />,
+  glidövningar:  <PilcrowRight size={15} strokeWidth={2} />,
 };
 
 type Props = { trick: Trick };
@@ -18,33 +18,42 @@ export function TrickCard({ trick }: Props) {
   const isLearned = learned.has(trick.id);
 
   return (
-    <button
-      onClick={() => selectTrick(trick.id)}
-      className="w-full text-left flex items-center gap-3 px-3 py-3 rounded-2xl active:scale-[0.98] transition-transform"
+    <div
+      className="relative flex items-center gap-3 px-4 py-3.5 rounded-2xl active:scale-[0.98] transition-transform"
       style={{ background: '#1E1E1E' }}
     >
+      {/* Tappable area for opening trick — covers full card except heart zone */}
+      <button
+        onClick={() => selectTrick(trick.id)}
+        className="absolute inset-0 rounded-2xl"
+        aria-label={`Öppna ${trick.name}`}
+      />
+
       {/* Category icon */}
       <div
-        className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-app-sub"
+        className="relative shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-app-sub pointer-events-none"
         style={{ background: '#262626' }}
       >
         {categoryIcon[trick.category]}
       </div>
 
       {/* Name + difficulty */}
-      <div className="flex-1 min-w-0">
-        <p className={`font-semibold text-[15px] leading-snug truncate ${isLearned ? 'text-brand-lime' : 'text-white'}`}>
-          {trick.name}
-        </p>
+      <div className="relative flex-1 min-w-0 pointer-events-none">
+        <div className="flex items-center gap-1.5">
+          <p className="font-semibold text-[15px] leading-snug truncate text-white">
+            {trick.name}
+          </p>
+          {isLearned && <CheckCircle size={13} strokeWidth={2.2} style={{ color: '#C8F500', flexShrink: 0 }} />}
+        </div>
         <div className="mt-1.5">
           <DifficultyBadge level={trick.difficulty} />
         </div>
       </div>
 
-      {/* Right side: heart */}
+      {/* Heart — sits above the card button via relative positioning */}
       <button
-        onClick={(e) => { e.stopPropagation(); toggleFavorite(trick.id); }}
-        className="shrink-0 flex items-center justify-center w-8 h-8"
+        onClick={() => toggleFavorite(trick.id)}
+        className="relative shrink-0 flex items-center justify-center w-11 h-11 -mr-1.5"
         aria-label={isFav ? 'Ta bort från favoriter' : 'Spara som favorit'}
       >
         <Heart
@@ -53,6 +62,6 @@ export function TrickCard({ trick }: Props) {
           className={isFav ? 'text-brand-orange fill-brand-orange' : 'text-app-muted'}
         />
       </button>
-    </button>
+    </div>
   );
 }

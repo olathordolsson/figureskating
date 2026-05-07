@@ -3,6 +3,8 @@ import { TRICKS } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
 import { DifficultyBadge } from '../components/DifficultyBadge';
+import { HeroHeader } from '../components/HeroHeader';
+import heroImage from '../assets/thumbsup.jpg';
 
 const ORDER = ['nybörjare', 'grundläggande', 'medel', 'avancerad', 'elit'] as const;
 
@@ -18,15 +20,14 @@ export function Learned() {
 
   return (
     <div className="pb-28">
-      <div className="px-4 pt-12 pb-5">
-        <h1 className="text-3xl font-bold text-white tracking-tight">Lärt mig</h1>
-        <p className="text-sm text-app-sub mt-1">
-          {tricks.length === 0 ? 'Inga trick markerade' : `${tricks.length} trick klarade`}
-        </p>
-      </div>
+      <HeroHeader
+        image={heroImage}
+        title="Tricks jag lärt mig"
+        subtitle={tricks.length === 0 ? 'Inga trick markerade' : `${tricks.length} trick klarade`}
+      />
 
       {tricks.length > 0 && (
-        <div className="mx-4 bg-app-card rounded-2xl p-4 mb-5">
+        <div className="mx-4 mt-5 bg-app-card rounded-2xl p-4 mb-5">
           <p className="text-[10px] font-semibold text-app-muted uppercase tracking-widest mb-3">
             Framsteg
           </p>

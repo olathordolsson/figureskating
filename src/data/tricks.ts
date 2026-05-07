@@ -40,7 +40,7 @@ export const TRICKS: Trick[] = [
     subcategoryLabel: 'Övningshopp',
     difficulty: 'nybörjare',
     description:
-      'Valshoppet är det första hoppet alla figureåkare lär sig. Det tar av från en framåtgående yttre kant på vänster fot och landar på en bakåtgående yttre kant på höger fot, med en halvrotation i luften. Det är i princip en enkel Axel utan den extra halvrotationen.',
+      'Valshoppet är det första hoppet alla konståkare lär sig. Det tar av från en framåtgående yttre kant på vänster fot och landar på en bakåtgående yttre kant på höger fot, med en halvrotation i luften. Det är i princip en enkel Axel utan den extra halvrotationen.',
     tips: [
       'Svinga höger ben starkt framåt och uppåt vid avhoppet för att skapa lyft.',
       'Håll armarna samlade mot kroppen i luften för att hålla balansen.',
