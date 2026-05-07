@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered, Play, Info, Link } from 'lucide-react';
+import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered, Play, Info, Link, Dumbbell, ChevronDown, Footprints, Activity, BicepsFlexed } from 'lucide-react';
 import { TRICKS, type Trick } from '../data/tricks';
 import { TRICK_VIDEOS } from '../data/trickVideos';
 import { TRICK_PHOTOS } from '../data/trickPhotos';
 import { TRICK_STEPS } from '../data/trickSteps';
+import { TRICK_OFF_ICE } from '../data/trickOffIce';
 import { VideoPlayer } from './VideoPlayer';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
@@ -13,12 +14,20 @@ export function TrickDetail() {
 
   const [trick, setTrick] = useState<Trick | null>(null);
   const [visible, setVisible] = useState(false);
+  const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
+  const toggleCategory = (key: string) =>
+    setOpenCategories((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
 
   useEffect(() => {
     if (selectedTrickId) {
       const found = TRICKS.find((t) => t.id === selectedTrickId);
       if (found) {
         setTrick(found);
+        setOpenCategories(new Set());
         requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
       }
     } else {
@@ -308,6 +317,73 @@ export function TrickDetail() {
               </div>
             </div>
           )}
+
+          {/* Off-ice training */}
+          {TRICK_OFF_ICE[trick.id] && (() => {
+            const offIce = TRICK_OFF_ICE[trick.id];
+            const rows = [
+              { key: 'stretch',  label: 'Rörlighet', Icon: Footprints,   dot: '#FEF9C3', dotText: '#92400E', items: offIce.stretch },
+              { key: 'strength', label: 'Styrka',    Icon: BicepsFlexed, dot: '#DBEAFE', dotText: '#1D4ED8', items: offIce.strength },
+              { key: 'cardio',   label: 'Kondition', Icon: Activity,      dot: '#DCFCE7', dotText: '#15803D', items: offIce.cardio },
+            ];
+            return (
+              <div>
+                <div className="flex items-center gap-1.5 mb-3 px-1">
+                  <Dumbbell size={13} strokeWidth={2} style={{ color: '#555' }} />
+                  <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#555' }}>
+                    Träning utanför isen
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  {rows.map(({ key, label, Icon, dot, dotText, items }) => {
+                    const isOpen = openCategories.has(key);
+                    return (
+                      <div key={key} className="rounded-2xl overflow-hidden" style={{ background: '#1E1E1E' }}>
+                        <button
+                          onClick={() => toggleCategory(key)}
+                          className="w-full flex items-center gap-3 px-4 py-3.5 active:scale-[0.98] transition-transform"
+                        >
+                          <div
+                            className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                            style={{ background: '#262626' }}
+                          >
+                            <Icon size={16} strokeWidth={2} style={{ color: '#888' }} />
+                          </div>
+                          <p className="flex-1 text-left font-semibold text-[15px] text-white">{label}</p>
+                          <ChevronDown
+                            size={15}
+                            strokeWidth={2}
+                            style={{
+                              color: '#555',
+                              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                              transition: 'transform 300ms ease',
+                            }}
+                          />
+                        </button>
+                        {isOpen && (
+                          <ul className="px-4 pb-4 space-y-3">
+                            {items.map((item, i) => (
+                              <li key={i} className="flex gap-3">
+                                <span
+                                  className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
+                                  style={{ background: dot, color: dotText }}
+                                >
+                                  {i + 1}
+                                </span>
+                                <span className="text-sm leading-relaxed" style={{ color: '#999' }}>
+                                  {item}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
 
           </div>{/* end padded content */}
         </div>
