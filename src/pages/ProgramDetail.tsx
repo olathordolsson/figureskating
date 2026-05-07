@@ -127,12 +127,12 @@ export function ProgramDetail() {
     return (
       <div className="pb-28">
         <div
-          className="sticky top-0 z-10 flex items-center justify-between px-4"
+          className="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4"
           style={{
             background: '#141414',
             borderBottom: '1px solid #2A2A2A',
-            paddingTop: 'calc(env(safe-area-inset-top, 44px) + 10px)',
-            paddingBottom: '10px',
+            paddingTop: 'env(safe-area-inset-top, 44px)',
+            paddingBottom: '12px',
           }}
         >
           <button
@@ -152,6 +152,7 @@ export function ProgramDetail() {
             Redigera
           </button>
         </div>
+        <div style={{ height: 'calc(env(safe-area-inset-top, 44px) + 52px)' }} />
 
         <div className="px-5 pt-6 space-y-5">
           <div>
@@ -269,12 +270,12 @@ export function ProgramDetail() {
   return (
     <div className="pb-28">
       <div
-        className="sticky top-0 z-10 flex items-center justify-between px-4"
+        className="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4"
         style={{
           background: '#141414',
           borderBottom: '1px solid #2A2A2A',
-          paddingTop: 'calc(env(safe-area-inset-top, 44px) + 10px)',
-          paddingBottom: '10px',
+          paddingTop: 'env(safe-area-inset-top, 44px)',
+          paddingBottom: '12px',
         }}
       >
         <button
@@ -294,6 +295,7 @@ export function ProgramDetail() {
           {saving ? 'Sparar…' : 'Spara'}
         </button>
       </div>
+      <div style={{ height: 'calc(env(safe-area-inset-top, 44px) + 52px)' }} />
 
       <div className="px-5 pt-5 space-y-5">
 
