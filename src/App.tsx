@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useStore } from './store/useStore';
 import { BottomNav } from './components/BottomNav';
 import { TrickDetail } from './components/TrickDetail';
+import { InstallPrompt } from './components/InstallPrompt';
 import { Browse } from './pages/Browse';
 import { Favorites } from './pages/Favorites';
 import { Learned } from './pages/Learned';
@@ -42,6 +43,7 @@ export default function App() {
       </main>
 
       <BottomNav />
+      <InstallPrompt />
 
       {selectedTrickId && <TrickDetail />}
     </>
