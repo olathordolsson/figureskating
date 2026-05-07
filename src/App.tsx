@@ -6,9 +6,11 @@ import { InstallPrompt } from './components/InstallPrompt';
 import { Browse } from './pages/Browse';
 import { Favorites } from './pages/Favorites';
 import { Learned } from './pages/Learned';
+import { Programs } from './pages/Programs';
+import { ProgramDetail } from './pages/ProgramDetail';
 
 export default function App() {
-  const { activeTab, selectedTrickId } = useStore();
+  const { activeTab, selectedTrickId, selectedProgramId, programs } = useStore();
   const [scrollOpacity, setScrollOpacity] = useState(0);
 
   useEffect(() => {
@@ -40,6 +42,11 @@ export default function App() {
         {activeTab === 'utforska' && <Browse />}
         {activeTab === 'favoriter' && <Favorites />}
         {activeTab === 'lärt-mig' && <Learned />}
+        {activeTab === 'program' && (
+          selectedProgramId && programs.some((p) => p.id === selectedProgramId)
+            ? <ProgramDetail />
+            : <Programs />
+        )}
       </main>
 
       <BottomNav />
