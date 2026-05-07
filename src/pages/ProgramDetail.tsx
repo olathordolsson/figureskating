@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Pencil, Trash2, ChevronUp, ChevronDown, Music, Plus, X, AlignLeft, Play } from 'lucide-react';
 import { useStore } from '../store/useStore';
-import type { SpotifyMeta } from '../store/useStore';
 import { TRICKS } from '../data/tricks';
 import { DifficultyBadge } from '../components/DifficultyBadge';
 import { TrickPicker } from '../components/TrickPicker';
