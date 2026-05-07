@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { X, ChevronRight, Heart, CheckCircle, Lightbulb, TriangleAlert } from 'lucide-react';
 import { TRICKS, type Trick } from '../data/tricks';
+import { TRICK_VIDEOS } from '../data/trickVideos';
+import { TRICK_PHOTOS } from '../data/trickPhotos';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
 
@@ -87,19 +89,50 @@ export function TrickDetail() {
       >
 
         {/* Scrollable content */}
-        <div className="overflow-y-auto flex-1 px-5 pt-6 pb-14 space-y-4">
+        <div className="overflow-y-auto flex-1">
 
-          {/* Title */}
-          <div>
-            <div className="flex items-center justify-between gap-2 mb-2">
-              <p className="text-[10px] uppercase tracking-widest font-medium" style={{ color: '#555' }}>
+          {/* Header — photo right, title bottom-left */}
+          <div className="relative overflow-hidden" style={{ height: TRICK_PHOTOS[trick.id] ? 260 : 'auto', background: '#141414', borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}>
+
+            {TRICK_PHOTOS[trick.id] && (
+              <>
+                {/* Wrapper sizes to image's natural width — gradient lives inside it */}
+                <div style={{ position: 'absolute', top: 0, right: 0, height: '100%', display: 'flex' }}>
+                  <img
+                    src={TRICK_PHOTOS[trick.id]}
+                    alt={trick.name}
+                    style={{ height: '100%', width: 'auto', display: 'block', filter: 'grayscale(1) contrast(1.1) brightness(0.7)' }}
+                  />
+                  {/* Left gradient — spans full image width, always aligned */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, bottom: 0, width: '60%',
+                    background: 'linear-gradient(to right, #141414 20%, transparent)',
+                  }} />
+                </div>
+                {/* Bottom gradient on outer container */}
+                <div style={{
+                  position: 'absolute', left: 0, right: 0, bottom: 0, height: '50%',
+                  background: 'linear-gradient(to bottom, transparent, #141414)',
+                  zIndex: 1,
+                }} />
+              </>
+            )}
+
+            {/* Title overlaid at bottom-left */}
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0 20px 20px', zIndex: 2 }}>
+              <p className="text-[10px] uppercase tracking-widest font-medium mb-2" style={{ color: '#555' }}>
                 {trick.subcategoryLabel}
               </p>
-              <DifficultyBadge level={trick.difficulty} showBv />
+              <h1 className="text-2xl font-bold text-white leading-tight">{trick.name}</h1>
+              <div className="flex items-center justify-between gap-2 mt-1">
+                <p className="text-xs" style={{ color: '#555' }}>{trick.englishName}</p>
+                <DifficultyBadge level={trick.difficulty} showBv />
+              </div>
             </div>
-            <h1 className="text-2xl font-bold text-white leading-tight">{trick.name}</h1>
-            <p className="text-xs mt-1" style={{ color: '#555' }}>{trick.englishName}</p>
           </div>
+
+          {/* All padded content */}
+          <div className="px-5 pt-4 pb-14 space-y-4">
 
           {/* Primary actions */}
           <div className="flex gap-2">
@@ -187,6 +220,25 @@ export function TrickDetail() {
             </ul>
           </div>
 
+          {/* Video */}
+          {TRICK_VIDEOS[trick.id] && (
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 px-1" style={{ color: '#555' }}>
+                Se tekniken
+              </p>
+              <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${TRICK_VIDEOS[trick.id]}?rel=0&modestbranding=1`}
+                  title={`${trick.name} — video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  style={{ border: 'none' }}
+                />
+              </div>
+            </div>
+          )}
+
           {/* Related */}
           {related.length > 0 && (
             <div>
@@ -214,6 +266,8 @@ export function TrickDetail() {
               </div>
             </div>
           )}
+
+          </div>{/* end padded content */}
         </div>
       </div>
     </>
