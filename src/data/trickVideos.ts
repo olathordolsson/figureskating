@@ -22,7 +22,7 @@ export const TRICK_VIDEOS: Record<string, string> = {
   'lutz-3':        '5LgY0eEsluQ',
   'euler-1':       '5LgY0eEsluQ',
 
-  // Snurrar
+  // Piruetter
   'uppright-basic':    'uD4IVjZQ35Q', // Coach Mary — One Foot Spin
   'scratch-spin':      'uD4IVjZQ35Q',
   'back-spin':         'uD4IVjZQ35Q',
@@ -56,7 +56,7 @@ export const TRICK_VIDEOS: Record<string, string> = {
   // Hopp — saknade
   'split-jump':        'ioA_MPRElPk', // Split Jump Tutorial
 
-  // Snurrar — saknade
+  // Piruetter — saknade
   'layback-spin':      'bp8fjGQJUyE', // Layback Spin
   'biellmann-spin':    'JCXBNUbzgDc', // Biellmann Spin
   'attitude-spin':     'NqK6TcriMHE', // Attitude Spin

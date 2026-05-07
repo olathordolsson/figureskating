@@ -194,15 +194,15 @@ export const TRICK_STEPS: Record<string, string[]> = {
   'uppright-basic': [
     'Glid framåt på vänster inre kant i en cirkel.',
     'Svep höger ben framåt och dra in armarna mot kroppen.',
-    'Låt vikten flyta över till snurrcentrumet på vänster fots klingsmitta.',
+    'Låt vikten flyta över till piruettcentrumet på vänster fots klingsmitta.',
     'Håll kroppen upprätt med armarna tätt och fria benet framme.',
     'Känn att du balanserar exakt på klingsmittan – inte tåspetsen.',
-    'Avsluta kontrollerat med ett bromssteg ut ur snurren.',
+    'Avsluta kontrollerat med ett bromssteg ut ur piruetten.',
   ],
 
   'scratch-spin': [
-    'Starta i stående snurr med armarna utsträckta till sidorna.',
-    'Hitta ett stabilt snurrcentrum och bygg upp grundläggande rotationshastighet.',
+    'Starta i stående piruett med armarna utsträckta till sidorna.',
+    'Hitta ett stabilt piruettcentrum och bygg upp grundläggande rotationshastighet.',
     'Dra in fria benet mot kroppen med ett snabbt, bestämt drag.',
     'Dra samtidigt in armarna tätt mot bröstet.',
     'Känn hur rotationen accelererar dramatiskt.',
@@ -212,50 +212,50 @@ export const TRICK_STEPS: Record<string, string[]> = {
   'back-spin': [
     'Starta bakifrån med vikt på höger bakre yttre kant.',
     'Svep vänster ben bakåt och låt vikten överföras till höger fot.',
-    'Hitta klingsmittan på höger fot och etablera snurraxeln.',
+    'Hitta klingsmittan på höger fot och etablera piruettaxeln.',
     'Håll armarna nära kroppen och fria benet bakåt.',
     'Bygg upp rotationshastigheten och håll positionen stabil.',
     'Avsluta kontrollerat med ett steg ut.',
   ],
 
   'layback-spin': [
-    'Starta i stående snurr och bygg upp god rotationshastighet.',
+    'Starta i stående piruett och bygg upp god rotationshastighet.',
     'Börja gradvis luta huvudet och axlarna bakåt.',
     'Låt ryggraden böja sig i en mjuk, graciös båge bakåt.',
     'Håll armarna i valfri dekorativ position – utåt eller ovanför.',
-    'Behåll snurrcentrumet och farten under bakåtböjningen.',
-    'Kom tillbaka upp kontrollerat och avsluta snurren.',
+    'Behåll piruettcentrumet och farten under bakåtböjningen.',
+    'Kom tillbaka upp kontrollerat och avsluta piruetten.',
   ],
 
   'biellmann-spin': [
-    'Starta i stående snurr eller liggande bakåtsnurr med god fart.',
+    'Starta i stående piruett eller liggande bakåtpiruett med god fart.',
     'Böj fria benets knä och lyft klingan bakåt och uppåt.',
     'Grip klingan med en eller båda händerna bakom ryggen.',
     'Dra klingan uppåt ovanför huvudet med armarna sträckta.',
-    'Håll kompressionen och snurraxeln stabilt i positionen.',
-    'Avsluta genom att mjukt släppa klingan och gå ur snurren.',
+    'Håll kompressionen och piruettaxeln stabilt i positionen.',
+    'Avsluta genom att mjukt släppa klingan och gå ur piruetten.',
   ],
 
   'attitude-spin': [
-    'Starta i stående snurr och bygg upp fart.',
+    'Starta i stående piruett och bygg upp fart.',
     'Höj fria benet åt sidan med knät böjt och höften aktivt utåtroterad.',
     'Håll låret minst parallellt med isen.',
     'Luta överkroppen lätt åt sidan och vrid huvudet elegant.',
-    'Behåll snurraxeln stabilt och farten uppe.',
+    'Behåll piruettaxeln stabilt och farten uppe.',
     'Avsluta kontrollerat.',
   ],
 
   'sit-spin': [
-    'Starta i stående snurr och bygg upp rotationshastighet.',
-    'Böj snurrbenets knä djupt och sänk kroppen mot isen.',
+    'Starta i stående piruett och bygg upp rotationshastighet.',
+    'Böj piruettbenets knä djupt och sänk kroppen mot isen.',
     'Sträck fria benet rakt framåt med sträckt tå.',
     'Håll ryggen relativt rak och vikten centrerad över klingsmittan.',
     'Sikta på att låret är parallellt med eller under isytan.',
-    'Kom upp kontrollerat och avsluta snurren.',
+    'Kom upp kontrollerat och avsluta piruetten.',
   ],
 
   'sit-spin-back': [
-    'Öva sittsnurr på höger fot separat tills den sitter.',
+    'Öva sittpiruett på höger fot separat tills den sitter.',
     'Starta på höger bakre yttre kant och bygg upp fart.',
     'Böj höger knä djupt till full sittposition.',
     'Sträck vänster ben framåt med sträckt tå.',
@@ -264,8 +264,8 @@ export const TRICK_STEPS: Record<string, string[]> = {
   ],
 
   'pancake-spin': [
-    'Starta i sittsnurr med god rotationshastighet.',
-    'Kryssa fria benet över snurrbenet.',
+    'Starta i sittpiruett med god rotationshastighet.',
+    'Kryssa fria benet över piruettbenet.',
     'Böj överkroppen framåt och nedåt mot isen.',
     'Sträck armarna bakåt längs kroppen för att hålla balansen.',
     'Håll positionen ett antal varv och känn komprimeringen.',
@@ -273,7 +273,7 @@ export const TRICK_STEPS: Record<string, string[]> = {
   ],
 
   'cannonball-spin': [
-    'Starta i sittsnurr med god hastighet.',
+    'Starta i sittpiruett med god hastighet.',
     'Grip fria benets ankel med händerna.',
     'Dra in armar och ben i ett snabbt, samordnat drag.',
     'Komprimera kroppen till en tight boll och känn accelerationen.',
@@ -285,13 +285,13 @@ export const TRICK_STEPS: Record<string, string[]> = {
     'Starta från en inåtgående kurva på vänster inre kant.',
     'Svep höger ben bakåt och lyft det aktivt till höfthöjd eller högre.',
     'Luta överkroppen framåt i T-position med plana axlar.',
-    'Hitta snurraxeln och etablera kamelposition.',
+    'Hitta piruettaxeln och etablera kamelposition.',
     'Sträck fria benet fullständigt – rakt knä, sträckt tå.',
     'Håll positionen stabilt och avsluta kontrollerat.',
   ],
 
   'layover-camel': [
-    'Starta i kamelsnurr och bygg upp fart.',
+    'Starta i kamelpiruett och bygg upp fart.',
     'Börja gradvis rotera överkroppen uppåt mot taket.',
     'Öppna bröstkorgen uppåt medan fria benet håller arabesquepositionen.',
     'Håll axlarna plana – ingen ska vara högre än den andra.',
@@ -300,21 +300,21 @@ export const TRICK_STEPS: Record<string, string[]> = {
   ],
 
   'donut-spin': [
-    'Starta i kamelsnurr och bygg upp god rotationshastighet.',
+    'Starta i kamelpiruett och bygg upp god rotationshastighet.',
     'Böj ryggen bakåt och grip fria benets klinga med händerna.',
     'Lyft klingan bakåt mot och ovanför huvudet.',
     'Känn hur kroppen formar en ring – ryggen böjd, benet ovanför.',
-    'Håll fast gripen och behåll snurraxeln stabilt.',
+    'Håll fast gripen och behåll piruettaxeln stabilt.',
     'Avsluta mjukt genom att släppa gripen.',
   ],
 
   'illusion-spin': [
-    'Starta i kamelsnurr med god fart.',
+    'Starta i kamelpiruett med god fart.',
     'Gunka överkroppen rytmiskt nedåt mot isen.',
     'Låt fria benet sparka uppåt när överkroppen går ned.',
     'Gunga tillbaka upp till kamelposition.',
-    'Upprepa gungrörelsen jämnt och flödande under hela snurren.',
-    'Avsluta i stående snurr.',
+    'Upprepa gungrörelsen jämnt och flödande under hela piruetten.',
+    'Avsluta i stående piruett.',
   ],
 
   'flying-camel': [
@@ -322,16 +322,16 @@ export const TRICK_STEPS: Record<string, string[]> = {
     'Ta av uppåt och svinga höger ben aktivt bakåt.',
     'Flyg med fria benet bakåt i arabesque – kroppen horisontell.',
     'Landa på vänster bakre kant och gå direkt in i kamelposition.',
-    'Etablera snurrcentrum och kamelposition omedelbart vid landningen.',
-    'Snurra kamelsnurr och avsluta kontrollerat.',
+    'Etablera piruettcentrum och kamelposition omedelbart vid landningen.',
+    'Piruetta kamelpiruett och avsluta kontrollerat.',
   ],
 
   'flying-sit-spin': [
     'Bygg upp fart och ta av uppåt med ett hopp.',
-    'Böj snurrbenets knä aktivt vid hoppets kulmen.',
+    'Böj piruettbenets knä aktivt vid hoppets kulmen.',
     'Anta sittposition i luften – det ska se ut som att du sitter på en stol.',
     'Landa mjukt på vänster fot direkt i full sittposition.',
-    'Etablera snurrcentrum och snurra sittsnurren.',
+    'Etablera piruettcentrum och piruetta sittpiruetten.',
     'Kom upp och avsluta kontrollerat.',
   ],
 
@@ -341,7 +341,7 @@ export const TRICK_STEPS: Record<string, string[]> = {
     'Håll kroppen nästan horisontell i luften – parallell med isen.',
     'Benen saxar förbi varandra med fullständigt sträckta knän.',
     'Landa mjukt på ett ben med böjt knä.',
-    'Gå direkt in i en snurr eller glid vidare ut på isen.',
+    'Gå direkt in i en piruett eller glid vidare ut på isen.',
   ],
 
   'death-drop': [
@@ -349,15 +349,15 @@ export const TRICK_STEPS: Record<string, string[]> = {
     'Ta av uppåt och sparka avhoppsbenet kraftfullt bakåt och uppåt.',
     'Flyg med kroppen i splitad position – ett ben bakåt, ett framåt.',
     'Landa på höger fot direkt in i full bakre sittposition.',
-    'Etablera snurrcentrum omedelbart och snurra bakre sittsnurr.',
+    'Etablera piruettcentrum omedelbart och piruetta bakre sittpiruett.',
     'Avsluta kontrollerat.',
   ],
 
   'combination-spin': [
-    'Välj startposition (t.ex. kamelsnurr) och bygg upp god fart.',
+    'Välj startposition (t.ex. kamelpiruett) och bygg upp god fart.',
     'Utför startpositionen fullständigt med stabil hastighet.',
-    'Övergå mjukt till nästa position (t.ex. sittsnurr) – bibehåll farten.',
-    'Vid fotbyte: byt kontrollerat och etablera snurrcentrum på andra foten.',
+    'Övergå mjukt till nästa position (t.ex. sittpiruett) – bibehåll farten.',
+    'Vid fotbyte: byt kontrollerat och etablera piruettcentrum på andra foten.',
     'Avsluta i upprätt position och accelerera inför avslutet.',
     'Avsluta med markerat stopp.',
   ],
@@ -366,7 +366,7 @@ export const TRICK_STEPS: Record<string, string[]> = {
 
   'three-turn': [
     'Glid framåt på en kant, till exempel vänster yttre.',
-    'Håll axlarna stilla och flytta fria foten nära snurrfoten.',
+    'Håll axlarna stilla och flytta fria foten nära piruettfoten.',
     'Rotera från höfterna – känn att kroppens axel vrids inifrån.',
     'Byt riktning och kant i ett flödande, odramatiskt moment.',
     'Lämna svängen bakåt på inre kanten med fria foten nära.',

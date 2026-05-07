@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import heroImage from '../assets/hero.jpg';
+const heroImage = 'https://media.istockphoto.com/id/1388581317/photo/figure-skating-lady-is-wearing-black-sportswear-is-skating-on-ice-rink-training-at-night-in.jpg?s=612x612&w=0&k=20&c=KFjeMcUvYbaYvcYEUBgz5rzpjMBfCtKvgdV57Dv_pMs=';
 import { ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight } from 'lucide-react';
 import { HeroHeader } from '../components/HeroHeader';
 import { CATEGORIES, TRICKS, type CategoryId, type Difficulty } from '../data/tricks';
@@ -8,7 +8,7 @@ import { TrickCard } from '../components/TrickCard';
 
 const categoryIcon: Record<CategoryId, React.ReactNode> = {
   hopp:         <ArrowUpFromLine size={13} strokeWidth={2} />,
-  snurrar:      <IterationCw size={13} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
+  piruetter:      <IterationCw size={13} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
   svängar:      <LineSquiggle size={13} strokeWidth={2} />,
   glidövningar: <PilcrowRight size={13} strokeWidth={2} />,
 };

@@ -382,13 +382,13 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
     ],
   },
 
-  // ── Snurrar ───────────────────────────────────────────────────────────────
+  // ── Piruetter ───────────────────────────────────────────────────────────────
 
   'uppright-basic': {
     strength: [
-      'Ettbensbalans med ögonen stängda – grundläggande snurrstabilitet.',
+      'Ettbensbalans med ögonen stängda – grundläggande piruettstabilitet.',
       'Plankan – kärna håller kroppen kompakt under rotation.',
-      'Sidoplankan – lateral stabilitet för rak snurraxel.',
+      'Sidoplankan – lateral stabilitet för rak piruettaxel.',
     ],
     cardio: [
       'Rotera runt egen axel med armarna in – tränar vestibulär anpassning.',
@@ -396,19 +396,19 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
     ],
     stretch: [
       'Vadssträck – vristens frihet på stödbenet.',
-      'Axelsträck korsad – frigör axlarna för snurrpositionen.',
-      'Quadssträck – stödbenet (ofta vänster) sträcks efter snurren.',
+      'Axelsträck korsad – frigör axlarna för piruettpositionen.',
+      'Quadssträck – stödbenet (ofta vänster) sträcks efter piruetten.',
     ],
   },
 
   'scratch-spin': {
     strength: [
-      'Ettbensbalans på tå – tränar kontrollen i snurrpositionen.',
+      'Ettbensbalans på tå – tränar kontrollen i piruettpositionen.',
       'Plankan med benlyft – kärna och höftböjare för kompakt position.',
-      'Adduktor-övning – drar in fria benet och accelererar snurren.',
+      'Adduktor-övning – drar in fria benet och accelererar piruetten.',
     ],
     cardio: [
-      'Rotation på snurrbräda eller Lazy Susan – direktträning av centrifugalkänslan.',
+      'Rotation på piruettbräda eller Lazy Susan – direktträning av centrifugalkänslan.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -425,7 +425,7 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Ryggstärkande övningar (rygghyperextension) – kontroll av baklängesaxeln.',
     ],
     cardio: [
-      'Rotation baklänges på snurrbräda – vestibulär träning.',
+      'Rotation baklänges på piruettbräda – vestibulär träning.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -439,7 +439,7 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
     strength: [
       'Ryggsträckare (Superman-övning) – stärker musklerna som håller bakåtböjningen.',
       'Kärnstabilitet i extension (bridge) – kontrollerat bakåtfall med stöd.',
-      'Ettbensbalans – snurrbalansen krävs under rörlighetsutmaningen.',
+      'Ettbensbalans – piruettbalansen krävs under rörlighetsutmaningen.',
       'Axelstabilitet (rotator cuff) – skyddar axlarna i bakåtposition.',
     ],
     cardio: [
@@ -458,7 +458,7 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Axel- och skulderrotatorstyrka – håller benet uppe bakom huvudet.',
       'Ryggstärkare – kontrollera den extrema bakåtböjningen.',
       'Hamstring eccentrisk styrka – benet dras upp utan att spänna.',
-      'Ettbensbalans – snurrbalansen under extremt rörlighetsläge.',
+      'Ettbensbalans – piruettbalansen under extremt rörlighetsläge.',
     ],
     cardio: [
       'Yoga flow med djupa bakåtböjningar – rörlighet och uthållighet.',
@@ -674,7 +674,7 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Hip-abduktor liggande (clamshell) – det horisontella benet behöver lyftkraft.',
       'Kärna rotationsövningar – den horisontella rotationen kring stödbenet.',
       'Bål-rotation med medicinboll – drivar butterflyrörelsens sveprörelse.',
-      'Ettbensbalans med rotation – stödbenet under snurrrörelsen.',
+      'Ettbensbalans med rotation – stödbenet under piruettrörelsen.',
     ],
     cardio: [
       'Horisontell kroppscirklar på golv – direktträning av butterflyrörelsens form.',
@@ -802,7 +802,7 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Fotledsstabilitet – hög belastning under snabba varv.',
     ],
     cardio: [
-      'Snurrövningar på rotation board – vestibulär träning och snabbhetsträning.',
+      'Piruettövningar på rotation board – vestibulär träning och snabbhetsträning.',
       'Hoppreppa – kondition och rytm.',
     ],
     stretch: [

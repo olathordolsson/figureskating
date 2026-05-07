@@ -5,7 +5,7 @@ import { DifficultyBadge } from './DifficultyBadge';
 
 const categoryIcon: Record<CategoryId, React.ReactNode> = {
   hopp:          <ArrowUpFromLine size={16} strokeWidth={2} />,
-  snurrar:       <IterationCw size={15} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
+  piruetter:       <IterationCw size={15} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
   svängar:       <LineSquiggle size={15} strokeWidth={2} />,
   glidövningar:  <PilcrowRight size={15} strokeWidth={2} />,
 };

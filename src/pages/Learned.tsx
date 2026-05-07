@@ -4,7 +4,7 @@ import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
 import { DifficultyBadge } from '../components/DifficultyBadge';
 import { HeroHeader } from '../components/HeroHeader';
-import heroImage from '../assets/thumbsup.jpg';
+const heroImage = 'https://media.wfmynews2.com/assets/CCT/images/dd1119ee-e29d-4f5b-9f3d-9dd5e34b54e0/20260210T203748/dd1119ee-e29d-4f5b-9f3d-9dd5e34b54e0_1920x1080.jpg';
 
 const ORDER = ['nybörjare', 'grundläggande', 'medel', 'avancerad', 'elit'] as const;
 
