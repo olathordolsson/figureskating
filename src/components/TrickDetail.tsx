@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { X, ChevronRight, Heart, CheckCircle, Lightbulb, TriangleAlert } from 'lucide-react';
+import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered } from 'lucide-react';
 import { TRICKS, type Trick } from '../data/tricks';
 import { TRICK_VIDEOS } from '../data/trickVideos';
 import { TRICK_PHOTOS } from '../data/trickPhotos';
+import { TRICK_STEPS } from '../data/trickSteps';
+import { VideoPlayer } from './VideoPlayer';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
 
@@ -155,8 +157,8 @@ export function TrickDetail() {
                 color: '#fff',
               }}
             >
-              <Heart size={15} strokeWidth={1.8} style={{ fill: isFav ? '#fff' : 'none' }} />
-              {isFav ? 'Sparad' : 'Spara'}
+              <Pin size={15} strokeWidth={1.8} style={{ fill: isFav ? '#fff' : 'none' }} />
+              {isFav ? 'Tränar på' : 'Tränar på'}
             </button>
           </div>
 
@@ -169,6 +171,33 @@ export function TrickDetail() {
               {trick.description}
             </p>
           </div>
+
+          {/* Steps */}
+          {TRICK_STEPS[trick.id] && (
+            <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
+              <div className="flex items-center gap-1.5 mb-4">
+                <ListOrdered size={13} strokeWidth={2} style={{ color: '#1D4ED8' }} />
+                <p className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: '#6B7280' }}>
+                  Så här gör du
+                </p>
+              </div>
+              <ol className="space-y-4">
+                {TRICK_STEPS[trick.id].map((step, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span
+                      className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
+                      style={{ background: '#DBEAFE', color: '#1D4ED8' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="text-sm leading-relaxed" style={{ color: '#1a1a1a' }}>
+                      {step}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
 
           {/* Tips */}
           <div className="rounded-2xl p-5" style={{ background: '#fff' }}>
@@ -226,16 +255,11 @@ export function TrickDetail() {
               <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 px-1" style={{ color: '#555' }}>
                 Se tekniken
               </p>
-              <div className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${TRICK_VIDEOS[trick.id]}?rel=0&modestbranding=1`}
-                  title={`${trick.name} — video`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  style={{ border: 'none' }}
-                />
-              </div>
+              <VideoPlayer
+                videoId={TRICK_VIDEOS[trick.id]}
+                title={`${trick.name} — video`}
+                thumbnail={TRICK_PHOTOS[trick.id]}
+              />
             </div>
           )}
 

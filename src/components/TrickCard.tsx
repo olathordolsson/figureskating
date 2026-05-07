@@ -1,4 +1,4 @@
-import { Heart, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight, CheckCircle } from 'lucide-react';
+import { Pin, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight, CheckCircle } from 'lucide-react';
 import type { CategoryId, Trick } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
@@ -54,9 +54,9 @@ export function TrickCard({ trick }: Props) {
       <button
         onClick={() => toggleFavorite(trick.id)}
         className="relative shrink-0 flex items-center justify-center w-11 h-11 -mr-1.5"
-        aria-label={isFav ? 'Ta bort från favoriter' : 'Spara som favorit'}
+        aria-label={isFav ? 'Ta bort från tränar på' : 'Lägg till i tränar på'}
       >
-        <Heart
+        <Pin
           size={16}
           strokeWidth={1.8}
           className={isFav ? 'text-brand-orange fill-brand-orange' : 'text-app-muted'}

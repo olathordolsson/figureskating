@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import heroImage from '../assets/hero.jpg';
-import { Search, X, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight } from 'lucide-react';
+import { ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight } from 'lucide-react';
 import { HeroHeader } from '../components/HeroHeader';
 import { CATEGORIES, TRICKS, type CategoryId, type Difficulty } from '../data/tricks';
 import { useStore } from '../store/useStore';
@@ -24,7 +24,6 @@ const DIFFICULTIES: { id: Difficulty; label: string; bg: string; color: string }
 export function Browse() {
   const { activeCategory, setCategory } = useStore();
   const [selectedDifficulties, setSelectedDifficulties] = useState<Set<Difficulty>>(new Set());
-  const [query, setQuery] = useState('');
   const toggleDifficulty = (d: Difficulty) => {
     setSelectedDifficulties((prev) => {
       const next = new Set(prev);
@@ -34,18 +33,9 @@ export function Browse() {
   };
 
   const grouped = useMemo(() => {
-    const q = query.trim().toLowerCase();
     let tricks = activeCategory ? TRICKS.filter((t) => t.category === activeCategory) : TRICKS;
     if (selectedDifficulties.size > 0) {
       tricks = tricks.filter((t) => selectedDifficulties.has(t.difficulty));
-    }
-    if (q) {
-      tricks = tricks.filter(
-        (t) =>
-          t.name.toLowerCase().includes(q) ||
-          t.englishName.toLowerCase().includes(q) ||
-          t.description.toLowerCase().includes(q)
-      );
     }
     return tricks.reduce<Record<string, typeof TRICKS>>((acc, t) => {
       const key = t.subcategoryLabel;
@@ -53,7 +43,7 @@ export function Browse() {
       acc[key].push(t);
       return acc;
     }, {});
-  }, [activeCategory, selectedDifficulties, query]);
+  }, [activeCategory, selectedDifficulties]);
 
   return (
     <div className="pb-28">
@@ -62,29 +52,6 @@ export function Browse() {
         title="Min konståkning"
         subtitle="Utforska trick och tekniker"
       />
-
-      {/* Search */}
-      <div className="px-4 mb-4">
-        <div className="relative">
-          <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-app-muted pointer-events-none" strokeWidth={2} />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Sök trick…"
-            className="w-full bg-app-raised rounded-xl pl-9 pr-9 py-2.5 text-sm text-white placeholder:text-app-muted outline-none focus:ring-2 focus:ring-brand-orange/40"
-          />
-          {query && (
-            <button
-              onClick={() => setQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-app-muted hover:text-white transition-colors"
-              aria-label="Rensa sökning"
-            >
-              <X size={15} strokeWidth={2} />
-            </button>
-          )}
-        </div>
-      </div>
 
       {/* Category tabs — primary */}
       <div className="flex gap-2 px-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
