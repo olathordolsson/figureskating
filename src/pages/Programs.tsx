@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Music2, Plus, ChevronRight, X } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { programBv, formatBv } from '../utils/bv';
+import { HeroHeader } from '../components/HeroHeader';
+
+const heroImage = 'https://images.unsplash.com/photo-1519139116361-2ea84d04a4aa?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 export function Programs() {
   const { programs, createProgram, selectProgram } = useStore();
@@ -18,17 +21,11 @@ export function Programs() {
 
   return (
     <div className="pb-28">
-      {/* Header */}
-      <div className="px-5 pt-14 pb-8">
-        <div
-          className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
-          style={{ background: '#1E1E1E' }}
-        >
-          <Music2 size={22} strokeWidth={1.8} style={{ color: '#C8F500' }} />
-        </div>
-        <h1 className="text-3xl font-bold text-white">Mina program</h1>
-        <p className="text-sm mt-1" style={{ color: '#555' }}>Bygg och hantera dina konståkningsprogram</p>
-      </div>
+      <HeroHeader
+        image={heroImage}
+        title="Mina program"
+        subtitle={programs.length === 0 ? 'Inga program skapade' : `${programs.length} ${programs.length === 1 ? 'program' : 'program'}`}
+      />
 
       <div className="px-4 space-y-2">
         {programs.length === 0 && !creating ? (
@@ -38,7 +35,7 @@ export function Programs() {
             </div>
             <p className="text-white font-semibold">Inga program ännu</p>
             <p className="text-app-sub text-sm mt-1 max-w-[220px]">
-              Skapa ett program och bygg upp dina element i ordning
+              Skapa ett program och bygg upp dina trick i ordning
             </p>
           </div>
         ) : (

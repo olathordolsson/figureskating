@@ -8,10 +8,18 @@ export type ProgramItem =
   | { id: string; type: 'trick'; trickId: string }
   | { id: string; type: 'note'; text: string };
 
+export type SpotifyMeta = {
+  title: string;
+  artist: string;
+  duration: string;
+  thumbnailUrl: string;
+};
+
 export type SkatingProgram = {
   id: string;
   name: string;
   spotifyUrl?: string;
+  spotifyMeta?: SpotifyMeta;
   items: ProgramItem[];
   createdAt: number;
 };
@@ -38,6 +46,7 @@ type Store = {
   deleteProgram: (id: string) => void;
   renameProgram: (id: string, name: string) => void;
   setSpotifyUrl: (id: string, url: string) => void;
+  setSpotifyMeta: (id: string, meta: SpotifyMeta | null) => void;
   addElement: (programId: string, trickId: string) => void;
   addNote: (programId: string) => void;
   removeItem: (programId: string, itemId: string) => void;
@@ -91,6 +100,13 @@ export const useStore = create<Store>()(
 
       setSpotifyUrl: (id, url) =>
         set((s) => ({ programs: s.programs.map((p) => (p.id === id ? { ...p, spotifyUrl: url } : p)) })),
+
+      setSpotifyMeta: (id, meta) =>
+        set((s) => ({
+          programs: s.programs.map((p) =>
+            p.id === id ? { ...p, spotifyMeta: meta ?? undefined } : p
+          ),
+        })),
 
       addElement: (programId, trickId) =>
         set((s) => ({

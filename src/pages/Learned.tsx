@@ -18,6 +18,11 @@ export function Learned() {
     return acc;
   }, {});
 
+  const totalByDifficulty = ORDER.reduce<Record<string, number>>((acc, d) => {
+    acc[d] = TRICKS.filter((t) => t.difficulty === d).length;
+    return acc;
+  }, {});
+
   return (
     <div className="pb-28">
       <HeroHeader
@@ -38,7 +43,9 @@ export function Learned() {
               return (
                 <div key={d} className="flex items-center gap-2">
                   <DifficultyBadge level={d} />
-                  <span className="text-sm font-bold text-white">{count}</span>
+                  <span className="text-sm font-bold text-white">
+                    {count}<span className="font-normal text-app-muted">/{totalByDifficulty[d]}</span>
+                  </span>
                 </div>
               );
             })}
