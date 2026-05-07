@@ -127,30 +127,28 @@ export function ProgramDetail() {
     return (
       <div className="pb-28">
         <div
-          className="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4"
-          style={{
-            background: '#141414',
-            borderBottom: '1px solid #2A2A2A',
-            paddingTop: 'env(safe-area-inset-top, 44px)',
-            paddingBottom: '12px',
-          }}
+          className="fixed inset-x-0 top-0 z-40"
+          style={{ background: '#141414', borderBottom: '1px solid #2A2A2A' }}
         >
-          <button
-            onClick={() => selectProgram(null)}
-            className="flex items-center gap-1.5 text-sm font-medium"
-            style={{ color: '#888' }}
-          >
-            <ArrowLeft size={16} strokeWidth={2} />
-            Mina program
-          </button>
-          <button
-            onClick={enterEdit}
-            className="flex items-center gap-1.5 px-3 h-8 rounded-full text-sm font-medium"
-            style={{ background: '#1E1E1E', color: '#C8F500' }}
-          >
-            <Pencil size={13} strokeWidth={2} />
-            Redigera
-          </button>
+          <div style={{ height: 'env(safe-area-inset-top, 44px)' }} />
+          <div className="flex items-center justify-between px-4 py-3">
+            <button
+              onClick={() => selectProgram(null)}
+              className="flex items-center gap-1.5 text-sm font-medium"
+              style={{ color: '#888' }}
+            >
+              <ArrowLeft size={16} strokeWidth={2} />
+              Mina program
+            </button>
+            <button
+              onClick={enterEdit}
+              className="flex items-center gap-1.5 px-3 h-8 rounded-full text-sm font-medium"
+              style={{ background: '#1E1E1E', color: '#C8F500' }}
+            >
+              <Pencil size={13} strokeWidth={2} />
+              Redigera
+            </button>
+          </div>
         </div>
         <div style={{ height: 'calc(env(safe-area-inset-top, 44px) + 52px)' }} />
 
@@ -270,30 +268,28 @@ export function ProgramDetail() {
   return (
     <div className="pb-28">
       <div
-        className="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-4"
-        style={{
-          background: '#141414',
-          borderBottom: '1px solid #2A2A2A',
-          paddingTop: 'env(safe-area-inset-top, 44px)',
-          paddingBottom: '12px',
-        }}
+        className="fixed inset-x-0 top-0 z-40"
+        style={{ background: '#141414', borderBottom: '1px solid #2A2A2A' }}
       >
-        <button
-          onClick={() => selectProgram(null)}
-          className="flex items-center gap-1.5 text-sm font-medium"
-          style={{ color: '#888' }}
-        >
-          <ArrowLeft size={16} strokeWidth={2} />
-          Mina program
-        </button>
-        <button
-          onClick={saveEdit}
-          disabled={saving}
-          className="flex items-center gap-1.5 px-4 h-8 rounded-full text-sm font-semibold disabled:opacity-50"
-          style={{ background: '#C8F500', color: '#141414' }}
-        >
-          {saving ? 'Sparar…' : 'Spara'}
-        </button>
+        <div style={{ height: 'env(safe-area-inset-top, 44px)' }} />
+        <div className="flex items-center justify-between px-4 py-3">
+          <button
+            onClick={() => selectProgram(null)}
+            className="flex items-center gap-1.5 text-sm font-medium"
+            style={{ color: '#888' }}
+          >
+            <ArrowLeft size={16} strokeWidth={2} />
+            Mina program
+          </button>
+          <button
+            onClick={saveEdit}
+            disabled={saving}
+            className="flex items-center gap-1.5 px-4 h-8 rounded-full text-sm font-semibold disabled:opacity-50"
+            style={{ background: '#C8F500', color: '#141414' }}
+          >
+            {saving ? 'Sparar…' : 'Spara'}
+          </button>
+        </div>
       </div>
       <div style={{ height: 'calc(env(safe-area-inset-top, 44px) + 52px)' }} />
 
