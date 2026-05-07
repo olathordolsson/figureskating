@@ -127,8 +127,13 @@ export function ProgramDetail() {
     return (
       <div className="pb-28">
         <div
-          className="sticky top-0 z-10 flex items-center justify-between px-4 py-3"
-          style={{ background: '#141414', borderBottom: '1px solid #2A2A2A' }}
+          className="sticky top-0 z-10 flex items-center justify-between px-4"
+          style={{
+            background: '#141414',
+            borderBottom: '1px solid #2A2A2A',
+            paddingTop: 'calc(env(safe-area-inset-top, 44px) + 10px)',
+            paddingBottom: '10px',
+          }}
         >
           <button
             onClick={() => selectProgram(null)}
@@ -264,8 +269,13 @@ export function ProgramDetail() {
   return (
     <div className="pb-28">
       <div
-        className="sticky top-0 z-10 flex items-center justify-between px-4 py-3"
-        style={{ background: '#141414', borderBottom: '1px solid #2A2A2A' }}
+        className="sticky top-0 z-10 flex items-center justify-between px-4"
+        style={{
+          background: '#141414',
+          borderBottom: '1px solid #2A2A2A',
+          paddingTop: 'calc(env(safe-area-inset-top, 44px) + 10px)',
+          paddingBottom: '10px',
+        }}
       >
         <button
           onClick={() => selectProgram(null)}
