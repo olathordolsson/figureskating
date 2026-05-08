@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 const heroImage = 'https://media.istockphoto.com/id/1388581317/photo/figure-skating-lady-is-wearing-black-sportswear-is-skating-on-ice-rink-training-at-night-in.jpg?s=612x612&w=0&k=20&c=KFjeMcUvYbaYvcYEUBgz5rzpjMBfCtKvgdV57Dv_pMs=';
 import { ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight } from 'lucide-react';
 import { HeroHeader } from '../components/HeroHeader';
+import { Tutorial } from '../components/Tutorial';
 import { CATEGORIES, TRICKS, type CategoryId, type Difficulty } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
@@ -24,6 +25,7 @@ const DIFFICULTIES: { id: Difficulty; label: string; bg: string; color: string }
 export function Browse() {
   const { activeCategory, setCategory } = useStore();
   const [selectedDifficulties, setSelectedDifficulties] = useState<Set<Difficulty>>(new Set());
+  const [showTutorial, setShowTutorial] = useState(false);
   const toggleDifficulty = (d: Difficulty) => {
     setSelectedDifficulties((prev) => {
       const next = new Set(prev);
@@ -47,11 +49,28 @@ export function Browse() {
 
   return (
     <div className="pb-28">
-      <HeroHeader
-        image={heroImage}
-        title="Min konståkning"
-        subtitle="Utforska trick och tekniker"
-      />
+      <div className="relative">
+        <HeroHeader
+          image={heroImage}
+          title="Min konståkning"
+          subtitle="Utforska trick och tekniker"
+        />
+        <button
+          onClick={() => setShowTutorial(true)}
+          className="absolute right-4 flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold"
+          style={{
+            top: 'calc(env(safe-area-inset-top, 44px) + 10px)',
+            zIndex: 10,
+            background: 'rgba(255,255,255,0.15)',
+            color: 'white',
+            backdropFilter: 'blur(6px)',
+          }}
+        >
+          ?
+        </button>
+      </div>
+
+      {showTutorial && <Tutorial onClose={() => setShowTutorial(false)} />}
 
       {/* Category tabs — primary */}
       <div className="flex gap-2 px-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>

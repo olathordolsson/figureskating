@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ListPlus } from 'lucide-react';
 import { TRICKS } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
@@ -9,7 +9,7 @@ const heroImage = 'https://media.wfmynews2.com/assets/CCT/images/dd1119ee-e29d-4
 const ORDER = ['nybörjare', 'grundläggande', 'medel', 'avancerad', 'elit'] as const;
 
 export function Learned() {
-  const { learned } = useStore();
+  const { learned, createProgram, selectProgram, setTab } = useStore();
   const tricks = TRICKS.filter((t) => learned.has(t.id));
 
   const byDifficulty = ORDER.reduce<Record<string, typeof TRICKS>>((acc, d) => {
@@ -77,6 +77,22 @@ export function Learned() {
               </div>
             </div>
           ))
+        )}
+
+        {tricks.length > 0 && (
+          <button
+            onClick={() => {
+              const trickIds = tricks.map((t) => t.id);
+              const id = createProgram('', trickIds);
+              setTab('program');
+              selectProgram(id);
+            }}
+            className="w-full flex items-center justify-center gap-2 h-12 rounded-2xl text-sm font-semibold"
+            style={{ background: '#1E1E1E', color: '#C8F500' }}
+          >
+            <ListPlus size={16} strokeWidth={2.5} />
+            Skapa program från lärda trick
+          </button>
         )}
       </div>
     </div>

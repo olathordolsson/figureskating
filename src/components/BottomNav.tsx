@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { StretchHorizontal, Pin, CheckCircle, Music2 } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
@@ -10,9 +11,25 @@ const tabs = [
 
 export function BottomNav() {
   const { activeTab, setTab } = useStore();
+  const [keyboardUp, setKeyboardUp] = useState(false);
+
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const handler = () => setKeyboardUp(vv.height < window.innerHeight - 100);
+    vv.addEventListener('resize', handler);
+    return () => vv.removeEventListener('resize', handler);
+  }, []);
 
   return (
-    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] border-t border-[#2A2A2A] pb-safe z-40" style={{ background: '#1E1E1E' }}>
+    <nav
+      className="fixed bottom-0 left-1/2 w-full max-w-[480px] border-t border-[#2A2A2A] pb-safe z-40"
+      style={{
+        background: '#1E1E1E',
+        transform: `translateX(-50%) translateY(${keyboardUp ? '100%' : '0'})`,
+        transition: 'transform 0.2s ease',
+      }}
+    >
       <div className="flex">
         {tabs.map(({ id, label, Icon }) => {
           const active = activeTab === id;

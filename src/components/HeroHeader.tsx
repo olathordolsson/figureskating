@@ -20,6 +20,7 @@ export function HeroHeader({ image, title, subtitle }: Props) {
         className="absolute inset-0"
         style={{
           zIndex: 1,
+          pointerEvents: 'none',
           background: 'linear-gradient(to bottom, rgba(20,20,20,0.1) 0%, rgba(20,20,20,0.5) 50%, #141414 100%)',
         }}
       />
