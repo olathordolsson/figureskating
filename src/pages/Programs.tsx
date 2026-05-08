@@ -63,7 +63,7 @@ export function Programs() {
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-white text-[15px] truncate">{p.name}</p>
+                  <p className="font-semibold text-white text-[15px] truncate">{p.name || 'Namnge ditt program…'}</p>
                   <p className="text-xs mt-0.5" style={{ color: '#555' }}>
                     {p.items.filter((it) => it.type === 'trick').length} element · BV {formatBv(bv)}
                   </p>

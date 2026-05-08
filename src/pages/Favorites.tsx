@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pin, Dumbbell, ChevronDown, Footprints, BicepsFlexed, Activity } from 'lucide-react';
+import { Pin, Dumbbell, ChevronDown, Footprints, BicepsFlexed, Activity, ListPlus } from 'lucide-react';
 import { TRICKS } from '../data/tricks';
 import { TRICK_OFF_ICE } from '../data/trickOffIce';
 import { useStore } from '../store/useStore';
@@ -8,7 +8,7 @@ import { HeroHeader } from '../components/HeroHeader';
 import heroImage from '../assets/hero.jpg';
 
 export function Favorites() {
-  const { favorites } = useStore();
+  const { favorites, createProgram, selectProgram, setTab } = useStore();
   const tricks = TRICKS.filter((t) => favorites.has(t.id));
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
 
@@ -66,6 +66,22 @@ export function Favorites() {
           </div>
         ) : (
           tricks.map((trick) => <TrickCard key={trick.id} trick={trick} />)
+        )}
+
+        {tricks.length > 0 && (
+          <button
+            onClick={() => {
+              const trickIds = tricks.map((t) => t.id);
+              const id = createProgram('', trickIds);
+              setTab('program');
+              selectProgram(id);
+            }}
+            className="w-full flex items-center justify-center gap-2 h-12 rounded-2xl text-sm font-semibold mt-2"
+            style={{ background: '#1E1E1E', color: '#C8F500' }}
+          >
+            <ListPlus size={16} strokeWidth={2.5} />
+            Skapa program från tränade trick
+          </button>
         )}
       </div>
 

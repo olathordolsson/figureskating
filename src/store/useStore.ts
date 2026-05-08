@@ -78,7 +78,7 @@ type Store = {
   selectProgram: (id: string | null) => void;
   setCategory: (cat: CategoryId | null) => void;
 
-  createProgram: (name: string) => string;
+  createProgram: (name: string, initialTrickIds?: string[]) => string;
   deleteProgram: (id: string) => void;
   renameProgram: (id: string, name: string) => void;
   setSpotifyUrl: (id: string, url: string) => void;
@@ -123,10 +123,13 @@ export const useStore = create<Store>()(
       selectProgram: (id) => set({ selectedProgramId: id }),
       setCategory: (cat) => set({ activeCategory: cat, selectedTrickId: null }),
 
-      createProgram: (name) => {
+      createProgram: (name, initialTrickIds?) => {
         const id = uid();
+        const items: ProgramItem[] = (initialTrickIds ?? []).map((trickId) => ({
+          id: uid(), type: 'trick' as const, trickId,
+        }));
         set((s) => ({
-          programs: [...s.programs, { id, name, items: [], createdAt: Date.now() }],
+          programs: [...s.programs, { id, name, items, createdAt: Date.now() }],
           openInEditMode: true,
         }));
         return id;

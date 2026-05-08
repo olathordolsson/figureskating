@@ -66,7 +66,7 @@ export function ProgramDetail() {
 
   const saveEdit = async () => {
     setSaving(true);
-    if (nameVal.trim()) renameProgram(program.id, nameVal.trim());
+    renameProgram(program.id, nameVal.trim() || 'Namnge ditt program');
     const url = spotifyVal.trim();
     setSpotifyUrl(program.id, url);
 
@@ -160,7 +160,7 @@ export function ProgramDetail() {
 
         <div className="px-5 pt-6 space-y-5">
           <div>
-            <h1 className="text-2xl font-bold text-white">{program.name}</h1>
+            <h1 className="text-2xl font-bold text-white">{program.name || 'Namnge ditt program…'}</h1>
             <p className="text-sm mt-1" style={{ color: '#555' }}>
               {trickCount} trick · BV {formatBv(bv)}
             </p>
@@ -307,9 +307,11 @@ export function ProgramDetail() {
             Programnamn
           </p>
           <input
+            autoFocus
             value={nameVal}
             onChange={(e) => setNameVal(e.target.value)}
-            className="w-full rounded-2xl px-4 py-3.5 text-lg font-bold text-white outline-none"
+            placeholder="Namnge ditt program…"
+            className="w-full rounded-2xl px-4 py-3.5 text-lg font-bold text-white outline-none placeholder:text-[#444] placeholder:font-bold"
             style={{ background: '#1E1E1E' }}
           />
         </div>
