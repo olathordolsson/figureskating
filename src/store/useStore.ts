@@ -34,6 +34,32 @@ export type SkatingProgram = {
   createdAt: number;
 };
 
+const DEFAULT_PROGRAMS: SkatingProgram[] = [
+  {
+    id: 'preset-exempelprogram',
+    name: 'Exempelprogram',
+    spotifyUrl: 'https://open.spotify.com/track/6VObnIkLVruX4UVyxWhlqm?si=3d4712879c934e71',
+    spotifyMeta: {
+      title: 'Skyfall',
+      artist: 'Adele',
+      duration: '4:46',
+      thumbnailUrl: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b479bb2aed275bb1b13d83da',
+    },
+    items: [
+      { id: 'pp-n1', type: 'note',  text: 'Inledning – bygg upp farten längs isen' },
+      { id: 'pp-t1', type: 'trick', trickId: 'waltz' },
+      { id: 'pp-t2', type: 'trick', trickId: 'salchow-1' },
+      { id: 'pp-n2', type: 'note',  text: 'Mittparti – anpassa rörelserna till musikens känsla' },
+      { id: 'pp-t3', type: 'trick', trickId: 'uppright-basic' },
+      { id: 'pp-t4', type: 'trick', trickId: 'loop-1' },
+      { id: 'pp-n3', type: 'note',  text: 'Avslutning – gör allt med full närvaro' },
+      { id: 'pp-t5', type: 'trick', trickId: 'flip-1' },
+      { id: 'pp-t6', type: 'trick', trickId: 'toe-loop-1' },
+    ],
+    createdAt: 1700000000000,
+  },
+];
+
 type Tab = 'utforska' | 'favoriter' | 'lärt-mig' | 'program';
 
 type Store = {
@@ -71,7 +97,7 @@ export const useStore = create<Store>()(
     (set) => ({
       favorites: new Set(DEFAULT_FAVORITES),
       learned: new Set(DEFAULT_LEARNED),
-      programs: [],
+      programs: DEFAULT_PROGRAMS,
       activeTab: 'utforska',
       selectedTrickId: null,
       selectedProgramId: null,
@@ -196,7 +222,8 @@ export const useStore = create<Store>()(
           }>;
         };
 
-        const programs: SkatingProgram[] = (p.programs ?? []).map((prog) => {
+        const rawPrograms = p.programs ?? (DEFAULT_PROGRAMS as unknown as NonNullable<typeof p.programs>);
+        const programs: SkatingProgram[] = rawPrograms.map((prog) => {
           if (prog.items) return prog as SkatingProgram;
           // migrate legacy elements → items
           const items: ProgramItem[] = [];
