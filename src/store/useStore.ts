@@ -1,8 +1,18 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { TRICKS } from '../data/tricks';
 import type { CategoryId } from '../data/tricks';
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
+
+const DEFAULT_FAVORITES = TRICKS
+  .filter((t) => t.difficulty === 'medel')
+  .map((t) => t.id);
+
+const DEFAULT_LEARNED = [
+  ...TRICKS.filter((t) => t.difficulty === 'nybörjare').map((t) => t.id),
+  ...TRICKS.filter((t) => t.difficulty === 'grundläggande').slice(0, 2).map((t) => t.id),
+];
 
 export type ProgramItem =
   | { id: string; type: 'trick'; trickId: string }
@@ -59,8 +69,8 @@ type Store = {
 export const useStore = create<Store>()(
   persist(
     (set) => ({
-      favorites: new Set(),
-      learned: new Set(),
+      favorites: new Set(DEFAULT_FAVORITES),
+      learned: new Set(DEFAULT_LEARNED),
       programs: [],
       activeTab: 'utforska',
       selectedTrickId: null,
@@ -201,8 +211,8 @@ export const useStore = create<Store>()(
 
         return {
           ...current,
-          favorites: new Set(p.favorites ?? []),
-          learned: new Set(p.learned ?? []),
+          favorites: new Set(p.favorites ?? DEFAULT_FAVORITES),
+          learned: new Set(p.learned ?? DEFAULT_LEARNED),
           programs,
         };
       },
