@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X, LayoutList, Pin, CheckCircle, Music2, ListPlus } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, LayoutList, Pin, Music2, ListPlus } from 'lucide-react';
 
 const slides = [
   {
@@ -14,7 +14,7 @@ const slides = [
     iconBg: '#FEF9C3',
     iconColor: '#B45309',
     title: 'Utforska tricklistan',
-    body: 'Bläddra bland trick sorterade efter kategori och svårighetsgrad. Tryck på ett trick för att läsa beskrivning, tips och övningar du kan göra utanför isen.',
+    body: 'Bläddra bland trick sorterade efter kategori och svårighetsgrad. Tryck på ett trick för att läsa beskrivning, tips och se övningar du kan göra utanför isen.',
   },
   {
     Icon: Pin,
@@ -28,7 +28,7 @@ const slides = [
     iconBg: '#D1FAE5',
     iconColor: '#065F46',
     title: 'Bygg ditt program',
-    body: 'Skapa ett tränings- eller tävlingsprogram genom att lägga till trick och anteckningar i ordning. Koppla musik från Spotify och se ditt totala basvärde (BV) direkt.',
+    body: 'Skapa ett tränings- eller tävlingsprogram genom att lägga till trick i ordning. Koppla musik från Spotify och se ditt totala basvärde (BV) direkt.',
   },
   {
     Icon: ListPlus,
@@ -42,10 +42,19 @@ const slides = [
 export function Tutorial({ onClose }: { onClose: () => void }) {
   const [current, setCurrent] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    requestAnimationFrame(() => setVisible(true));
+  }, []);
+
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(onClose, 350);
+  };
 
   const isLast = current === slides.length - 1;
-
-  const next = () => isLast ? onClose() : setCurrent((c) => c + 1);
+  const next = () => isLast ? handleClose() : setCurrent((c) => c + 1);
   const prev = () => current > 0 && setCurrent((c) => c - 1);
 
   const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
@@ -63,27 +72,39 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
       {/* Scrim */}
       <div
         className="absolute inset-0"
-        style={{ background: 'rgba(0,0,0,0.5)' }}
-        onClick={onClose}
+        style={{
+          background: 'rgba(0,0,0,0.5)',
+          opacity: visible ? 1 : 0,
+          transition: 'opacity 0.3s ease',
+        }}
+        onClick={handleClose}
       />
 
       {/* Sheet */}
       <div
         className="relative flex flex-col rounded-t-3xl overflow-hidden"
-        style={{ background: 'white', maxHeight: '82vh' }}
+        style={{
+          background: 'white',
+          maxHeight: '82vh',
+          transform: visible ? 'translateY(0)' : 'translateY(100%)',
+          transition: 'transform 0.4s cubic-bezier(0.32, 0.72, 0, 1)',
+        }}
       >
-        {/* Handle + top bar */}
+        {/* Top bar */}
         <div className="flex items-center justify-between px-5 pt-4 pb-2 shrink-0">
           <button
             onClick={prev}
             className="w-9 h-9 flex items-center justify-center rounded-full text-sm font-medium"
-            style={{ color: current === 0 ? 'transparent' : '#999', pointerEvents: current === 0 ? 'none' : 'auto' }}
+            style={{
+              color: current === 0 ? 'transparent' : '#999',
+              pointerEvents: current === 0 ? 'none' : 'auto',
+            }}
           >
             ←
           </button>
           <div className="w-10 h-1 rounded-full" style={{ background: '#E0E0E0' }} />
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="w-9 h-9 flex items-center justify-center rounded-full"
             style={{ background: '#F5F5F5' }}
           >
@@ -150,7 +171,7 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
         >
           <button
             onClick={next}
-            className="w-full h-13 rounded-2xl text-base font-semibold py-3.5"
+            className="w-full rounded-2xl text-base font-semibold py-3.5"
             style={{ background: '#141414', color: 'white' }}
           >
             {isLast ? 'Kom igång' : 'Nästa'}

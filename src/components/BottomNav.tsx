@@ -14,11 +14,22 @@ export function BottomNav() {
   const [keyboardUp, setKeyboardUp] = useState(false);
 
   useEffect(() => {
-    const vv = window.visualViewport;
-    if (!vv) return;
-    const handler = () => setKeyboardUp(vv.height < window.innerHeight - 100);
-    vv.addEventListener('resize', handler);
-    return () => vv.removeEventListener('resize', handler);
+    const onFocusIn = (e: FocusEvent) => {
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') setKeyboardUp(true);
+    };
+    const onFocusOut = () => {
+      setTimeout(() => {
+        const tag = document.activeElement?.tagName ?? '';
+        if (tag !== 'INPUT' && tag !== 'TEXTAREA') setKeyboardUp(false);
+      }, 100);
+    };
+    document.addEventListener('focusin', onFocusIn);
+    document.addEventListener('focusout', onFocusOut);
+    return () => {
+      document.removeEventListener('focusin', onFocusIn);
+      document.removeEventListener('focusout', onFocusOut);
+    };
   }, []);
 
   return (

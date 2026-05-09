@@ -102,6 +102,16 @@ export function Browse() {
 
       {/* Difficulty filter — secondary */}
       <div className="flex gap-1.5 px-4 mt-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+        <button
+          onClick={() => setSelectedDifficulties(new Set())}
+          className="shrink-0 px-3 py-1 rounded-full text-[11px] font-medium transition-colors"
+          style={{
+            background: selectedDifficulties.size === 0 ? '#F05A28' : '#262626',
+            color: selectedDifficulties.size === 0 ? '#fff' : '#8A8A8A',
+          }}
+        >
+          Alla
+        </button>
         {DIFFICULTIES.map((d) => {
           const active = selectedDifficulties.has(d.id);
           return (
