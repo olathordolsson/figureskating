@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useStore } from './store/useStore';
+import { useAuth } from './hooks/useAuth';
 import { BottomNav } from './components/BottomNav';
 import { TrickDetail } from './components/TrickDetail';
 import { ExerciseDetail } from './components/ExerciseDetail';
 import { InstallPrompt } from './components/InstallPrompt';
+import { Tutorial } from './components/Tutorial';
+import { AuthModal } from './components/AuthModal';
+import { AccountSheet } from './components/AccountSheet';
 import { Browse } from './pages/Browse';
 import { Favorites } from './pages/Favorites';
 import { Learned } from './pages/Learned';
@@ -12,7 +16,9 @@ import { Programs } from './pages/Programs';
 import { ProgramDetail } from './pages/ProgramDetail';
 
 export default function App() {
-  const { activeTab, selectedTrickId, selectedProgramId, selectedOffIceId, programs } = useStore();
+  const { activeTab, selectedTrickId, selectedProgramId, selectedOffIceId, programs, showTutorial, setShowTutorial } = useStore();
+  const { user, emailVerified } = useAuth();
+  const [showAccount, setShowAccount] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(0);
 
   useEffect(() => {
@@ -27,9 +33,11 @@ export default function App() {
     setScrollOpacity(0);
   }, [activeTab]);
 
+  const onAccount = () => setShowAccount(true);
+
   return (
     <>
-      {/* Status bar gradient — protects Dynamic Island area on scroll */}
+      {/* Status bar gradient */}
       <div
         className="fixed inset-x-0 top-0 pointer-events-none"
         style={{
@@ -41,22 +49,29 @@ export default function App() {
       />
 
       <main>
-        {activeTab === 'utforska' && <Browse />}
-        {activeTab === 'favoriter' && <Favorites />}
-        {activeTab === 'lärt-mig' && <Learned />}
-        {activeTab === 'off-ice' && <OffIce />}
-        {activeTab === 'program' && (
+        {activeTab === 'utforska'  && <Browse onAccount={onAccount} />}
+        {activeTab === 'favoriter' && <Favorites onAccount={onAccount} />}
+        {activeTab === 'lärt-mig' && <Learned onAccount={onAccount} />}
+        {activeTab === 'off-ice'   && <OffIce onAccount={onAccount} />}
+        {activeTab === 'program'   && (
           selectedProgramId && programs.some((p) => p.id === selectedProgramId)
             ? <ProgramDetail />
-            : <Programs />
+            : <Programs onAccount={onAccount} />
         )}
       </main>
 
       <BottomNav />
       <InstallPrompt />
 
-      {selectedTrickId && <TrickDetail />}
+      {selectedTrickId  && <TrickDetail />}
       {selectedOffIceId && <ExerciseDetail />}
+      {showTutorial     && <Tutorial onClose={() => setShowTutorial(false)} />}
+
+      {showAccount && (
+        user
+          ? <AccountSheet user={user} emailVerified={emailVerified} onClose={() => setShowAccount(false)} />
+          : <AuthModal onClose={() => setShowAccount(false)} />
+      )}
     </>
   );
 }

@@ -16,7 +16,7 @@ const SECTIONS: { key: ExerciseCategory; label: string }[] = [
 
 type FilterState = ExerciseCategory | 'favoriter' | null;
 
-export function OffIce() {
+export function OffIce({ onAccount }: { onAccount: () => void }) {
   const { favoritedExercises } = useStore();
   const [activeFilter, setActiveFilter] = useState<FilterState>(null);
 
@@ -32,6 +32,7 @@ export function OffIce() {
         image={heroImage}
         title="Off ice"
         subtitle="Träning utanför isen"
+        onAccount={onAccount}
       />
 
       {/* Filter row */}

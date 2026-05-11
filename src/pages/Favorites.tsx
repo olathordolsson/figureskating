@@ -9,7 +9,7 @@ import { ExerciseCard } from '../components/ExerciseCard';
 import { HeroHeader } from '../components/HeroHeader';
 import heroImage from '../assets/hero.jpg';
 
-export function Favorites() {
+export function Favorites({ onAccount }: { onAccount: () => void }) {
   const { favorites, createProgram, selectProgram, setTab } = useStore();
   const tricks = TRICKS.filter((t) => favorites.has(t.id));
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
@@ -59,6 +59,7 @@ export function Favorites() {
         image={heroImage}
         title="Tränar på"
         subtitle="Trick du jobbar med just nu"
+        onAccount={onAccount}
       />
 
       <div className="px-4 mt-5 space-y-2">

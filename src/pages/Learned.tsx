@@ -8,7 +8,7 @@ const heroImage = 'https://media.wfmynews2.com/assets/CCT/images/dd1119ee-e29d-4
 
 const ORDER = ['nybörjare', 'grundläggande', 'medel', 'avancerad', 'elit'] as const;
 
-export function Learned() {
+export function Learned({ onAccount }: { onAccount: () => void }) {
   const { learned, createProgram, selectProgram, setTab } = useStore();
   const tricks = TRICKS.filter((t) => learned.has(t.id));
 
@@ -29,6 +29,7 @@ export function Learned() {
         image={heroImage}
         title="Tricks jag lärt mig"
         subtitle={tricks.length === 0 ? 'Inga trick markerade' : `${tricks.length} trick klarade`}
+        onAccount={onAccount}
       />
 
       {tricks.length > 0 && (

@@ -60,22 +60,26 @@ const DEFAULT_PROGRAMS: SkatingProgram[] = [
   },
 ];
 
-type Tab = 'utforska' | 'favoriter' | 'lärt-mig' | 'program';
+type Tab = 'utforska' | 'favoriter' | 'lärt-mig' | 'off-ice' | 'program';
 
 type Store = {
   favorites: Set<string>;
   learned: Set<string>;
+  favoritedExercises: Set<string>;
   programs: SkatingProgram[];
   activeTab: Tab;
   selectedTrickId: string | null;
   selectedProgramId: string | null;
+  selectedOffIceId: string | null;
   activeCategory: CategoryId | null;
 
   toggleFavorite: (id: string) => void;
   toggleLearned: (id: string) => void;
+  toggleExerciseFavorite: (id: string) => void;
   setTab: (tab: Tab) => void;
   selectTrick: (id: string | null) => void;
   selectProgram: (id: string | null) => void;
+  selectOffIce: (id: string | null) => void;
   setCategory: (cat: CategoryId | null) => void;
 
   createProgram: (name: string, initialTrickIds?: string[]) => string;
@@ -90,6 +94,9 @@ type Store = {
   setNoteText: (programId: string, itemId: string, text: string) => void;
   openInEditMode: boolean;
   clearOpenInEditMode: () => void;
+
+  showTutorial: boolean;
+  setShowTutorial: (v: boolean) => void;
 };
 
 export const useStore = create<Store>()(
@@ -97,12 +104,15 @@ export const useStore = create<Store>()(
     (set) => ({
       favorites: new Set(DEFAULT_FAVORITES),
       learned: new Set(DEFAULT_LEARNED),
+      favoritedExercises: new Set<string>(),
       programs: DEFAULT_PROGRAMS,
       activeTab: 'utforska',
       selectedTrickId: null,
       selectedProgramId: null,
+      selectedOffIceId: null,
       activeCategory: null,
       openInEditMode: false,
+      showTutorial: false,
 
       toggleFavorite: (id) =>
         set((s) => {
@@ -118,9 +128,17 @@ export const useStore = create<Store>()(
           return { learned: next };
         }),
 
+      toggleExerciseFavorite: (id) =>
+        set((s) => {
+          const next = new Set(s.favoritedExercises);
+          next.has(id) ? next.delete(id) : next.add(id);
+          return { favoritedExercises: next };
+        }),
+
       setTab: (tab) => set({ activeTab: tab, selectedTrickId: null, selectedProgramId: null, activeCategory: null }),
       selectTrick: (id) => set({ selectedTrickId: id }),
       selectProgram: (id) => set({ selectedProgramId: id }),
+      selectOffIce: (id) => set({ selectedOffIceId: id }),
       setCategory: (cat) => set({ activeCategory: cat, selectedTrickId: null }),
 
       createProgram: (name, initialTrickIds?) => {
@@ -136,6 +154,7 @@ export const useStore = create<Store>()(
       },
 
       clearOpenInEditMode: () => set({ openInEditMode: false }),
+      setShowTutorial: (v) => set({ showTutorial: v }),
 
       deleteProgram: (id) =>
         set((s) => ({ programs: s.programs.filter((p) => p.id !== id), selectedProgramId: null })),
@@ -211,12 +230,14 @@ export const useStore = create<Store>()(
       partialize: (s) => ({
         favorites: [...s.favorites],
         learned: [...s.learned],
+        favoritedExercises: [...s.favoritedExercises],
         programs: s.programs,
       }),
       merge: (persisted: unknown, current) => {
         const p = persisted as {
           favorites?: string[];
           learned?: string[];
+          favoritedExercises?: string[];
           programs?: Array<{
             id: string; name: string; spotifyUrl?: string; createdAt: number;
             items?: ProgramItem[];
@@ -243,6 +264,7 @@ export const useStore = create<Store>()(
           ...current,
           favorites: new Set(p.favorites ?? DEFAULT_FAVORITES),
           learned: new Set(p.learned ?? DEFAULT_LEARNED),
+          favoritedExercises: new Set(p.favoritedExercises ?? []),
           programs,
         };
       },

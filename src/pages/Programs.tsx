@@ -6,7 +6,7 @@ import { HeroHeader } from '../components/HeroHeader';
 
 const heroImage = 'https://images.unsplash.com/photo-1715318755388-100298581a17?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BvdGxpZ2h0fGVufDB8fDB8fHww';
 
-export function Programs() {
+export function Programs({ onAccount }: { onAccount: () => void }) {
   const { programs, createProgram, selectProgram } = useStore();
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState('');
@@ -25,6 +25,7 @@ export function Programs() {
         image={heroImage}
         title="Mina program"
         subtitle={programs.length === 0 ? 'Inga program skapade' : `${programs.length} ${programs.length === 1 ? 'program' : 'program'}`}
+        onAccount={onAccount}
       />
 
       <div className="px-4 space-y-2">
