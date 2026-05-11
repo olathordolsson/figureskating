@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { StretchHorizontal, Pin, CheckCircle, Music2 } from 'lucide-react';
+import { StretchHorizontal, Pin, CheckCircle, Music2, SportShoe } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 const tabs = [
-  { id: 'utforska'  as const, label: 'Tricklista',    Icon: StretchHorizontal },
-  { id: 'favoriter' as const, label: 'Tränar på',     Icon: Pin },
-  { id: 'lärt-mig' as const, label: 'Lärt mig',      Icon: CheckCircle },
-  { id: 'program'   as const, label: 'Mina program',  Icon: Music2 },
+  { id: 'favoriter' as const, label: 'Tränar på',    Icon: Pin },
+  { id: 'lärt-mig' as const, label: 'Lärt mig',     Icon: CheckCircle },
+  { id: 'utforska'  as const, label: 'Tricklista',   Icon: StretchHorizontal },
+  { id: 'program'   as const, label: 'Mina program', Icon: Music2 },
+  { id: 'off-ice'   as const, label: 'Off ice',      Icon: SportShoe },
 ];
 
 export function BottomNav() {

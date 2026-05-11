@@ -2,15 +2,17 @@ import { useEffect, useState } from 'react';
 import { useStore } from './store/useStore';
 import { BottomNav } from './components/BottomNav';
 import { TrickDetail } from './components/TrickDetail';
+import { ExerciseDetail } from './components/ExerciseDetail';
 import { InstallPrompt } from './components/InstallPrompt';
 import { Browse } from './pages/Browse';
 import { Favorites } from './pages/Favorites';
 import { Learned } from './pages/Learned';
+import { OffIce } from './pages/OffIce';
 import { Programs } from './pages/Programs';
 import { ProgramDetail } from './pages/ProgramDetail';
 
 export default function App() {
-  const { activeTab, selectedTrickId, selectedProgramId, programs } = useStore();
+  const { activeTab, selectedTrickId, selectedProgramId, selectedOffIceId, programs } = useStore();
   const [scrollOpacity, setScrollOpacity] = useState(0);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export default function App() {
         {activeTab === 'utforska' && <Browse />}
         {activeTab === 'favoriter' && <Favorites />}
         {activeTab === 'lärt-mig' && <Learned />}
+        {activeTab === 'off-ice' && <OffIce />}
         {activeTab === 'program' && (
           selectedProgramId && programs.some((p) => p.id === selectedProgramId)
             ? <ProgramDetail />
@@ -53,6 +56,7 @@ export default function App() {
       <InstallPrompt />
 
       {selectedTrickId && <TrickDetail />}
+      {selectedOffIceId && <ExerciseDetail />}
     </>
   );
 }

@@ -4,7 +4,7 @@ import { useStore } from '../store/useStore';
 import { programBv, formatBv } from '../utils/bv';
 import { HeroHeader } from '../components/HeroHeader';
 
-const heroImage = 'https://images.unsplash.com/photo-1519139116361-2ea84d04a4aa?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const heroImage = 'https://images.unsplash.com/photo-1715318755388-100298581a17?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BvdGxpZ2h0fGVufDB8fDB8fHww';
 
 export function Programs() {
   const { programs, createProgram, selectProgram } = useStore();

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered, Play, Info, Link, Dumbbell, ChevronDown, Footprints, Activity, BicepsFlexed } from 'lucide-react';
+import { X, ChevronRight, Pin, CheckCircle, Lightbulb, TriangleAlert, ListOrdered, Play, Info, Link, Dumbbell, ChevronDown, Footprints, Activity, BicepsFlexed, Target } from 'lucide-react';
 import { TRICKS, type Trick } from '../data/tricks';
 import { TRICK_VIDEOS } from '../data/trickVideos';
 import { TRICK_PHOTOS } from '../data/trickPhotos';
 import { TRICK_STEPS } from '../data/trickSteps';
 import { TRICK_OFF_ICE } from '../data/trickOffIce';
+import { findExerciseByRaw, type Exercise } from '../data/offIceExercises';
 import { VideoPlayer } from './VideoPlayer';
+import { ExerciseCard } from './ExerciseCard';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
 
@@ -321,10 +323,20 @@ export function TrickDetail() {
           {/* Off-ice training */}
           {TRICK_OFF_ICE[trick.id] && (() => {
             const offIce = TRICK_OFF_ICE[trick.id];
+            const toExercises = (raws: string[]): Exercise[] => {
+              const seen = new Set<string>();
+              return raws.flatMap((raw) => {
+                const ex = findExerciseByRaw(raw);
+                if (!ex || seen.has(ex.id)) return [];
+                seen.add(ex.id);
+                return [ex];
+              });
+            };
             const rows = [
-              { key: 'stretch',  label: 'Rörlighet', Icon: Footprints,   dot: '#FEF9C3', dotText: '#92400E', items: offIce.stretch },
-              { key: 'strength', label: 'Styrka',    Icon: BicepsFlexed, dot: '#DBEAFE', dotText: '#1D4ED8', items: offIce.strength },
-              { key: 'cardio',   label: 'Kondition', Icon: Activity,      dot: '#DCFCE7', dotText: '#15803D', items: offIce.cardio },
+              { key: 'teknik',   label: 'Teknik',    Icon: Target,       exercises: toExercises(offIce.teknik ?? []) },
+              { key: 'stretch',  label: 'Rörlighet', Icon: Footprints,   exercises: toExercises(offIce.stretch) },
+              { key: 'strength', label: 'Styrka',    Icon: BicepsFlexed, exercises: toExercises(offIce.strength) },
+              { key: 'cardio',   label: 'Kondition', Icon: Activity,     exercises: toExercises(offIce.cardio) },
             ];
             return (
               <div>
@@ -335,7 +347,8 @@ export function TrickDetail() {
                   </p>
                 </div>
                 <div className="space-y-1">
-                  {rows.map(({ key, label, Icon, dot, dotText, items }) => {
+                  {rows.map(({ key, label, Icon, exercises }) => {
+                    if (!exercises.length) return null;
                     const isOpen = openCategories.has(key);
                     return (
                       <div key={key} className="rounded-2xl overflow-hidden" style={{ background: '#1E1E1E' }}>
@@ -349,7 +362,10 @@ export function TrickDetail() {
                           >
                             <Icon size={16} strokeWidth={2} style={{ color: '#888' }} />
                           </div>
-                          <p className="flex-1 text-left font-semibold text-[15px] text-white">{label}</p>
+                          <div className="flex-1 text-left">
+                            <p className="font-semibold text-[15px] text-white">{label}</p>
+                            <p className="text-xs mt-0.5" style={{ color: '#555' }}>{exercises.length} övningar</p>
+                          </div>
                           <ChevronDown
                             size={15}
                             strokeWidth={2}
@@ -361,21 +377,9 @@ export function TrickDetail() {
                           />
                         </button>
                         {isOpen && (
-                          <ul className="px-4 pb-4 space-y-3">
-                            {items.map((item, i) => (
-                              <li key={i} className="flex gap-3">
-                                <span
-                                  className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
-                                  style={{ background: dot, color: dotText }}
-                                >
-                                  {i + 1}
-                                </span>
-                                <span className="text-sm leading-relaxed" style={{ color: '#999' }}>
-                                  {item}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
+                          <div className="px-3 pb-3 space-y-2">
+                            {exercises.map((ex) => <ExerciseCard key={ex.id} exercise={ex} />)}
+                          </div>
                         )}
                       </div>
                     );

@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Pin, Dumbbell, ChevronDown, Footprints, BicepsFlexed, Activity, ListPlus } from 'lucide-react';
 import { TRICKS } from '../data/tricks';
 import { TRICK_OFF_ICE } from '../data/trickOffIce';
+import { findExerciseByRaw, type Exercise } from '../data/offIceExercises';
 import { useStore } from '../store/useStore';
 import { TrickCard } from '../components/TrickCard';
+import { ExerciseCard } from '../components/ExerciseCard';
 import { HeroHeader } from '../components/HeroHeader';
 import heroImage from '../assets/hero.jpg';
 
@@ -20,29 +22,35 @@ export function Favorites() {
     });
 
   const aggregated = (() => {
-    const stretch = new Set<string>();
-    const strength = new Set<string>();
-    const cardio = new Set<string>();
+    const stretch = new Map<string, Exercise>();
+    const strength = new Map<string, Exercise>();
+    const cardio = new Map<string, Exercise>();
+    const addEx = (raws: string[], map: Map<string, Exercise>) => {
+      for (const raw of raws) {
+        const ex = findExerciseByRaw(raw);
+        if (ex) map.set(ex.id, ex);
+      }
+    };
     for (const t of tricks) {
       const ex = TRICK_OFF_ICE[t.id];
       if (!ex) continue;
-      ex.stretch.forEach((s) => stretch.add(s));
-      ex.strength.forEach((s) => strength.add(s));
-      ex.cardio.forEach((s) => cardio.add(s));
+      addEx(ex.stretch, stretch);
+      addEx(ex.strength, strength);
+      addEx(ex.cardio, cardio);
     }
     return {
-      stretch: [...stretch],
-      strength: [...strength],
-      cardio: [...cardio],
+      stretch: [...stretch.values()],
+      strength: [...strength.values()],
+      cardio: [...cardio.values()],
     };
   })();
 
   const hasOffIce = aggregated.stretch.length + aggregated.strength.length + aggregated.cardio.length > 0;
 
   const rows = [
-    { key: 'stretch',  label: 'Rörlighet', Icon: Footprints,   dot: '#FEF9C3', dotText: '#92400E', items: aggregated.stretch },
-    { key: 'strength', label: 'Styrka',    Icon: BicepsFlexed, dot: '#DBEAFE', dotText: '#1D4ED8', items: aggregated.strength },
-    { key: 'cardio',   label: 'Kondition', Icon: Activity,     dot: '#DCFCE7', dotText: '#15803D', items: aggregated.cardio },
+    { key: 'stretch',  label: 'Rörlighet', Icon: Footprints,   items: aggregated.stretch },
+    { key: 'strength', label: 'Styrka',    Icon: BicepsFlexed, items: aggregated.strength },
+    { key: 'cardio',   label: 'Kondition', Icon: Activity,     items: aggregated.cardio },
   ];
 
   return (
@@ -94,7 +102,7 @@ export function Favorites() {
             </p>
           </div>
           <div className="space-y-1">
-            {rows.map(({ key, label, Icon, dot, dotText, items }) => {
+            {rows.map(({ key, label, Icon, items }) => {
               if (!items.length) return null;
               const isOpen = openCategories.has(key);
               return (
@@ -124,21 +132,9 @@ export function Favorites() {
                     />
                   </button>
                   {isOpen && (
-                    <ul className="px-4 pb-4 space-y-3">
-                      {items.map((item, i) => (
-                        <li key={i} className="flex gap-3">
-                          <span
-                            className="mt-0.5 w-5 h-5 rounded-full text-[10px] flex items-center justify-center shrink-0 font-bold"
-                            style={{ background: dot, color: dotText }}
-                          >
-                            {i + 1}
-                          </span>
-                          <span className="text-sm leading-relaxed" style={{ color: '#999' }}>
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="px-3 pb-3 space-y-2">
+                      {items.map((ex) => <ExerciseCard key={ex.id} exercise={ex} />)}
+                    </div>
                   )}
                 </div>
               );

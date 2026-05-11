@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, LayoutList, Pin, Music2, ListPlus } from 'lucide-react';
+import { X, LayoutList, Pin, Music2, ListPlus, SportShoe, Bookmark } from 'lucide-react';
 
 const slides = [
   {
@@ -14,7 +14,7 @@ const slides = [
     iconBg: '#FEF9C3',
     iconColor: '#B45309',
     title: 'Utforska tricklistan',
-    body: 'Bläddra bland trick sorterade efter kategori och svårighetsgrad. Tryck på ett trick för att läsa beskrivning, tips och se övningar du kan göra utanför isen.',
+    body: 'Bläddra bland trick sorterade efter kategori och svårighetsgrad. Tryck på ett trick för att läsa beskrivning, tips och se rekommenderade övningar du kan göra utanför isen.',
   },
   {
     Icon: Pin,
@@ -31,9 +31,23 @@ const slides = [
     body: 'Skapa ett tränings- eller tävlingsprogram genom att lägga till trick i ordning. Koppla musik från Spotify och se ditt totala basvärde (BV) direkt.',
   },
   {
-    Icon: ListPlus,
+    Icon: SportShoe,
     iconBg: '#EDE9FE',
-    iconColor: '#6D28D9',
+    iconColor: '#7C3AED',
+    title: 'Off ice-träning',
+    body: 'Under Off ice hittar du övningar i fyra kategorier: Teknik, Rörlighet, Kondition och Styrka. Varje övning har steg-för-steg-guide, tips och progressioner anpassade för konståkning.',
+  },
+  {
+    Icon: Bookmark,
+    iconBg: '#FEF9C3',
+    iconColor: '#92400E',
+    title: 'Spara dina övningar',
+    body: 'Tryck på bookmark-ikonen på en övning för att spara den. Dina sparade övningar samlas i det gula bookmark-filtret längst till vänster — enkelt att hitta när du tränar.',
+  },
+  {
+    Icon: ListPlus,
+    iconBg: '#ECFDF5',
+    iconColor: '#065F46',
     title: 'Snabbstart',
     body: 'Under Tränar på och Lärt mig finns en knapp som omvandlar alla dina markerade trick till ett nytt program — med ett enda tryck.',
   },
@@ -46,6 +60,8 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
 
   useEffect(() => {
     requestAnimationFrame(() => setVisible(true));
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
   }, []);
 
   const handleClose = () => {

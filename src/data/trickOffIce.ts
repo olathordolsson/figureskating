@@ -2,6 +2,7 @@ export type OffIceExercises = {
   strength: string[];
   cardio: string[];
   stretch: string[];
+  teknik?: string[];
 };
 
 export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
@@ -16,213 +17,277 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
     ],
     cardio: [
       'Hoppreppa – bygger explosivitet och rytmkänsla inför avhoppet.',
-      'Sidohopp (lateral bounds) – tränar den laterala rörelsen vid avhopp och landning.',
+      'Sidohopp – tränar den laterala rörelsen vid avhopp och landning.',
     ],
     stretch: [
-      'Höftböjarsträck i utfall – öppnar höften för det fria benets svängrörelse.',
+      'Hip flexor-sträck – öppnar höften för det fria benets svängrörelse.',
       'Liggande quadssträck – löser ut framsidan av avhoppsbenet.',
-      'Vadssträck mot vägg – förbättrar vristens rörlighet inför takeoff.',
+      'Vadssträck – förbättrar vristens rörlighet inför takeoff.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
     ],
   },
 
   'axel-1': {
     strength: [
-      'Ettbenssquat med rotation – tränar det kantspecifika avhoppet och koordinationen.',
-      'Sidoutfall (lateral lunge) – stärker höftabduktorerna för den yttre kanten.',
-      'Plankan med rotation – bygger kärnstabilitet för rotationen i luften.',
-      'Vadhöjningar på ett ben – stärker den plantarflexion som driver avhoppet.',
+      'Ettbenssquat – tränar det kantspecifika avhoppet och koordinationen.',
+      'Sidoutfall – stärker höftabduktorerna för den yttre kanten.',
+      'Plankan – bygger kärnstabilitet för rotationen i luften.',
+      'Vadhöjningar på ett ben – stärker plantarflexionen som driver avhoppet.',
     ],
     cardio: [
-      'Hoppreppa med enbenhopp – bygger explosiv kraft i avhoppsbenet.',
-      'Plyometriska sidohopp – simulerar kantarbetet och landningsstöten.',
+      'Hoppreppa – bygger explosiv kraft i avhoppsbenet.',
+      'Sidohopp – simulerar kantarbetet och landningsstöten.',
     ],
     stretch: [
-      'Hip flexor-sträck i djupt utfall – frigör höften för svingbenet framåt.',
-      'Piriformissträck (figur-4 liggande) – minskar spänning i höftrotatorer.',
-      'Bröstöppning mot vägg – förbereder armsvingen för avhoppet.',
+      'Hip flexor-sträck – frigör höften för svingbenet framåt.',
+      'Piriformissträck – minskar spänning i höftrotatorer.',
+      'Bröststräck – förbereder armsvingen för avhoppet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
     ],
   },
 
   'axel-2': {
     strength: [
       'Bulgarisk split-squat – maximal enbensstyrka för det kraftfulla avhoppet.',
-      'Medicinbollsrotation stående – bygger explosiv rotationskraft.',
+      'Medicinbollsrotation – bygger explosiv rotationskraft.',
       'Hängande benlyft – stärker buken och höftböjarna för kompakt rotation.',
       'Boxhopp – tränar snabb explosiv kraft från böjt knä till fullt avhopp.',
     ],
     cardio: [
-      'Sprint-intervaller 20 m – bygger snabbtyrka i benen.',
-      'Plyometriska hopp med landning på ett ben – tränar landningskontrollen.',
+      'Sprint-intervaller – bygger snabbstyrka i benen.',
+      'Sidohopp – tränar landningskontrollen.',
     ],
     stretch: [
-      'Hip flexor-sträck i djupt utfall – nödvändig för den kraftfulla framsvingen.',
-      'Thoraxrotation i fyrfotaställning – ökar rörligheten i överkroppen för armsvingen.',
-      'Höftrotationssträck liggande – löser upp yttre kantens höftarbete.',
+      'Hip flexor-sträck – nödvändig för den kraftfulla framsvingen.',
+      'Thoraxrotation – ökar rörligheten i överkroppen för armsvingen.',
+      'Höftrotationssträck – löser upp yttre kantens höftarbete.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
     ],
   },
 
   'axel-3': {
     strength: [
-      'Bulgarisk split-squat med viktväst – maximal enbenstyrka krävs för 3,5 varv.',
-      'Kabelrotation i stående – tränar den explosiva rotationskraften.',
-      'Hängande benlyft med rotation – koordinerar kärna och höftböjare.',
-      'Djupa boxhopp med ettbenslandning – tränar landningsstabilitet under hög belastning.',
+      'Bulgarisk split-squat – maximal enbenstyrka för 3,5 varv.',
+      'Kabelrotation – tränar explosiv rotationskraft i stående.',
+      'Hängande benlyft – koordinerar kärna och höftböjare.',
+      'Boxhopp – tränar landningsstabilitet under hög belastning.',
     ],
     cardio: [
-      'Bounding (löphopp) – bygger maximal explosiv kraft per steg.',
-      'Sprint-intervaller uppför backe – stärker hela kinetiska kedjan.',
+      'Bounding – bygger maximal explosiv kraft per steg.',
+      'Sprint-intervaller – stärker hela kinetiska kedjan.',
     ],
     stretch: [
-      'Djup hip flexor-sträck med bröstöppning – frigör hela framsidan.',
+      'Hip flexor-sträck – frigör hela framsidan.',
       'Pigeon pose – djup sträckning av höftrotatorer och piriformis.',
-      'Bröststräck mot dörrpost – öppnar upp för maximal armsvingrörlighet.',
+      'Bröststräck – öppnar upp för maximal armsvingrörlighet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
     ],
   },
 
   'salchow-1': {
     strength: [
-      'Inåtrotation höft (höftadduktor) – stärker insidekanten på vänster bakre kant.',
-      'Ettbenssquat på vänster ben – specifikt avhoppsben för salchow.',
-      'Rumpkick stående (hip extension) – aktiverar sätesmuskeln för avhoppet.',
+      'Adduktor och abduktor – stärker insidekanten för salchow-avhoppet.',
+      'Ettbenssquat – specifikt avhoppsben för salchow.',
+      'Rumpkick stående – aktiverar sätesmuskeln för avhoppet.',
     ],
     cardio: [
       'Hoppreppa – bygger timing och rytm i avhoppsmomentet.',
       'Laterala stegserier – tränar övergången från glid till avhopp.',
     ],
     stretch: [
-      'Insidessträck (adduktorsträck) – öppnar upp för insidekantsarbetet.',
-      'Höftböjarsträck – frigör svingbenet för utsvingen.',
-      'Hamstringsträck stående – minskar spänning i baksidan av avhoppsbenet.',
+      'Adduktorsträck – öppnar upp för insidekantsarbetet.',
+      'Hip flexor-sträck – frigör svingbenet för utsvingen.',
+      'Hamstringsträck – minskar spänning i baksidan av avhoppsbenet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
     ],
   },
 
   'salchow-2': {
     strength: [
-      'Adduktor-maskin eller band – stärker insidekantsarbetet specifikt.',
-      'Bulgarisk split-squat vänster ben – bygger mer kraft i avhoppsbenet.',
-      'Medicinbollskast med rotation – tränar rotationsinitiering i luften.',
+      'Adduktor-maskin – stärker insidekantsarbetet specifikt.',
+      'Bulgarisk split-squat – bygger kraft i avhoppsbenet.',
+      'Medicinbollsrotation – tränar rotationsinitiering i luften.',
       'Sidoplankan – stärker kärnan lateralt för jämn rotation.',
     ],
     cardio: [
-      'Plyometriska inåthopp – tränar insidekantens explosivitet.',
-      'Hoppreppa med dubbelunder – ökar rotationshastigheten.',
+      'Sidohopp – tränar insidekantens explosivitet.',
+      'Hoppreppa – ökar rotationshastigheten.',
     ],
     stretch: [
-      'Djup adduktorsträck (straddle) – öppnar upp insidan av höften.',
+      'Adduktorsträck – öppnar upp insidan av höften.',
       'Piriformissträck – löser upp höftrotatorer efter rotationen.',
       'Ryggrotation liggande – bibehåller rörligheten i thorax.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'salchow-3': {
     strength: [
       'Ettbensdödlyft – maximal höftstyrka för det kraftiga avhoppet.',
-      'Kabelrotation low-to-high – tränar rotationskraften från botten upp.',
+      'Kabelrotation – tränar rotationskraften.',
       'Hängande benlyft – stärker kärnan för kompakt trippelrotation.',
-      'Boxhopp med ettbenslandning – kontrollerad kraft vid nedkomsten.',
+      'Boxhopp – kontrollerad kraft vid nedkomsten.',
     ],
     cardio: [
-      'Bounding med rotation – kombinerar explosivitet och rotationskoordination.',
+      'Bounding – kombinerar explosivitet och rotationskoordination.',
       'Sprint-intervaller – maximal benstyrka och snabbhet.',
     ],
     stretch: [
-      'Pigeon pose vänster – djup höftöppning inför salchow-kanten.',
-      'Djup straddle-sträck – nödvändig adduktorflexibilitet.',
+      'Pigeon pose – djup höftöppning inför salchow-kanten.',
+      'Adduktorsträck – nödvändig adduktorflexibilitet.',
       'Thoraxrotation – bibehåller överkroppens rörlighet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'loop-1': {
     strength: [
-      'Ettbenssquat höger ben – avhoppet sker helt från höger ben i loop.',
-      'Hip abduktor med band – stärker den yttre kanten i höger höft.',
-      'Enkelt benhop på höger – tränar den kompakta enbenslyften.',
+      'Ettbenssquat – avhoppet sker helt från ett ben i loop.',
+      'Hip abduktor med band – stärker den yttre kanten i höften.',
+      'Tåhöjning – tränar den kompakta enbenslyften.',
     ],
     cardio: [
-      'Plyometriska enbenhopp – simulerar loop-hoppets avhopp.',
+      'Hoppreppa – simulerar loop-hoppets avhopp.',
       'Hoppreppa – bygger timing och benstyrka.',
     ],
     stretch: [
-      'Piriformissträck höger – löser spänning i det yttre höftarbetet.',
-      'Hamstrings stående – frigör bakre kedjan i avhoppsbenet.',
+      'Piriformissträck – löser spänning i det yttre höftarbetet.',
+      'Hamstringsträck – frigör bakre kedjan i avhoppsbenet.',
       'Vadssträck – förbättrar fotledsmobiliteten.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
     ],
   },
 
   'loop-2': {
     strength: [
-      'Bulgarisk split-squat höger – kraftutveckling i avhoppsbenet.',
-      'Höftabduktion med band stående – specifikt för yttre kantkontrollen.',
+      'Bulgarisk split-squat – kraftutveckling i avhoppsbenet.',
+      'Hip abduktor med band – specifikt för yttre kantkontrollen.',
       'Medicinbollsrotation – tränar rotationsinitiering.',
       'Plankan – kärna för kompakt dubbelrotation.',
     ],
     cardio: [
-      'Box jumps – explosiv kraft i höger ben.',
-      'Laterala bounds – simulerar kantarbetet.',
+      'Boxhopp – explosiv kraft i avhoppsbenet.',
+      'Laterala stegserier – simulerar kantarbetet.',
     ],
     stretch: [
-      'Figur-4-sträck (piriformis) – höger höft.',
-      'Hamstrings och sätessträck – balanserar bakre kedjan.',
+      'Piriformissträck – höftens yttre rotatorer.',
+      'Hamstringsträck – balanserar bakre kedjan.',
       'Hip flexor-sträck – frigör framsidan inför nästa rörelse.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'loop-3': {
     strength: [
-      'Ettbensdödlyft höger – maximal posterior kedjestyrka.',
+      'Ettbensdödlyft – maximal posterior kedjestyrka.',
       'Kabelrotation – explosiv rotationskraft för tre varv.',
       'Hängande benlyft – kärna och höftböjare.',
-      'Djupa boxhopp med ettbenslandning – landningskontroll.',
+      'Boxhopp – landningskontroll.',
     ],
     cardio: [
       'Sprint-intervaller – benstyrka och snabbhet.',
-      'Plyometrisk enbensserie – simulerar avhoppet under trötthet.',
+      'Hoppreppa – simulerar avhoppet under trötthet.',
     ],
     stretch: [
-      'Pigeon pose höger – djup höftöppning.',
+      'Pigeon pose – djup höftöppning.',
       'Thoraxrotation – rörlig överkropp för rotationen.',
       'Vadssträck – fotledsrörlighet för yttre kanten.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'toe-loop-1': {
     strength: [
-      'Tåhöjning på ett ben – stärker tåpicken som driver avhoppet.',
-      'Ettbenssquat höger – avhoppsben för toe loop.',
-      'Vadpress – bygger plantarflexionsstyrka för pick-trycket.',
+      'Tåhöjning – stärker tåpicken som driver avhoppet.',
+      'Ettbenssquat – avhoppsben för toe loop.',
+      'Vadhöjningar på ett ben – bygger plantarflexionsstyrka för pick-trycket.',
     ],
     cardio: [
-      'Hoppreppa på tårna – tränar tå-pushoff och rytm.',
+      'Hoppreppa – tränar tå-pushoff och rytm.',
       'Sidohopp – lateral stabilitet vid insteget.',
     ],
     stretch: [
-      'Vadssträck på trappa – fotledsrörlighet för tåpicken.',
-      'Tåböjarsträck på golv – löser upp plantarfascian och tårna.',
+      'Vadssträck – fotledsrörlighet för tåpicken.',
+      'Tåböjarsträck – löser upp plantarfascian och tårna.',
       'Hip flexor-sträck – frigör svingbenet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
     ],
   },
 
   'toe-loop-2': {
     strength: [
-      'Tåhöjning med vikt – kraftigare pick för dubbelns avhopp.',
-      'Bulgarisk split-squat – mer kraft i höger avhoppsben.',
+      'Tåhöjning – kraftigare pick för dubbelns avhopp.',
+      'Bulgarisk split-squat – mer kraft i avhoppsbenet.',
       'Medicinbollsrotation – rotationskraft för dubbelvarvet.',
       'Plankan – kärna för kontrollerad luftposition.',
     ],
     cardio: [
-      'Plyometrisk tåhoppsserie – tränar tårnas explosivitet.',
-      'Hoppreppa med dubbelunder – rotationshastighet.',
+      'Hoppreppa – tränar tårnas explosivitet.',
+      'Hoppreppa – rotationshastighet.',
     ],
     stretch: [
-      'Vadssträck med rak och böjt knä – full flexibilitet i vadkomplexet.',
+      'Vadssträck – full flexibilitet i vadkomplexet.',
       'Piriformissträck – höftrotatorer efter rotationen.',
-      'Quadssträck – framsidan av avhoppsbenet.',
+      'Liggande quadssträck – framsidan av avhoppsbenet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'toe-loop-3': {
     strength: [
-      'Tåhöjning med tung vikt – pick-kraften är avgörande för 3 varv.',
+      'Tåhöjning – pick-kraften är avgörande för 3 varv.',
       'Ettbensdödlyft – maximal höftstyrka.',
       'Kabelrotation – explosiv rotationskraft.',
       'Hängande benlyft – kärna och kompakt luftposition.',
@@ -232,17 +297,23 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Sprint-intervaller – snabba ben.',
     ],
     stretch: [
-      'Djup vadsträck och plantar-fasciasläppning – tårna belastas maximalt.',
+      'Vadssträck – tårna belastas maximalt.',
       'Pigeon pose – djup höftsträck.',
       'Thoraxrotation – överkroppens rörlighet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'flip-1': {
     strength: [
-      'Adduktor-övning med band – stärker insidekanten (vänster bakre) för flip.',
-      'Tåhöjning vänster – pick-foten i flip är höger, men balansen kräver vänster styrka.',
-      'Ettbenssquat vänster – avhoppsben är vänster i flip.',
+      'Adduktor och abduktor – stärker insidekanten för flip.',
+      'Tåhöjning – pick-foten och balansen.',
+      'Ettbenssquat – avhoppsben i flip.',
       'Plankan – kärna för kontroll i luften.',
     ],
     cardio: [
@@ -250,135 +321,183 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Hoppreppa – grundläggande benstyrka och tajming.',
     ],
     stretch: [
-      'Adduktorsträck – insidan av höften för vänster insidekant.',
-      'Vadssträck – höger pick-fot.',
-      'Hip flexor-sträck höger – svingbenet i flip.',
+      'Adduktorsträck – insidan av höften för insidekanten.',
+      'Vadssträck – pick-foten.',
+      'Hip flexor-sträck – svingbenet i flip.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
     ],
   },
 
   'flip-2': {
     strength: [
-      'Bulgarisk split-squat vänster – kraftutveckling i avhoppsbenet.',
+      'Bulgarisk split-squat – kraftutveckling i avhoppsbenet.',
       'Adduktor-maskin – specifik insidekantstyrka.',
       'Medicinbollsrotation – rotationskraft för 2 varv.',
-      'Tåhöjning höger – pick-foten i flip.',
+      'Tåhöjning – pick-foten i flip.',
     ],
     cardio: [
-      'Plyometriska inåthopp – insidekantens explosivitet.',
-      'Hoppreppa med dubbelunder – rotationshastighet.',
+      'Sidohopp – insidekantens explosivitet.',
+      'Hoppreppa – rotationshastighet.',
     ],
     stretch: [
-      'Djup adduktorsträck – vänster innsidekant.',
+      'Adduktorsträck – insidekanten.',
       'Piriformissträck – höftrotatorer.',
       'Bröststräck – armsvingen för rotationen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'flip-3': {
     strength: [
-      'Ettbensdödlyft vänster – maximal kraft.',
-      'Kabelrotation low-to-high – rotationsinitiering.',
-      'Hängande benlyft med rotation – kärna och höftböjare.',
-      'Adduktor-maskin tung – stark insidekant krävs.',
+      'Ettbensdödlyft – maximal kraft.',
+      'Kabelrotation – rotationsinitiering.',
+      'Hängande benlyft – kärna och höftböjare.',
+      'Adduktor-maskin – stark insidekant krävs.',
     ],
     cardio: [
       'Bounding – maximal kraft per steg.',
       'Sprint-intervaller – explosiv snabbhet.',
     ],
     stretch: [
-      'Pigeon pose vänster – djup höftsträck.',
-      'Djup straddle – adduktorer.',
+      'Pigeon pose – djup höftsträck.',
+      'Adduktorsträck – adduktorer.',
       'Thoraxrotation – överkroppens rörlighet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'lutz-1': {
     strength: [
-      'Hip-abduktorövning (band eller maskin) – stärker den yttre kanten (vänster bakre yttre) i lutz.',
-      'Ettbenssquat vänster med utåtrotation – tränar den utmanande yttre kanten.',
-      'Tåhöjning höger – pick-foten i lutz.',
+      'Hip abduktor med band – stärker den yttre kanten i lutz.',
+      'Bulgarisk split-squat – tränar den utmanande yttre kanten.',
+      'Tåhöjning – pick-foten i lutz.',
       'Sidoplankan – lateral kärna för yttre kantbalansen.',
     ],
     cardio: [
-      'Laterala bounds – yttre kantens explosivitet.',
+      'Laterala stegserier – yttre kantens explosivitet.',
       'Hoppreppa – grundläggande benstyrka.',
     ],
     stretch: [
-      'Piriformissträck vänster – yttre höftrotatorer för utåtkanten.',
+      'Piriformissträck – yttre höftrotatorer för utåtkanten.',
       'IT-band-sträck – lateral höft- och lårfrihet.',
-      'Vadssträck höger – pick-foten.',
+      'Vadssträck – pick-foten.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Lutz-ingång – tränar det bakåtglidande kantarbetet och axelkontrollen inför Lutz-avhoppet.',
     ],
   },
 
   'lutz-2': {
     strength: [
-      'Höftabduktion med band – yttre kanten kräver stark abduktion.',
-      'Bulgarisk split-squat vänster med utåtrotation – kantspecifik styrka.',
+      'Hip abduktor med band – yttre kanten kräver stark abduktion.',
+      'Bulgarisk split-squat – kantspecifik styrka.',
       'Medicinbollsrotation – rotationskraft.',
-      'Tåhöjning höger tung – kraftig pick för dubbelhoppet.',
+      'Tåhöjning – kraftig pick för dubbelhoppet.',
     ],
     cardio: [
-      'Plyometriska sidohopp – lateral explosivitet.',
-      'Hoppreppa med dubbelunder – rotationshastighet.',
+      'Sidohopp – lateral explosivitet.',
+      'Hoppreppa – rotationshastighet.',
     ],
     stretch: [
-      'Pigeon pose vänster – djup yttre höftsträck.',
-      'IT-band-sträck med foam roller – lateral friktion.',
+      'Pigeon pose – djup yttre höftsträck.',
+      'IT-band-sträck – lateral friktion.',
       'Bröststräck – armsvingen motverkar kontra-rotationen i lutz.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Lutz-ingång – tränar det bakåtglidande kantarbetet och axelkontrollen inför Lutz-avhoppet.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'lutz-3': {
     strength: [
-      'Ettbensdödlyft vänster – maximal höftstyrka.',
-      'Kabelrotation med utåtrotation i höften – lutz-specifik styrka.',
+      'Ettbensdödlyft – maximal höftstyrka.',
+      'Kabelrotation – lutz-specifik rotationsstyrka.',
       'Hängande benlyft – kärna för 3 varv.',
-      'Tung tåhöjning höger – pick-kraften är avgörande.',
+      'Tåhöjning – pick-kraften är avgörande.',
     ],
     cardio: [
       'Bounding – maximal kraft.',
       'Sprint-intervaller – snabba ben.',
     ],
     stretch: [
-      'Djup pigeon pose vänster – yttre höft.',
+      'Pigeon pose – yttre höft.',
       'Thoraxrotation – överkroppens rörlighet.',
       'IT-band-sträck – lateral kedja.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Tåpick-avhopp – simulerar avhoppsrörelsen för tå-hopp (Toe-loop, Flip, Lutz) på marken.',
+      'Lutz-ingång – tränar det bakåtglidande kantarbetet och axelkontrollen inför Lutz-avhoppet.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'euler-1': {
     strength: [
-      'Ettbenssquat höger – euler avhoppas från höger yttre bakre kant.',
-      'Hip-abduktorövning – yttre kanten i höger höft.',
-      'Tåhöjning vänster – pick-foten i euler.',
+      'Ettbenssquat – euler avhoppas från yttre bakre kant.',
+      'Hip abduktor med band – yttre kanten.',
+      'Tåhöjning – pick-foten i euler.',
       'Plankan – kärna för det kompakta enkla varvet.',
     ],
     cardio: [
       'Hoppreppa – tajming och benstyrka.',
-      'Laterala steg – kantövergångsträning.',
+      'Laterala stegserier – kantövergångsträning.',
     ],
     stretch: [
-      'Piriformissträck höger – yttre kanten.',
-      'Vadssträck vänster – pick-foten.',
+      'Piriformissträck – yttre kanten.',
+      'Vadssträck – pick-foten.',
       'Hip flexor-sträck – frigör svingbenet.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
     ],
   },
 
   'split-jump': {
     strength: [
-      'Sidosparkar stående (hip abduktion + extension) – tränar den explosiva benspärkan.',
-      'Hamstring curl – bakre kedjans styrka för benlyftshöjden.',
-      'Höftböjare med band – frontsidans lyft i split-positionen.',
-      'Plankan och sideplankan – kärna för balansen i luften.',
+      'Sidoutfall – tränar den explosiva benspärkan.',
+      'Hamstrings excentrisk styrka – bakre kedjans styrka för benlyftshöjden.',
+      'Hip flexor-styrka med band – frontsidans lyft i split-positionen.',
+      'Sidoplankan – kärna för balansen i luften.',
     ],
     cardio: [
       'Hoppreppa – grundläggande explosivitet.',
-      'Scissor jumps (sax-hopp) – direkt träning av rörelsen.',
+      'Sidohopp – direkt träning av rörelsen.',
     ],
     stretch: [
-      'Hamstringsträck stående framåt – ben behöver nå högt bakåt.',
-      'Hip flexor-sträck i djupt utfall – frontsidans lyft.',
-      'Spagatt (splits) – full rörelseomfång för split-positionen.',
+      'Hamstringsträck – benet behöver nå högt bakåt.',
+      'Hip flexor-sträck – frontsidans lyft.',
+      'Spagatt – full rörelseomfång för split-positionen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
     ],
   },
 
@@ -386,133 +505,160 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'uppright-basic': {
     strength: [
-      'Ettbensbalans med ögonen stängda – grundläggande piruettstabilitet.',
+      'Ettbensbalans – grundläggande piruettstabilitet.',
       'Plankan – kärna håller kroppen kompakt under rotation.',
       'Sidoplankan – lateral stabilitet för rak piruettaxel.',
     ],
     cardio: [
-      'Rotera runt egen axel med armarna in – tränar vestibulär anpassning.',
       'Hoppreppa – kondition och rytmkänsla.',
+      'Laterala stegserier – koordination och rytm.',
     ],
     stretch: [
       'Vadssträck – vristens frihet på stödbenet.',
-      'Axelsträck korsad – frigör axlarna för piruettpositionen.',
-      'Quadssträck – stödbenet (ofta vänster) sträcks efter piruetten.',
+      'Axelsträck – frigör axlarna för piruettpositionen.',
+      'Liggande quadssträck – stödbenet sträcks efter piruetten.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'scratch-spin': {
     strength: [
-      'Ettbensbalans på tå – tränar kontrollen i piruettpositionen.',
-      'Plankan med benlyft – kärna och höftböjare för kompakt position.',
-      'Adduktor-övning – drar in fria benet och accelererar piruetten.',
+      'Ettbensbalans – tränar kontrollen i piruettpositionen.',
+      'Plankan – kärna och höftböjare för kompakt position.',
+      'Adduktor-maskin – drar in fria benet och accelererar piruetten.',
     ],
     cardio: [
-      'Rotation på piruettbräda eller Lazy Susan – direktträning av centrifugalkänslan.',
       'Hoppreppa – kondition.',
+      'Sidohopp – explosivitet.',
     ],
     stretch: [
-      'Axelsträck framåt – armarna dras in tätt mot kroppen.',
-      'Quadssträck – stödbenets framdel.',
+      'Axelsträck – armarna dras in tätt mot kroppen.',
+      'Liggande quadssträck – stödbenets framdel.',
       'Vadssträck – vristens rörlighet på tå.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'back-spin': {
     strength: [
-      'Ettbensbalans på höger tå – back-spin stöds av höger ben.',
-      'Hip-abduktorstyrka höger – den bakre balansen kräver höft stabilitet.',
-      'Ryggstärkande övningar (rygghyperextension) – kontroll av baklängesaxeln.',
+      'Ettbensbalans – back-spin kräver balans på ett ben.',
+      'Hip abduktor med band – bakre balansen kräver höftstabilitet.',
+      'Ryggstärkare – kontroll av baklängesaxeln.',
     ],
     cardio: [
-      'Rotation baklänges på piruettbräda – vestibulär träning.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – koordination.',
     ],
     stretch: [
-      'Höftböjarsträck – frigör framsidan på stödbenet.',
-      'Bröst- och axelsträck bakåt – öppnar upp för bakåtbalansen.',
+      'Hip flexor-sträck – frigör framsidan på stödbenet.',
+      'Bröststräck – öppnar upp för bakåtbalansen.',
       'Vadssträck – fotledsrörlighet.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'layback-spin': {
     strength: [
-      'Ryggsträckare (Superman-övning) – stärker musklerna som håller bakåtböjningen.',
-      'Kärnstabilitet i extension (bridge) – kontrollerat bakåtfall med stöd.',
+      'Ryggstärkare – stärker musklerna som håller bakåtböjningen.',
+      'Plankan – kärnstabilitet i extension.',
       'Ettbensbalans – piruettbalansen krävs under rörlighetsutmaningen.',
-      'Axelstabilitet (rotator cuff) – skyddar axlarna i bakåtposition.',
+      'Axelstabilitet – skyddar axlarna i bakåtposition.',
     ],
     cardio: [
-      'Yoga flow med bakåtböjningar – kombinerar rörlighet och kondition.',
+      'Yoga flow – kombinerar rörlighet och kondition.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Camel pose (yoga) – djup bakåtböjning i bröstryggen.',
-      'Bröststräck mot foam roller – öppnar thorax.',
+      'Camel pose – djup bakåtböjning i bröstryggen.',
+      'Bröststräck – öppnar thorax.',
       'Hip flexor-sträck – framsidan frigörs för bakåtpositionen.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'biellmann-spin': {
     strength: [
-      'Axel- och skulderrotatorstyrka – håller benet uppe bakom huvudet.',
-      'Ryggstärkare – kontrollera den extrema bakåtböjningen.',
-      'Hamstring eccentrisk styrka – benet dras upp utan att spänna.',
+      'Axelstabilitet – håller benet uppe bakom huvudet.',
+      'Ryggstärkare – kontrollerar den extrema bakåtböjningen.',
+      'Hamstrings excentrisk styrka – benet dras upp utan att spänna.',
       'Ettbensbalans – piruettbalansen under extremt rörlighetsläge.',
     ],
     cardio: [
-      'Yoga flow med djupa bakåtböjningar – rörlighet och uthållighet.',
+      'Yoga flow – rörlighet och uthållighet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Full biellmann-sträck liggande – gradvis förberedelse.',
-      'Camel pose och wheel pose – djup brygga.',
-      'Hamstrings med benet ovanför – extrem hamstringflexibilitet krävs.',
+      'Biellmann-sträck liggande – gradvis förberedelse.',
+      'Camel pose – djup brygga.',
+      'Hamstringsträck – extrem hamstringflexibilitet krävs.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'attitude-spin': {
     strength: [
       'Hip flexor-styrka med band – håller benet i attitydposition.',
-      'Hip abduktor – benet hålls utåt och uppåt.',
-      'Ettbensbalans – stödbenet under den statiska benposition.',
-      'Rygg och kärna – överkroppen hålls upprätt.',
+      'Hip abduktor med band – benet hålls utåt och uppåt.',
+      'Ettbensbalans – stödbenet under den statiska benpositionen.',
+      'Ryggstärkare – överkroppen hålls upprätt.',
     ],
     cardio: [
-      'Balettstyrkeövningar (développé) – specifik träning av attitydpositionen.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – koordination och rytm.',
     ],
     stretch: [
-      'Hip flexor-sträck djupt – frigör höften för benlyftets vinkel.',
-      'Quadssträck bak – attitydbenet är böjt, framfjädern behöver vara lös.',
+      'Hip flexor-sträck – frigör höften för benlyftets vinkel.',
+      'Liggande quadssträck – attitydbenet är böjt.',
       'Axelsträck – armarna hålls i elegant position.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'sit-spin': {
     strength: [
-      'Djup squat (ass to grass) – sittposition kräver full knäflexion med kraft.',
-      'Ettbenssquat djup – stödbenet i sit-spin är under extrem belastning.',
-      'Quadriceps isotonisk hållning – håller den djupa positionen.',
-      'Kärnstabilitet – håller ryggen rak i sittposition.',
+      'Djup squat – sittposition kräver full knäflexion med kraft.',
+      'Ettbenssquat – stödbenet i sit-spin är under extrem belastning.',
+      'Plankan – kärnstabilitet i sittposition.',
     ],
     cardio: [
-      'Wall sit-intervaller – specifik träning av sittpositionens uthållighet.',
+      'Wall sit – specifik träning av sittpositionens uthållighet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Djup squat-sträck med hälar i golv – full ankelrörlighet för sittposition.',
-      'Höftöppning i djup squat – fri höft för den kompakta formen.',
-      'Quadssträck – framsidan av det böjda stödbenet.',
+      'Djup squat-sträck – full ankelrörlighet för sittposition.',
+      'Hip flexor-sträck – fri höft för den kompakta formen.',
+      'Liggande quadssträck – framsidan av det böjda stödbenet.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'sit-spin-back': {
     strength: [
-      'Djup squat på höger ben (back-sit stöds av höger) – enbenssittstyrka.',
-      'Hip-abduktor höger – baklängesbalansen i djup squat.',
+      'Djup squat – enbenssittstyrka.',
+      'Hip abduktor med band – baklängesbalansen i djup squat.',
       'Ryggstärkare – bakåtaxeln kräver mer lumbal kontroll.',
-      'Kärnstabilitet – kompakt position baklänges.',
+      'Plankan – kompakt position baklänges.',
     ],
     cardio: [
       'Wall sit – uthållighet i den djupa positionen.',
@@ -520,38 +666,46 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
     ],
     stretch: [
       'Djup squat-sträck – full ankelrörlighet.',
-      'Piriformissträck – höger höft.',
-      'Ryggrotation – lumbal rörlighet för baklängesaxeln.',
+      'Piriformissträck – höftrotatorer.',
+      'Ryggrotation liggande – lumbal rörlighet för baklängesaxeln.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'pancake-spin': {
     strength: [
-      'Adduktor-styrka – benet trycks ner mot isen i T-position.',
-      'Hamstrings excentrisk – kontrollerat nedtryck av det horisontella benet.',
+      'Adduktor-maskin – benet trycks ner mot isen i T-position.',
+      'Hamstrings excentrisk styrka – kontrollerat nedtryck av det horisontella benet.',
       'Ettbensbalans – stödbenet under extremt rörlighetsläge.',
-      'Kärna och rygg – överkroppen hålls parallell med golvet.',
+      'Ryggstärkare – överkroppen hålls parallell med golvet.',
     ],
     cardio: [
-      'Aktiv straddle-sträck med pulsering – rörlighet och uthållighet.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – koordination.',
     ],
     stretch: [
-      'Straddle (sidospagatt) – det horisontella benet kräver full adduktorlängd.',
+      'Straddle – det horisontella benet kräver full adduktorlängd.',
       'Hamstringsträck – benet sträckt ut åt sidan.',
-      'Ryggböjning framåt i straddle – hela bakre kedjan.',
+      'Ryggrotation liggande – hela bakre kedjan.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'cannonball-spin': {
     strength: [
-      'Djup squat med kompakt position – tränar den extrema böjpositionen.',
-      'Hip flexor-styrka – knäna dras mot bröstet.',
-      'Kärnstabilitet – håller kroppen tät runt stödbenet.',
-      'Ettbensbalans i djup squat – stödbenet bär all vikt.',
+      'Djup squat – tränar den extrema böjpositionen.',
+      'Hip flexor-styrka med band – knäna dras mot bröstet.',
+      'Plankan – håller kroppen tät runt stödbenet.',
+      'Ettbensbalans – stödbenet bär all vikt.',
     ],
     cardio: [
-      'Wall sit djupt – uthållighet.',
+      'Wall sit – uthållighet i extrem sittposition.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -559,143 +713,180 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Ryggrotation liggande – lumbal rörlighet.',
       'Hip flexor-sträck – kontrastträck efter den kompakta positionen.',
     ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+    ],
   },
 
   'camel-spin': {
     strength: [
-      'Hip-extension (rumpkick) stående – håller det fria benet horisontellt.',
-      'Ryggstärkare (Superman) – stöder det horisontella överkroppsläget.',
-      'Hamstrings och sätesmuskel – det fria benet lyfts och hålls bakåt.',
-      'Ettbensbalans framåtlutad – simulerar kamelposition på golv.',
+      'Hip-extension med band – håller det fria benet horisontellt.',
+      'Ryggstärkare – stöder det horisontella överkroppsläget.',
+      'Hamstrings excentrisk styrka – det fria benet lyfts och hålls bakåt.',
+      'Ettbensbalans – simulerar kamelposition på golv.',
     ],
     cardio: [
-      'Yoga flow arabesk-serier – direktträning av kamelkroppspositionen.',
+      'Yoga flow – direktträning av kamelkroppspositionen.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Hip flexor-sträck djupt – framsidan av stödbenet frigörs.',
+      'Hip flexor-sträck – framsidan av stödbenet frigörs.',
       'Hamstringsträck – det fria benet behöver vara långt bakåt.',
-      'Bröststräck framåtlutad – öppnar ryggen i kamelposition.',
+      'Bröststräck – öppnar ryggen i kamelposition.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'layover-camel': {
     strength: [
-      'Sidolyft i arabesk – det fria benet roteras utåt och uppåt.',
+      'Hip abduktor med band – rotationen av det fria benet utåt.',
       'Oblique-styrka – sned-böjningen kräver lateral kärnstyrka.',
-      'Axelstabilitet – stödarm eller friarm hålls korrekt.',
-      'Hip abduktor – rotationen av det fria benet utåt.',
+      'Axelstabilitet – armen hålls korrekt.',
+      'Ryggstärkare – det fria benet roteras utåt och uppåt.',
     ],
     cardio: [
-      'Sidoböjningar stående med vikt – lateral uthållighet.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – lateral uthållighet.',
     ],
     stretch: [
-      'Lateral sidosträck med lyft – öppnar flanken för layover-positionen.',
+      'Lateral flanksträck – öppnar flanken för layover-positionen.',
       'Piriformissträck – höftrotatorer.',
-      'Bröststräck med rotation – överkroppens sideways-rörlighet.',
+      'Bröststräck – överkroppens sideways-rörlighet.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'donut-spin': {
     strength: [
-      'Ryggstärkare och gluteus – håller benet uppåt bakåt i hög position.',
-      'Axel- och skulderrotatorstyrka – benet greppas med händerna.',
-      'Hamstrings – benet dras upp mot huvudet.',
+      'Ryggstärkare – håller benet uppåt bakåt i hög position.',
+      'Axelstabilitet – benet greppas med händerna.',
+      'Hamstrings excentrisk styrka – benet dras upp mot huvudet.',
       'Ettbensbalans – stödbenet under extremt läge.',
     ],
     cardio: [
-      'Yoga wheel-övningar – gradvis bakåtböjning med benstöd.',
+      'Yoga flow – gradvis bakåtböjning.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Full bakåtböjning (wheel pose) – extrem thorax och lumbal rörlighet.',
-      'Hamstrings mot väggen – benet upp mot kroppen.',
-      'Axelsträck bakåt djupt – axlarna möter benet.',
+      'Wheel pose – extrem thorax och lumbal rörlighet.',
+      'Hamstringsträck – benet upp mot kroppen.',
+      'Axelsträck – axlarna möter benet.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'illusion-spin': {
     strength: [
-      'Ettbenssquat med framåtfall – simulerar illusionens rotation.',
-      'Hip flexor och extension växelvis – drivkraften i illusionsrörelsen.',
-      'Hamstrings och rygg – det fria benet svingar i en cirkel.',
-      'Kärna – stabiliserar axeln under rörelsen.',
+      'Ettbenssquat – simulerar illusionens rotation.',
+      'Hip flexor-styrka med band – drivkraften i illusionsrörelsen.',
+      'Hamstrings excentrisk styrka – det fria benet svingar i en cirkel.',
+      'Plankan – stabiliserar axeln under rörelsen.',
     ],
     cardio: [
-      'Illusionssvängar på golv utan rotation – teknisk repetitionsträning.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – teknisk repetitionsträning.',
     ],
     stretch: [
-      'Hamstringsträck framåt böjd – hela bakre kedjan.',
+      'Hamstringsträck – hela bakre kedjan.',
       'Hip flexor-sträck – framsidans rörlighet.',
-      'Ryggrotation – thorax följer benets svängning.',
+      'Ryggrotation liggande – thorax följer benets svängning.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'flying-camel': {
     strength: [
-      'Box jumps med arabesk-landing – tränar kombinationen hopp till kamelposition.',
-      'Hip-extension med band – det fria benet ska gå horisontellt direkt vid landning.',
+      'Boxhopp – tränar kombinationen hopp till kamelposition.',
+      'Hip-extension med band – det fria benet ska gå horisontellt vid landning.',
       'Ryggstärkare – kamelposition ska intas omedelbart.',
       'Ettbenssquat – landningsbenet bär stöten.',
     ],
     cardio: [
-      'Plyometriska arabesk-hopp – direktträning av flyingkamelen.',
+      'Hoppreppa – direktträning av flyingkamelen.',
       'Hoppreppa – explosivitet.',
     ],
     stretch: [
-      'Hip flexor-sträck djupt – stödbenet frigörs för kamelposition.',
+      'Hip flexor-sträck – stödbenet frigörs för kamelposition.',
       'Hamstringsträck – det fria benet bakåt.',
-      'Ryggrörlighet i extension – kamelpositionens bakåtlutning.',
+      'Ryggextensionssträck – kamelpositionens bakåtlutning.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'flying-sit-spin': {
     strength: [
-      'Boxhopp till djup squat – tränar flyingsittrotationens landning.',
-      'Djup ettbenssquat – landningsbenet sänker sig direkt till sittposition.',
-      'Quadriceps isotonisk hållning – sittläget kräver stark framdel.',
-      'Kärna – kompakt position vid landning.',
+      'Boxhopp – tränar flyingsittrotationens landning.',
+      'Djup squat – landningsbenet sänker sig direkt till sittposition.',
+      'Plankan – kompakt position vid landning.',
     ],
     cardio: [
-      'Plyometriska squat jumps – explosivitet och landningskontroll.',
+      'Sidohopp – explosivitet och landningskontroll.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
       'Djup squat-sträck – ankel och höft för sittposition.',
-      'Quadssträck – framsidan av stödbenet.',
+      'Liggande quadssträck – framsidan av stödbenet.',
       'Hip flexor-sträck – kontrastträck efter squat-positionen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
   'butterfly': {
     strength: [
-      'Hip-abduktor liggande (clamshell) – det horisontella benet behöver lyftkraft.',
-      'Kärna rotationsövningar – den horisontella rotationen kring stödbenet.',
-      'Bål-rotation med medicinboll – drivar butterflyrörelsens sveprörelse.',
-      'Ettbensbalans med rotation – stödbenet under piruettrörelsen.',
+      'Hip abduktor med band – det horisontella benet behöver lyftkraft.',
+      'Medicinbollsrotation – driver butterflyrörelsens sveprörelse.',
+      'Oblique-styrka – den horisontella rotationen kring stödbenet.',
+      'Ettbensbalans – stödbenet under piruettrörelsen.',
     ],
     cardio: [
-      'Horisontell kroppscirklar på golv – direktträning av butterflyrörelsens form.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – direktträning av butterflyrörelsens form.',
     ],
     stretch: [
       'Straddle – horisontellt benet behöver full adduktorlängd.',
       'Ryggrotation liggande – thorax rörlighet.',
       'Hip flexor-sträck – framsidan frigörs efter rörelsen.',
     ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+    ],
   },
 
   'death-drop': {
     strength: [
-      'Ettbenssquat med djup kontrollerad nedgång – extremt kontrollerad sittlandning.',
-      'Hip-abduktor och externa rotatorer – det fria benet spreads ut.',
-      'Explosiv box jump – avhoppet kräver maximal kraft.',
-      'Rygg och kärna – kontrollerat bakåtfall till sittposition.',
+      'Ettbenssquat – extremt kontrollerad sittlandning.',
+      'Hip abduktor med band – det fria benet spreads ut.',
+      'Boxhopp – avhoppet kräver maximal kraft.',
+      'Ryggstärkare – kontrollerat bakåtfall till sittposition.',
     ],
     cardio: [
-      'Plyometriska squat jumps – explosivitet för avhoppet.',
+      'Sidohopp – explosivitet för avhoppet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -703,22 +894,32 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Straddle – det fria benets ytterläge.',
       'Hip flexor-sträck – kontrast till den kompakta sittlandningen.',
     ],
+    teknik: [
+      'Hoppimitation – övar ingång, avhopp och landningsposition för ett hopp på golvet.',
+      'Landningsposition – tränar check-out-positionen och balansen direkt efter ett hopp.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+    ],
   },
 
   'combination-spin': {
     strength: [
-      'Alla positionsspecifika styrkeövningar (sit, camel, upright) – kombinationsspinnen kräver alla tre.',
-      'Ettbensbalans med positionsbyten – tränar övergångarna mellan positioner.',
-      'Kärna allsidigt – balansen ska bibehållas under positionsbytena.',
+      'Ettbensbalans – tränar övergångarna mellan positioner.',
+      'Plankan – balansen ska bibehållas under positionsbytena.',
+      'Djup squat – sit-spin-positionen kräver full knäflexion.',
     ],
     cardio: [
-      'Wall sit + arabesk-hållning sekvens – konditionsträning av kombinationsflödet.',
+      'Wall sit – konditionsträning av sittflödet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Sekventiella sträckningar: quad, hip flexor, hamstring – alla positioner kräver olika flexibilitet.',
-      'Ryggrotation och extension – rörlighet för positionsbytena.',
+      'Hip flexor-sträck – alla positioner kräver olika flexibilitet.',
+      'Ryggrotation liggande – rörlighet för positionsbytena.',
       'Axelsträck – överkroppen rör sig fritt mellan positionerna.',
+    ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
     ],
   },
 
@@ -726,9 +927,9 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'three-turn': {
     strength: [
-      'Ettbensbalans med rotation på tå – tränar den precisa axelrotationen.',
-      'Fotledsövningar med band – kant-till-kant stabilitet i vristen.',
-      'Kärna med rotation – skulder och höft arbetar i kontra-rotation.',
+      'Ettbensbalans – tränar den precisa axelrotationen.',
+      'Fotledsstabilitet med band – kant-till-kant stabilitet i vristen.',
+      'Plankan – skulder och höft arbetar i kontra-rotation.',
     ],
     cardio: [
       'Laterala stegserier – kantövergångar och rytm.',
@@ -739,17 +940,21 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Ryggrotation liggande – skulderaxelns rörlighet.',
       'Hip flexor-sträck – frigör höften vid kantbytet.',
     ],
+    teknik: [
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+    ],
   },
 
   'bracket': {
     strength: [
-      'Ettbensbalans med kontra-rotation – bracketen kräver aktiv motståndsrotation.',
-      'Oblique-övningar – sidovägg motstår axelrotationen.',
-      'Fotledsövningar – inre/yttre kant-stabilitet.',
-      'Kärna allsidigt – axeln hålls stabil mot rotationskraften.',
+      'Ettbensbalans – bracketen kräver aktiv motståndsrotation.',
+      'Oblique-styrka – sidovägg motstår axelrotationen.',
+      'Fotledsstabilitet med band – inre/yttre kant-stabilitet.',
+      'Plankan – axeln hålls stabil mot rotationskraften.',
     ],
     cardio: [
-      'Laterala stegserier med stopp – kantprecision.',
+      'Laterala stegserier – kantprecision.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -757,110 +962,138 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Vadssträck – fotledsrörlighet.',
       'Piriformissträck – höftrotatorer.',
     ],
+    teknik: [
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
+      'Lutz-ingång – tränar det bakåtglidande kantarbetet och axelkontrollen inför Lutz-avhoppet.',
+    ],
   },
 
   'rocker': {
     strength: [
-      'Ettbensbalans på hälkant och tåkant växelvis – rockern byter kant längs fotens axel.',
-      'Fotledsstabilitet med band (dorsal- och plantarflexion) – kant-till-kant i fotledsled.',
-      'Kärna – kroppen roterar inte, foten byter kant.',
+      'Ettbensbalans – rockern byter kant längs fotens axel.',
+      'Fotledsstabilitet med band – kant-till-kant i fotledsled.',
+      'Plankan – kroppen roterar inte, foten byter kant.',
     ],
     cardio: [
-      'Kant-till-kantövningar på golv – rytm och precision.',
+      'Laterala stegserier – rytm och precision.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Vadssträck rak och böjt knä – full fotledsrörlighet.',
-      'Fotledsrotationer cirkulärt – leder upp vristens rörlighet.',
-      'Höftböjarsträck – frigör höften under svängen.',
+      'Vadssträck – full fotledsrörlighet.',
+      'Fotledsrotationer – värmer upp vristens rörlighet.',
+      'Hip flexor-sträck – frigör höften under svängen.',
+    ],
+    teknik: [
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
     ],
   },
 
   'counter': {
     strength: [
-      'Oblique-rotation mot motstånd – countern kräver aktiv rotation mot rörelseriktningen.',
-      'Ettbensbalans med rotation – skulder roterar in i kurvan aktivt.',
-      'Hip abduktor och adduktor – kant-specificitet.',
-      'Kärna roterande – medicinbollsrotationer.',
+      'Oblique-styrka – countern kräver aktiv rotation mot rörelseriktningen.',
+      'Ettbensbalans – skulder roterar in i kurvan aktivt.',
+      'Adduktor och abduktor – kant-specificitet.',
+      'Medicinbollsrotation – kärnrotation.',
     ],
     cardio: [
-      'Laterala stegserier med rotation – rytm och koordination.',
+      'Laterala stegserier – rytm och koordination.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Thoraxrotation djup – överkroppens rörlighet för counterrotationen.',
+      'Thoraxrotation – överkroppens rörlighet för counterrotationen.',
       'Piriformissträck – höftrotatorer.',
       'Vadssträck – fotledsrörlighet.',
+    ],
+    teknik: [
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
     ],
   },
 
   'twizzle': {
     strength: [
-      'Ettbensbalans med snabb rotation – twizzeln roterar snabbt på ett ben.',
-      'Kärna med rotation – snabb, tätt kompakt rotation.',
-      'Adduktor-övning – fria benet dras in snabbt.',
-      'Fotledsstabilitet – hög belastning under snabba varv.',
+      'Ettbensbalans – twizzeln roterar snabbt på ett ben.',
+      'Plankan – snabb, tätt kompakt rotation.',
+      'Adduktor-maskin – fria benet dras in snabbt.',
+      'Fotledsstabilitet med band – hög belastning under snabba varv.',
     ],
     cardio: [
-      'Piruettövningar på rotation board – vestibulär träning och snabbhetsträning.',
       'Hoppreppa – kondition och rytm.',
+      'Laterala stegserier – vestibulär träning och snabbhetsträning.',
     ],
     stretch: [
       'Piriformissträck – höftrotatorer arbetar intensivt.',
       'Vadssträck – fotledsrörlighet under rotation.',
       'Axelsträck – armarna hålls kontrollerade.',
     ],
+    teknik: [
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+      'Rotationsövning – tränar arm-pull och axelposition för kontrollerad rotation i luften.',
+    ],
   },
 
   'loop-turn': {
     strength: [
-      'Ettbensbalans med rotation – loop-turn är en mjuk, intern rotation på ett ben.',
-      'Fotledsövningar – kantbyte under glid.',
-      'Kärna lätt – loopen är en subtil sväng.',
+      'Ettbensbalans – loop-turn är en mjuk, intern rotation på ett ben.',
+      'Fotledsstabilitet med band – kantbyte under glid.',
+      'Plankan – loopen är en subtil sväng.',
     ],
     cardio: [
-      'Glida loop-turns i slow motion – teknisk repetition.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – teknisk repetition.',
     ],
     stretch: [
       'Vadssträck – fotledsrörlighet.',
       'Höftrotationssträck – intern rotation i höften.',
       'Ryggrotation liggande – thorax rörlighet.',
     ],
+    teknik: [
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
+      'Spotting – tränar blickteknik för att hålla orientering och balans under rotation.',
+    ],
   },
 
   'mohawk': {
     strength: [
-      'Hip-utåtrotation stående – mohawken byter fot med utåtrotation.',
+      'Hip-utåtrotation – mohawken byter fot med utåtrotation.',
       'Ettbensbalans – varje fot bär vikt separat.',
       'Adduktor och abduktor – kantarbetet kräver medial och lateral stabilitet.',
     ],
     cardio: [
-      'Stegserier med fotbyte – koordination och rytm.',
+      'Laterala stegserier – koordination och rytm.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Höftutåtrotationssträck – frigör höftleden för mohawkens fotbyte.',
+      'Höftrotationssträck – frigör höftleden för mohawkens fotbyte.',
       'Vadssträck – båda fötter.',
       'Piriformissträck – höftrotatorer.',
+    ],
+    teknik: [
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
     ],
   },
 
   'choctaw': {
     strength: [
       'Hip-utåtrotation – choctaw byter kant och fot med djupare rotation.',
-      'Ettbensbalans under rotation – varje ben tar emot.',
-      'Höftböjare – svingbenet rör sig aktivt vid fotbytet.',
-      'Kärna – kroppen hålls stabil under det mer komplexa bytet.',
+      'Ettbensbalans – varje ben tar emot.',
+      'Hip flexor-styrka med band – svingbenet rör sig aktivt vid fotbytet.',
+      'Plankan – kroppen hålls stabil under det mer komplexa bytet.',
     ],
     cardio: [
-      'Koordinationsstegserier med fotbyte – komplex rörelsekombination.',
+      'Laterala stegserier – komplex rörelsekombination.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Djup höftutåtrotationssträck – större krav än mohawk.',
+      'Höftrotationssträck – större krav än mohawk.',
       'Hip flexor-sträck – svingbenet rör sig mer.',
       'Piriformissträck – rotationsmuskulaturen.',
+    ],
+    teknik: [
+      'Mohawk-sekvens – övar fotbytet och viktöverföringen som ingång till kanthopp.',
+      'Ingångssteg – tränar fotrörelsemönstret och kantarbetet inför hoppet.',
     ],
   },
 
@@ -868,9 +1101,9 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'forward-outside-edge': {
     strength: [
-      'Hip-abduktorövning – stärker den yttre kanten vid framlänges glid.',
+      'Hip abduktor med band – stärker den yttre kanten vid framlänges glid.',
       'Ettbensbalans – hela vikten vilar på ett ben under gliden.',
-      'Vadövningar – vristens stabilitet på kanten.',
+      'Vadhöjningar på ett ben – vristens stabilitet på kanten.',
     ],
     cardio: [
       'Laterala stegserier – kant-känsla och rytm.',
@@ -885,12 +1118,12 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'forward-inside-edge': {
     strength: [
-      'Hip-adduktorövning – stärker insidekanten.',
+      'Adduktor och abduktor – stärker insidekanten.',
       'Ettbensbalans – viktbärande på insidekant.',
       'Fotledsstabilitet med band – inre kant-kontroll.',
     ],
     cardio: [
-      'Inåt-laterala stegserier – insidekantsrörlighet.',
+      'Laterala stegserier – insidekantsrörlighet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
@@ -902,82 +1135,82 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'backward-outside-edge': {
     strength: [
-      'Hip-abduktor baklänges – yttre kanten i baklängesglid.',
+      'Hip abduktor med band – yttre kanten i baklängesglid.',
       'Ryggstärkare – kontrollen baklänges kräver lumbal stabilitet.',
-      'Ettbensbalans baklänges – proprioception utan framsyn.',
+      'Ettbensbalans – proprioception utan framsyn.',
     ],
     cardio: [
-      'Baklänges glida med stopp – trygghet och kontroll.',
+      'Laterala stegserier – trygghet och kontroll.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
       'Piriformissträck – yttre höft.',
-      'Ryggrotation – lumbalt rörlig för baklängesaxeln.',
+      'Ryggrotation liggande – lumbalt rörlig för baklängesaxeln.',
       'Vadssträck – fotledsrörlighet.',
     ],
   },
 
   'backward-inside-edge': {
     strength: [
-      'Hip-adduktor baklänges – insidekanten baklänges.',
-      'Kärnstabilitet – kroppen hålls upprätt utan framsyn.',
-      'Fotledsstabilitet – inre kant baklänges.',
+      'Adduktor och abduktor – insidekanten baklänges.',
+      'Plankan – kroppen hålls upprätt utan framsyn.',
+      'Fotledsstabilitet med band – inre kant baklänges.',
     ],
     cardio: [
-      'Baklänges rörelseövningar – komfort och flöde.',
+      'Laterala stegserier – komfort och flöde.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
       'Adduktorsträck – insidan av höften.',
-      'Ryggrotation – thorax rörlighet baklänges.',
+      'Ryggrotation liggande – thorax rörlighet baklänges.',
       'Vadssträck – fotledsrörlighet.',
     ],
   },
 
   'spread-eagle': {
     strength: [
-      'Hip-utåtrotation (lateral rotation) – spread eagle kräver maximal utåtrotation i båda höfterna.',
-      'Adduktor och abduktor med benen utåtroterade – specifik styrka i rörelseomfånget.',
-      'Kärnstabilitet – överkroppen hålls upprätt i extremt höftläge.',
+      'Hip-utåtrotation – spread eagle kräver maximal utåtrotation i båda höfterna.',
+      'Adduktor och abduktor – specifik styrka i rörelseomfånget.',
+      'Plankan – överkroppen hålls upprätt i extremt höftläge.',
     ],
     cardio: [
-      'Hip-utåtrotationsövningar med rörlighetsträning – aktiv rörlighet.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – aktiv rörlighet.',
     ],
     stretch: [
-      'Grodposition (frog pose) – djup bilateral höftutåtrotation.',
-      'Straddle med utåtrotation – adduktorer i utåtroterat läge.',
+      'Höftrotationssträck – djup bilateral höftutåtrotation.',
+      'Straddle – adduktorer i utåtroterat läge.',
       'Piriformissträck – höftrotatorer.',
     ],
   },
 
   'ina-bauer': {
     strength: [
-      'Hip-utåtrotation ett ben, inåtrotation ett ben – ina bauer har en fot utåt, en inåt.',
-      'Fotledsstabilitet – varje fot på olika kant.',
-      'Kärnstabilitet – överkroppen böjer sig medan benen håller positionen.',
+      'Hip-utåtrotation – ina bauer har en fot utåt, en inåt.',
+      'Fotledsstabilitet med band – varje fot på olika kant.',
+      'Plankan – överkroppen böjer sig medan benen håller positionen.',
     ],
     cardio: [
-      'Övre kroppsrörlighetsflöde – kombinerar bakåtböjning med benstabilitet.',
+      'Yoga flow – kombinerar bakåtböjning med benstabilitet.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
       'Hip flexor-sträck – framsidan frigörs för bakåtböjningen.',
-      'Thoraxrotation och extension – bröstryggen böjs bakåt.',
+      'Thoraxrotation – bröstryggen böjs bakåt.',
       'Camel pose – bakåtböjning i Ina-Bauer-ryggen.',
     ],
   },
 
   'hydroblading': {
     strength: [
-      'Djup squat med framåtlutning – hydroblading kräver extrem framåtlutning nära isen.',
-      'Höftböjarsyrka – underkroppen böjer sig kraftigt.',
-      'Rygg- och kärna i excentrisk kontroll – sänker sig kontrollerat mot isen.',
-      'Ettbenssquat djup – en fot håller gliden.',
+      'Djup squat – hydroblading kräver extrem framåtlutning nära isen.',
+      'Hip flexor-styrka med band – underkroppen böjer sig kraftigt.',
+      'Ryggstärkare – sänker sig kontrollerat mot isen.',
+      'Ettbenssquat – en fot håller gliden.',
     ],
     cardio: [
-      'Djupa squat-serier med framåtlutning – specifik rörelsevana.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – specifik rörelsevana.',
     ],
     stretch: [
       'Djup squat-sträck – full knä och höftflexion.',
@@ -988,17 +1221,17 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'cantilever': {
     strength: [
-      'Sidoplankan med höftlyft – lateral kärnkraft för den extrema sidelutningen.',
-      'Hip-abduktorstyrka – hålls upp mot gravitationen lateralt.',
+      'Sidoplankan – lateral kärnkraft för den extrema sidelutningen.',
+      'Hip abduktor med band – hålls upp mot gravitationen lateralt.',
       'Oblique-styrka – sidan av bålkärnan bär hela kroppen.',
       'Ettbensbalans – all vikt på ett ben i extrem sidolutning.',
     ],
     cardio: [
-      'Sidoböjningsserier med hållning – lateral uthållighet.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – lateral uthållighet.',
     ],
     stretch: [
-      'Lateral flanksträck stående – öppnar flanken för cantilever-positionen.',
+      'Lateral flanksträck – öppnar flanken för cantilever-positionen.',
       'IT-band-sträck – lateral lårfrihet.',
       'Vadssträck – fotledsrörlighet.',
     ],
@@ -1006,14 +1239,14 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'spiral': {
     strength: [
-      'Hip-extension med band stående (arabesk) – håller benet högt bakom i spiralen.',
-      'Hamstrings och sätesmuskel – lyfter och håller benet horisontellt eller högre.',
+      'Hip-extension med band – håller benet högt bakom i spiralen.',
+      'Hamstrings excentrisk styrka – lyfter och håller benet horisontellt eller högre.',
       'Ryggstärkare – överkroppen böjs framåt, benet lyfts bakåt.',
-      'Ettbensbalans framåtlutad – simulerar spiralposition på golv.',
+      'Ettbensbalans – simulerar spiralposition på golv.',
     ],
     cardio: [
-      'Arabesk-hållningsserier – uthållighet i spiralpositionen.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – uthållighet i spiralpositionen.',
     ],
     stretch: [
       'Hamstringsträck – benet bakom ska nå högt.',
@@ -1024,37 +1257,37 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
 
   'charlotte-spiral': {
     strength: [
-      'Hamstrings extrem styrka – det fria benet lyfts vertikalt ovanför huvudet.',
-      'Hip-flexor med motståndsband – benet hålls högt framåt.',
+      'Hamstrings excentrisk styrka – det fria benet lyfts vertikalt ovanför huvudet.',
+      'Hip flexor-styrka med band – benet hålls högt framåt.',
       'Ryggstärkare – överkroppen böjer sig bakåt.',
-      'Ettbensbalans i extrem position – stödbenet bär allt.',
+      'Ettbensbalans – stödbenet bär allt.',
     ],
     cardio: [
-      'Aktiv hamstrings-serie i stående – direktträning av det vertikala lyftet.',
       'Hoppreppa – kondition.',
+      'Laterala stegserier – direktträning av det vertikala lyftet.',
     ],
     stretch: [
-      'Extrem hamstrings-sträck (benet mot väggen vertikalt) – benet ska gå vertikalt.',
-      'Ryggextension djup – överkroppen böjer sig bakåt.',
-      'Hip flexor-sträck djupt – kontrast mot hög benlyft.',
+      'Hamstringsträck – benet ska gå vertikalt.',
+      'Ryggextensionssträck – överkroppen böjer sig bakåt.',
+      'Hip flexor-sträck – kontrast mot hög benlyft.',
     ],
   },
 
   'biellmann-spiral': {
     strength: [
-      'Axel- och skulderrotatorstyrka – håller benet ovanför huvudet bakifrån.',
-      'Hamstrings – extrem benlängd bakåt och uppåt.',
+      'Axelstabilitet – håller benet ovanför huvudet bakifrån.',
+      'Hamstrings excentrisk styrka – extrem benlängd bakåt och uppåt.',
       'Ryggstärkare – extrem bakåtböjning kombinerat med benlyft.',
-      'Ettbensbalans i maximalposition – det svåraste stabilitetskravet.',
+      'Ettbensbalans – det svåraste stabilitetskravet.',
     ],
     cardio: [
-      'Gradvis biellmann-prep liggande – rörlighetsträning med kontroll.',
+      'Yoga flow – rörlighetsträning med kontroll.',
       'Hoppreppa – kondition.',
     ],
     stretch: [
-      'Biellmann-sträck liggande på mage – gradvis förberedelse.',
-      'Wheel pose (full brygga) – extrem thorax och lumbal rörlighet.',
-      'Hamstrings mot väggen – extrem benlängd.',
+      'Biellmann-sträck liggande – gradvis förberedelse.',
+      'Wheel pose – extrem thorax och lumbal rörlighet.',
+      'Hamstringsträck – extrem benlängd.',
     ],
   },
 };
