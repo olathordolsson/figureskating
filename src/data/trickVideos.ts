@@ -2,25 +2,25 @@
 export const TRICK_VIDEOS: Record<string, string> = {
   // Hopp
   'waltz':         'lajRteZxQxU', // Coach Mary — Waltz Jump
-  'axel-1':        '5LgY0eEsluQ', // Slow Motion Singles
-  'axel-2':        '5LgY0eEsluQ',
-  'axel-3':        '5LgY0eEsluQ',
-  'salchow-1':     '5LgY0eEsluQ',
-  'salchow-2':     '5LgY0eEsluQ',
-  'salchow-3':     '5LgY0eEsluQ',
-  'loop-1':        '5LgY0eEsluQ',
-  'loop-2':        '5LgY0eEsluQ',
-  'loop-3':        '5LgY0eEsluQ',
+  'axel-1':        'j__OA16E2Kw', // Single Axel tutorial
+  'axel-2':        'dPi57uI38gA', // Double Axel
+  'axel-3':        'dWhsSTwWNX0', // Triple Axel slow motion
+  'salchow-1':     'exupEwh6PDc', // Single Salchow tutorial
+  'salchow-2':     '0YAC_2zJ0Cg', // Double Salchow
+  'salchow-3':     'sAhHNsT1Ic8', // Triple Salchow slow motion
+  'loop-1':        'W9pMB9p7ODY', // Single Loop tutorial
+  'loop-2':        'roPXwrICIEA', // Double Loop
+  'loop-3':        'Hmv48301eXU', // Triple Loop
   'toe-loop-1':    '6a3URzAHPGQ', // Coach Mary — Toe Loop
-  'toe-loop-2':    '5LgY0eEsluQ',
-  'toe-loop-3':    '5LgY0eEsluQ',
-  'flip-1':        '5LgY0eEsluQ',
-  'flip-2':        '5LgY0eEsluQ',
-  'flip-3':        '5LgY0eEsluQ',
-  'lutz-1':        '5LgY0eEsluQ',
-  'lutz-2':        '5LgY0eEsluQ',
-  'lutz-3':        '5LgY0eEsluQ',
-  'euler-1':       '5LgY0eEsluQ',
+  'toe-loop-2':    'vZE0C0riWrk', // Double Toe Loop
+  'toe-loop-3':    'TS_wf4APud4', // Triple Toe Loop slow motion
+  'flip-1':        'Lyy-L-42Hsw', // Single Flip tutorial
+  'flip-2':        'nvRcR23nz2s', // Double Flip
+  'flip-3':        'SlEx48jE4rw', // Triple Flip slow motion
+  'lutz-1':        '5OGECS-1XO0', // Single Lutz tutorial
+  'lutz-2':        'IM_7ZtUhg3w', // Double Lutz
+  'lutz-3':        'xoj1LY50MoQ', // Triple Lutz slow motion
+  'euler-1':       '3hUA8Az_4vs', // Euler / Half Loop tutorial
 
   // Piruetter
   'uppright-basic':    'uD4IVjZQ35Q', // Coach Mary — One Foot Spin
@@ -68,19 +68,19 @@ export const TRICK_VIDEOS: Record<string, string> = {
   'death-drop':        'YM0W5s9d0ko', // Death Drop
 
   // Hopp — nya
-  'bunny-hop':      '5LgY0eEsluQ',
-  'mazurka':        '5LgY0eEsluQ',
-  'half-flip':      '5LgY0eEsluQ',
-  'ballet-jump':    '5LgY0eEsluQ',
-  'stag-jump':      '5LgY0eEsluQ',
-  'butterfly-jump': '5LgY0eEsluQ',
-  'falling-leaf':   '5LgY0eEsluQ',
-  'toe-loop-4':     '5LgY0eEsluQ',
-  'salchow-4':      '5LgY0eEsluQ',
-  'loop-4':         '5LgY0eEsluQ',
-  'flip-4':         '5LgY0eEsluQ',
-  'lutz-4':         '5LgY0eEsluQ',
-  'axel-4':         '5LgY0eEsluQ',
+  'bunny-hop':      'd8rMlxbSbOk', // Bunny Hop tutorial
+  'mazurka':        '1xUnADKtSGs', // Mazurka jump tutorial
+  'half-flip':      'y5bpoRSP5V8', // Half Flip tutorial
+  'ballet-jump':    'lFWX_634QJY', // Ballet Jump tutorial
+  'stag-jump':      'xJ6jr4aMiNQ', // Stag Jump tutorial
+  'butterfly-jump': 'n_JPB-nSoSA', // Butterfly Jump
+  'falling-leaf':   'RcJb4v0ch0E', // Falling Leaf tutorial
+  'toe-loop-4':     'PqV-na1V-Qs', // Quad Toe Loop — Nathan Chen
+  'salchow-4':      '4ms8jDSlWTU', // Quad Salchow — Yuzuru Hanyu
+  'loop-4':         '-XNO0gGez4w', // Quad Loop — Yuzuru Hanyu
+  'flip-4':         'LgrreuNAn3o', // Quad Flip — Shoma Uno
+  'lutz-4':         'F9Q4CHk1JUs', // Quad Lutz — Nathan Chen
+  'axel-4':         'Pr8oqacv7wM', // Quad Axel — Ilia Malinin
 
   // Piruetter — nya
   'y-spin':              'uD4IVjZQ35Q',
