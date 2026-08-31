@@ -62,8 +62,8 @@ export const TRICK_VIDEOS: Record<string, string> = {
   'attitude-spin':     'NqK6TcriMHE', // Attitude Spin
   'pancake-spin':      'v-MoudwLLf0', // Pancake Spin
   'cannonball-spin':   '3fSScWgYJLw', // Cannonball Spin
-  'donut-spin':        'N5MQyM0BSYc', // Donut Spin
-  'illusion-spin':     'OEi4OYce3Ak', // Illusion Spin
+  'donut-spin':        'S9gi-UanO_8', // Donut Spin
+  'illusion-spin':     'S6I-5TDmcs8', // Illusion Spin
   'butterfly':         'n_JPB-nSoSA', // Butterfly
   'death-drop':        'YM0W5s9d0ko', // Death Drop
 
