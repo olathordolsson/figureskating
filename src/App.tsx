@@ -16,9 +16,12 @@ import { Programs } from './pages/Programs';
 import { ProgramDetail } from './pages/ProgramDetail';
 
 export default function App() {
-  const { activeTab, selectedTrickId, selectedProgramId, selectedOffIceId, programs, showTutorial, setShowTutorial } = useStore();
+  const { activeTab, selectedTrickId, selectedProgramId, selectedOffIceId, programs, showTutorial, setShowTutorial, showAuthPrompt, clearAuthPrompt } = useStore();
   const { user, emailVerified } = useAuth();
   const [showAccount, setShowAccount] = useState(false);
+
+  const showModal = showAccount || showAuthPrompt;
+  const closeModal = () => { setShowAccount(false); clearAuthPrompt(); };
   const [scrollOpacity, setScrollOpacity] = useState(0);
 
   useEffect(() => {
@@ -67,10 +70,10 @@ export default function App() {
       {selectedOffIceId && <ExerciseDetail />}
       {showTutorial     && <Tutorial onClose={() => setShowTutorial(false)} />}
 
-      {showAccount && (
+      {showModal && (
         user
-          ? <AccountSheet user={user} emailVerified={emailVerified} onClose={() => setShowAccount(false)} />
-          : <AuthModal onClose={() => setShowAccount(false)} />
+          ? <AccountSheet user={user} emailVerified={emailVerified} onClose={closeModal} />
+          : <AuthModal onClose={closeModal} />
       )}
     </>
   );

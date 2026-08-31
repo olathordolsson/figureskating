@@ -1,12 +1,13 @@
-import { Pin, ArrowUpFromLine, IterationCw, LineSquiggle, PilcrowRight, CheckCircle } from 'lucide-react';
+import { Pin, ArrowUpFromLine, Footprints, IterationCw, LineSquiggle, PilcrowRight, CheckCircle } from 'lucide-react';
 import type { CategoryId, Trick } from '../data/tricks';
 import { useStore } from '../store/useStore';
 import { DifficultyBadge } from './DifficultyBadge';
 
 const categoryIcon: Record<CategoryId, React.ReactNode> = {
   hopp:          <ArrowUpFromLine size={16} strokeWidth={2} />,
-  piruetter:       <IterationCw size={15} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
+  piruetter:     <IterationCw size={15} strokeWidth={2} style={{ transform: 'rotate(90deg)' }} />,
   svängar:       <LineSquiggle size={15} strokeWidth={2} />,
+  steg:          <Footprints size={15} strokeWidth={2} />,
   glidövningar:  <PilcrowRight size={15} strokeWidth={2} />,
 };
 
@@ -41,7 +42,7 @@ export function TrickCard({ trick }: Props) {
       <div className="relative flex-1 min-w-0 pointer-events-none">
         <div className="flex items-center gap-1.5">
           <p className="font-semibold text-[15px] leading-snug truncate text-white">
-            {trick.name}
+            {trick.name}{trick.isNew && <span style={{ color: '#F05A28', fontSize: '11px', marginLeft: '3px', verticalAlign: 'super', fontWeight: 700 }}>*</span>}
           </p>
           {isLearned && <CheckCircle size={13} strokeWidth={2.2} style={{ color: '#C8F500', flexShrink: 0 }} />}
         </div>

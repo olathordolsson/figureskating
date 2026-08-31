@@ -29,14 +29,9 @@ export type Database = {
         Update: never;
       };
       programs: {
-        Row: { id: string; user_id: string; name: string; spotify_url: string | null; created_at: string };
-        Insert: { id: string; user_id: string; name: string; spotify_url?: string | null };
-        Update: { name?: string; spotify_url?: string | null };
-      };
-      program_tricks: {
-        Row: { id: string; program_id: string; trick_id: string; position: number };
-        Insert: { id: string; program_id: string; trick_id: string; position: number };
-        Update: { position?: number };
+        Row: { id: string; user_id: string; name: string; spotify_url: string | null; spotify_meta: unknown; items: unknown; created_at: string };
+        Insert: { id: string; user_id: string; name: string; spotify_url?: string | null; spotify_meta?: unknown; items?: unknown };
+        Update: { name?: string; spotify_url?: string | null; spotify_meta?: unknown; items?: unknown };
       };
     };
   };

@@ -66,4 +66,69 @@ export const TRICK_VIDEOS: Record<string, string> = {
   'illusion-spin':     'OEi4OYce3Ak', // Illusion Spin
   'butterfly':         'n_JPB-nSoSA', // Butterfly
   'death-drop':        'YM0W5s9d0ko', // Death Drop
+
+  // Hopp — nya
+  'bunny-hop':      '5LgY0eEsluQ',
+  'mazurka':        '5LgY0eEsluQ',
+  'half-flip':      '5LgY0eEsluQ',
+  'ballet-jump':    '5LgY0eEsluQ',
+  'stag-jump':      '5LgY0eEsluQ',
+  'butterfly-jump': '5LgY0eEsluQ',
+  'falling-leaf':   '5LgY0eEsluQ',
+  'toe-loop-4':     '5LgY0eEsluQ',
+  'salchow-4':      '5LgY0eEsluQ',
+  'loop-4':         '5LgY0eEsluQ',
+  'flip-4':         '5LgY0eEsluQ',
+  'lutz-4':         '5LgY0eEsluQ',
+  'axel-4':         '5LgY0eEsluQ',
+
+  // Piruetter — nya
+  'y-spin':              'uD4IVjZQ35Q',
+  'a-frame-spin':        'uD4IVjZQ35Q',
+  'haircutter-spin':     'uD4IVjZQ35Q',
+  'svamp-spin':          'Ds2Qg7z1_n8',
+  'shoot-the-duck-spin': 'Ds2Qg7z1_n8',
+  'back-camel-spin':     'OO2xE9MJEZo',
+  'catch-foot-camel':    'OO2xE9MJEZo',
+  'pearl-spin':          'OO2xE9MJEZo',
+  'flying-upright-spin': 'G34Pl-f_HAk',
+  'sit-upright-combo':   '2Zy_NU95V3Y',
+  'camel-sit-combo':     '2Zy_NU95V3Y',
+
+  // Svängar — nya
+  'inside-three-turn': 'iPMvnw1bpaA',
+  'outside-mohawk':    '6rNfhz_aAE8',
+  'inside-mohawk':     '6rNfhz_aAE8',
+  'outside-choctaw':   '6rNfhz_aAE8',
+  'inside-choctaw':    '6rNfhz_aAE8',
+
+  // Steg — nya
+  'chasse':          '6rNfhz_aAE8',
+  'crossovers':      '6rNfhz_aAE8',
+  'back-crossovers': '6rNfhz_aAE8',
+  'cross-rolls':     '6rNfhz_aAE8',
+  'progressive':     '6rNfhz_aAE8',
+  'toe-step':        '6rNfhz_aAE8',
+  'slalom':          '6rNfhz_aAE8',
+  'power-pulls':     '6rNfhz_aAE8',
+  'swing-roll':      '6rNfhz_aAE8',
+  'cluster':         'TvqVaTh9IpM',
+  'toe-twizzle':     'TvqVaTh9IpM',
+  'bracket-twizzle': 'TvqVaTh9IpM',
+  'counter-twizzle': 'TvqVaTh9IpM',
+  'rocker-twizzle':  'TvqVaTh9IpM',
+
+  // Glidövningar — nya
+  'y-spiral':          '-ZY9OEBGvMY',
+  'catch-foot-spiral': '-ZY9OEBGvMY',
+  'penche-spiral':     '-ZY9OEBGvMY',
+  'shoot-the-duck':    '-ZY9OEBGvMY',
+  'drag':              '-ZY9OEBGvMY',
+  'lunge':             '-ZY9OEBGvMY',
+  'bauer-spiral':      '7wN1fI8fTrY',
+  'arabesque':         '-ZY9OEBGvMY',
+  'fan-spiral':        '-ZY9OEBGvMY',
+  'side-spiral':       '-ZY9OEBGvMY',
+  'forward-spiral':    '-ZY9OEBGvMY',
+  'backward-spiral':   '-ZY9OEBGvMY',
 };

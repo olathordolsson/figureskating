@@ -4,50 +4,43 @@ import { X, LayoutList, Pin, Music2, ListPlus, SportShoe, Bookmark } from 'lucid
 const slides = [
   {
     Icon: LayoutList,
-    iconBg: '#DBEAFE',
-    iconColor: '#1D4ED8',
+    iconColor: '#F05A28',
     title: 'Välkommen till Figurskate',
     body: 'Din digitala träningsdagbok för konståkning. Utforska trick, följ dina framsteg och bygg upp dina tävlingsprogram — allt på ett ställe.',
   },
   {
     Icon: LayoutList,
-    iconBg: '#FEF9C3',
-    iconColor: '#B45309',
+    iconColor: '#C8F500',
     title: 'Utforska tricklistan',
     body: 'Bläddra bland trick sorterade efter kategori och svårighetsgrad. Tryck på ett trick för att läsa beskrivning, tips och se rekommenderade övningar du kan göra utanför isen.',
   },
   {
     Icon: Pin,
-    iconBg: '#FCE7F3',
-    iconColor: '#BE185D',
+    iconColor: '#F05A28',
     title: 'Tränar på & Lärt mig',
     body: 'Nålikonen markerar trick du jobbar med just nu. Bocken markerar trick du redan behärskar. Under Lärt mig ser du dina framsteg per nivå.',
   },
   {
     Icon: Music2,
-    iconBg: '#D1FAE5',
-    iconColor: '#065F46',
+    iconColor: '#C8F500',
     title: 'Bygg ditt program',
     body: 'Skapa ett tränings- eller tävlingsprogram genom att lägga till trick i ordning. Koppla musik från Spotify och se ditt totala basvärde (BV) direkt.',
   },
   {
     Icon: SportShoe,
-    iconBg: '#EDE9FE',
-    iconColor: '#7C3AED',
+    iconColor: '#C084FC',
     title: 'Off ice-träning',
     body: 'Under Off ice hittar du övningar i fyra kategorier: Teknik, Rörlighet, Kondition och Styrka. Varje övning har steg-för-steg-guide, tips och progressioner anpassade för konståkning.',
   },
   {
     Icon: Bookmark,
-    iconBg: '#FEF9C3',
-    iconColor: '#92400E',
+    iconColor: '#EAB308',
     title: 'Spara dina övningar',
     body: 'Tryck på bookmark-ikonen på en övning för att spara den. Dina sparade övningar samlas i det gula bookmark-filtret längst till vänster — enkelt att hitta när du tränar.',
   },
   {
     Icon: ListPlus,
-    iconBg: '#ECFDF5',
-    iconColor: '#065F46',
+    iconColor: '#C8F500',
     title: 'Snabbstart',
     body: 'Under Tränar på och Lärt mig finns en knapp som omvandlar alla dina markerade trick till ett nytt program — med ett enda tryck.',
   },
@@ -101,7 +94,7 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
         className="relative flex flex-col rounded-t-3xl overflow-hidden"
         style={{
           background: 'white',
-          maxHeight: '82vh',
+          maxHeight: '90vh',
           transform: visible ? 'translateY(0)' : 'translateY(100%)',
           transition: 'transform 0.4s cubic-bezier(0.32, 0.72, 0, 1)',
         }}
@@ -148,7 +141,7 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
               >
                 <div
                   className="w-20 h-20 rounded-3xl flex items-center justify-center mb-6"
-                  style={{ background: slide.iconBg }}
+                  style={{ background: '#262626' }}
                 >
                   <slide.Icon size={32} strokeWidth={1.6} style={{ color: slide.iconColor }} />
                 </div>
@@ -164,7 +157,7 @@ export function Tutorial({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center items-center gap-2 mb-4 shrink-0">
+        <div className="flex justify-center items-center gap-2 mb-7 shrink-0">
           {slides.map((_, i) => (
             <button
               key={i}

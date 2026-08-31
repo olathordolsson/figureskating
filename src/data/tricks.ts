@@ -1,6 +1,6 @@
 export type Difficulty = 'nybörjare' | 'grundläggande' | 'medel' | 'avancerad' | 'elit';
 
-export type CategoryId = 'hopp' | 'piruetter' | 'svängar' | 'glidövningar';
+export type CategoryId = 'hopp' | 'piruetter' | 'svängar' | 'steg' | 'glidövningar';
 
 export type Trick = {
   id: string;
@@ -14,6 +14,7 @@ export type Trick = {
   tips: string[];
   pitfalls: string[];
   relatedIds?: string[];
+  isNew?: boolean;
 };
 
 export type Category = {
@@ -25,7 +26,8 @@ export type Category = {
 export const CATEGORIES: Category[] = [
   { id: 'hopp', label: 'Hopp', icon: '↑' },
   { id: 'piruetter', label: 'Piruetter', icon: '○' },
-  { id: 'svängar', label: 'Svängar & Steg', icon: '↻' },
+  { id: 'svängar', label: 'Svängar', icon: '↻' },
+  { id: 'steg', label: 'Steg & Övergångar', icon: '→' },
   { id: 'glidövningar', label: 'Glidövningar', icon: '~' },
 ];
 
@@ -478,7 +480,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'split-jump',
-    name: 'Spridhoppet',
+    isNew: true,
+    name: 'Splithopp',
     englishName: 'Split Jump',
     category: 'hopp',
     subcategory: 'övningshopp',
@@ -502,8 +505,9 @@ export const TRICKS: Trick[] = [
   // ─── SNURRAR – STÅENDE ──────────────────────────────────────────────────────
   {
     id: 'uppright-basic',
+    isNew: true,
     name: 'Framåt ståpiruett',
-    englishName: 'Upright Spin',
+    englishName: 'Forward Upright Spin',
     category: 'piruetter',
     subcategory: 'stående-piruett',
     subcategoryLabel: 'Stående piruetter',
@@ -549,7 +553,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'back-spin',
-    name: 'Bakre stående piruett',
+    isNew: true,
+    name: 'Bakåt ståpiruett',
     englishName: 'Back Upright Spin',
     category: 'piruetter',
     subcategory: 'stående-piruett',
@@ -571,7 +576,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'layback-spin',
-    name: 'Liggpiruett',
+    isNew: true,
+    name: 'Himmelspiruett',
     englishName: 'Layback Spin',
     category: 'piruetter',
     subcategory: 'stående-piruett',
@@ -664,7 +670,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'sit-spin-back',
-    name: 'Bakre sittpiruett',
+    isNew: true,
+    name: 'Bakåt sittpiruett',
     englishName: 'Back Sit Spin',
     category: 'piruetter',
     subcategory: 'sittpiruett',
@@ -705,24 +712,25 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'cannonball-spin',
-    name: 'Broken leg',
-    englishName: 'Cannonball Spin',
+    isNew: true,
+    name: 'Broken Leg-piruett',
+    englishName: 'Broken Leg Spin',
     category: 'piruetter',
     subcategory: 'sittpiruett',
     subcategoryLabel: 'Sittpiruetter',
     difficulty: 'avancerad',
     description:
-      'Kanonbollspiruett är en djup sittpiruett där fria benet viks in (ankle-grip) och bröstet dras mot låret – hela kroppen komprimeras till en tight boll. Skapar en dramatisk acceleration och är en av de mest imponerande sittpiruettvarianterna.',
+      'Broken Leg-piruetten utförs från sittpiruetspositionen där fria benet böjs i knät och det nedre benet sticket ut åt sidan eller framåt i en vinkel – som ett brutet ben. Positionen ger en distinkt siluett och kräver god balans i den asymmetriska positionen.',
     tips: [
-      'Grip fria benets ankel med samma sidas hand eller båda händerna.',
-      'Dra in armar och ben i ett snabbt drag för att accelerera.',
-      'Ha god höjd och hastighet i sittpiruetten innan du komprimerar.',
+      'Böj fria benets knä tydligt och håll underbenet utsträckt åt sidan.',
+      'Håll piruettaxeln stabil trots den asymmetriska belastningen.',
+      'Bygg upp hastigheten i sittpiruetten innan du intar Broken Leg-positionen.',
     ],
     pitfalls: [
-      'Att komma ur positionen för snabbt – håll kanonbollspositionen ett antal varv.',
-      'Att tappa balansen när gripen stängs.',
+      'Att tappa piruettcentrumet när benet böjs – håll axeln fast.',
+      'Att underbenet hänger ned istället för att sticka ut tydligt.',
     ],
-    relatedIds: ['sit-spin'],
+    relatedIds: ['sit-spin', 'svamp-spin'],
   },
 
   // ─── SNURRAR – KAMELSNURR ───────────────────────────────────────────────────
@@ -752,7 +760,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'layover-camel',
-    name: 'Liggande liggpiruett',
+    isNew: true,
+    name: 'Liggande kamelpiruett',
     englishName: 'Layover Camel Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -773,7 +782,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'donut-spin',
-    name: 'Bilman piruett',
+    isNew: true,
+    name: 'Dip-piruett',
     englishName: 'Doughnut Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -794,7 +804,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'illusion-spin',
-    name: 'Dip piruett',
+    isNew: true,
+    name: 'Illusionspiruett',
     englishName: 'Illusion Spin',
     category: 'piruetter',
     subcategory: 'kamelpiruett',
@@ -954,7 +965,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'bracket',
-    name: 'Innerskärs trea',
+    isNew: true,
+    name: 'Bracket',
     englishName: 'Bracket Turn',
     category: 'svängar',
     subcategory: 'ettfotssvängar',
@@ -977,7 +989,8 @@ export const TRICKS: Trick[] = [
   },
   {
     id: 'rocker',
-    name: 'Rockettsväng',
+    isNew: true,
+    name: 'Rockersväng',
     englishName: 'Rocker Turn',
     category: 'svängar',
     subcategory: 'ettfotssvängar',
@@ -1263,5 +1276,1231 @@ export const TRICKS: Trick[] = [
       'Att glida ut på en flack kant och tappa kontakten.',
     ],
     relatedIds: ['hydroblading', 'ina-bauer'],
+  },
+
+  // ─── HOPP – ÖVNINGSHOPP (nya) ────────────────────────────────────────────────
+  {
+    id: 'bunny-hop',
+    isNew: true,
+    name: 'Harr hopp',
+    englishName: 'Bunny Hop',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'nybörjare',
+    description:
+      'Harrhoppet är ett av de absolut första hoppen en konståkare lär sig. Åkaren lyfter ena foten, hoppar framåt på tåspetsen av den andra foten och landar tillbaka på samma fot – utan rotation. Det tränar känslan för avhopp och landning i en enkel och säker form.',
+    tips: [
+      'Håll vikten framåt mot tåspetsen vid avhoppet.',
+      'Håll ut armarna för balans.',
+      'Landa mjukt på tåspetsen och rulla ner på hela klingan.',
+    ],
+    pitfalls: [
+      'Att landa på hälen istället för tåspetsen.',
+      'Att tveka i avhoppet och tappa fart.',
+    ],
+    relatedIds: ['waltz'],
+  },
+  {
+    id: 'mazurka',
+    isNew: true,
+    name: 'Mazurka',
+    englishName: 'Mazurka',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'nybörjare',
+    description:
+      'Mazurkan är ett tidigt hoppsteg med en halv rotation. Åkaren tar ett steg framåt, hoppar och lutar sig åt sidan med en halvvarvsrotation och landar bakåt på den andra foten. Det är ett bra övningshopp för att lära sig känslan av rotation.',
+    tips: [
+      'Ta ett tydligt steg innan hoppet och använd armarna för att starta rotationen.',
+      'Tänk på att landa bakåt på hela klingan med mjukt knä.',
+    ],
+    pitfalls: [
+      'Att inte fullfölja den halvrotation som krävs.',
+      'Att landa ostadigt på grund av att man hoppar för litet.',
+    ],
+    relatedIds: ['waltz', 'half-flip'],
+  },
+  {
+    id: 'half-flip',
+    isNew: true,
+    name: 'Halv Flip',
+    englishName: 'Half Flip',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'nybörjare',
+    description:
+      'Halv Flip är ett hoppsteg som tar av från en bakre inre kant med tåsparsassistans och utför en halvrotation för att landa framåt på tåspetsen av den motsatta foten. Det är ett viktigt förberedelsehopp inför enkel Flip.',
+    tips: [
+      'Plantera tåspetsen bestämt och låt den bakre inre kanten göra jobbet.',
+      'Tänk framåt vid landningen – du ska landa på tåspetsen med vikten framåt.',
+    ],
+    pitfalls: [
+      'Att rotera för mycket och hamna bakåt istället för framåt.',
+      'Att inte ta av från kanten utan hoppa rakt upp från tåspetsen.',
+    ],
+    relatedIds: ['flip-1', 'mazurka'],
+  },
+  {
+    id: 'ballet-jump',
+    isNew: true,
+    name: 'Baletthopp',
+    englishName: 'Ballet Jump',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'grundläggande',
+    description:
+      'Baletthoppet är ett konstnärligt hopp där åkaren hoppar framåt och lyfter fria benet högt bakåt i en arabesqueposition under flygtiden. Det liknar ett trehopp men betonar den artistiska linjens höjd och elegans snarare än rotation.',
+    tips: [
+      'Lyft fria benet aktivt och håll arabesquen tydlig i luften.',
+      'Sträck båda tårna och håll axlarna öppna.',
+    ],
+    pitfalls: [
+      'Att fria benet hänger ned istället för att lyftas i arabesqueline.',
+      'Att böja knäna på fria benet i luften.',
+    ],
+    relatedIds: ['waltz', 'stag-jump'],
+  },
+  {
+    id: 'stag-jump',
+    isNew: true,
+    name: 'Staghopp',
+    englishName: 'Stag Jump',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'grundläggande',
+    description:
+      'Staghoppet är ett koreografiskt hopp där åkaren böjer ett knä och lyfter det framåt-uppåt medan det andra benet sträcks bakåt – likt en hjorts hopp. Positionen i luften liknar en sax med ett böjt och ett rakt ben och används som ett artistiskt inslag i program.',
+    tips: [
+      'Lyft det främre knät skarpt uppåt och sträck det bakre benet rakt ut.',
+      'Håll axlarna öppna och armarna i en naturlig position.',
+    ],
+    pitfalls: [
+      'Att inte uppnå en tydlig asymmetrisk benposition i luften.',
+      'Att båda benen hänger på samma nivå.',
+    ],
+    relatedIds: ['ballet-jump', 'split-jump'],
+  },
+  {
+    id: 'butterfly-jump',
+    isNew: true,
+    name: 'Fjärilshopp',
+    englishName: 'Butterfly Jump',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'grundläggande',
+    description:
+      'Fjärilshoppet är ett tvåfots-avhoppshopp där åkaren propsar upp i en sidorotation med kroppen nästan horisontell och benen saxar förbi varandra i luften. Det skiljer sig från Fjärilsspinnet (piruett) – detta är ett koreografiskt hopp som ofta används som ingång till en flygande piruett.',
+    tips: [
+      'Tryck av från båda fötterna jämnt och håll kroppen parallell med isen under flygtiden.',
+      'Håll benen sträckta och saxrörelsen symmetrisk.',
+    ],
+    pitfalls: [
+      'Att landa på ett rakt ben utan knäabsorbering.',
+      'Att böja benen under flygtiden – de ska vara utsträckta.',
+    ],
+    relatedIds: ['butterfly', 'flying-camel'],
+  },
+  {
+    id: 'falling-leaf',
+    isNew: true,
+    name: 'Fallande lövet',
+    englishName: 'Falling Leaf',
+    category: 'hopp',
+    subcategory: 'övningshopp',
+    subcategoryLabel: 'Övningshopp',
+    difficulty: 'grundläggande',
+    description:
+      'Fallande lövet är ett enbens-hopp där åkaren lutar kroppen åt sidan under flygtiden – likt ett löv som faller. Det är ett koreografiskt element som används för att visa artistisk kontroll och är inte ett tävlingspoängssatt hopp.',
+    tips: [
+      'Låt överkroppen luta tydligt åt sidan under flygtiden.',
+      'Håll fria benet sträckt och landa med böjt knä.',
+    ],
+    pitfalls: [
+      'Att inte uppnå den tydliga sidlutningen som ger elementet dess karaktär.',
+      'Att landa ostadigt på grund av sidlutningen.',
+    ],
+    relatedIds: ['ballet-jump'],
+  },
+
+  // ─── HOPP – KVADRUPELHOPP ────────────────────────────────────────────────────
+  {
+    id: 'toe-loop-4',
+    isNew: true,
+    name: 'Kvadrupel Toe Loop',
+    englishName: 'Quad Toe Loop',
+    category: 'hopp',
+    subcategory: 'tåhopp',
+    subcategoryLabel: 'Tåhopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Toe Loop kräver fyra fulla rotationer och är det vanligaste kvadrupelhoppet i tävling. Mekaniken är identisk med trippelvarianten men kräver exceptionell rotationshastighet, maximal komprimering från första ögonblicket och perfekt tåsparrsplantering.',
+    tips: [
+      'Maximera ingångsfarten – varje extra km/h ger tid för det fjärde varvet.',
+      'Tåplantningen måste vara explosiv och ge ett tydligt uppåtlyft.',
+      'Komprimera kroppen fullständigt direkt vid avhoppet – det fjärde varvet finns inte om kompressionen dröjer.',
+    ],
+    pitfalls: [
+      'Underrotation på det fjärde varvet – det vanligaste felet.',
+      'Att kasta överkroppen vid avhoppet och tappa avhoppets riktning.',
+    ],
+    relatedIds: ['toe-loop-3'],
+  },
+  {
+    id: 'salchow-4',
+    isNew: true,
+    name: 'Kvadrupel Salchow',
+    englishName: 'Quad Salchow',
+    category: 'hopp',
+    subcategory: 'kanthopp',
+    subcategoryLabel: 'Kanthopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Salchow anses vara det mest tillgängliga av kvadrupelhoppet tack vare den kraftfulla bensvepningen som genererar naturlig rotation. Fyra rotationer kräver ändå exceptionell fart, komprimering och teknik.',
+    tips: [
+      'Bensvepningen måste vara mer explosiv än i trippelvarianten.',
+      'Full komprimering direkt vid avhoppet – varje hundradels sekund räknas.',
+      'Öva djupa bakre inrekantssvängar för att maximera avhoppskantens kvalitet.',
+    ],
+    pitfalls: [
+      'Att pre-rotera med överkroppen innan avhoppet.',
+      'Underrotation på det fjärde varvet.',
+    ],
+    relatedIds: ['salchow-3'],
+  },
+  {
+    id: 'loop-4',
+    isNew: true,
+    name: 'Kvadrupel Ögel',
+    englishName: 'Quad Loop',
+    category: 'hopp',
+    subcategory: 'kanthopp',
+    subcategoryLabel: 'Kanthopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Ögel är ett av de tekniskt svåraste kvadrupelhoppet – utan tåsparrsassistans måste alla fyra rotationer skapas enbart från kantens kraft. Extremt sällsynt i tävling och kräver exceptionell kantbindning och explosivitet.',
+    tips: [
+      'Maximal ingångsfart och det djupaste möjliga kantgrepp.',
+      'Explosiv kantpressning vid avhoppet utan minsta tåsparrsassistans.',
+      'All rotationskraft måste vara lagrad i kanten innan avhoppet.',
+    ],
+    pitfalls: [
+      'Att ta av med tåspetsen under trycket – tekniskt fel som domare markerar.',
+      'Kant som planar ut vid hög fart.',
+    ],
+    relatedIds: ['loop-3'],
+  },
+  {
+    id: 'flip-4',
+    isNew: true,
+    name: 'Kvadrupel Flip',
+    englishName: 'Quad Flip',
+    category: 'hopp',
+    subcategory: 'tåhopp',
+    subcategoryLabel: 'Tåhopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Flip kräver fyra rotationer från bakre inre kant med tåsparrsassistans. Kantkvaliteten är kritisk – ett kantfel (lip/flutz) ger teknisk nedräkning. Mycket få åkare har landat detta hopp rent i tävling.',
+    tips: [
+      'Håll den inre kanten oavsett fart – ett kantfel är värre än ett fall.',
+      'Explosiv tåplantning som genererar maximalt uppåtlyft.',
+      'Omedelbar och total komprimering vid avhoppet.',
+    ],
+    pitfalls: [
+      'Kantfel (lip/flutz) – vanligaste felet bland elitåkare.',
+      'Underrotation på det fjärde varvet.',
+    ],
+    relatedIds: ['flip-3'],
+  },
+  {
+    id: 'lutz-4',
+    isNew: true,
+    name: 'Kvadrupel Lutz',
+    englishName: 'Quad Lutz',
+    category: 'hopp',
+    subcategory: 'tåhopp',
+    subcategoryLabel: 'Tåhopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Lutz är ett av konståkningens mest poänggivande hopp och ett signaturtrick för världens bästa åkare. Fyra rotationer mot kurvens naturliga riktning från bakre yttre kant kräver extrem precision, maximal fart och ett kompromisslöst kantgrepp.',
+    tips: [
+      'Den längsta möjliga ingångskurvan med obruten yttre kant.',
+      'Motstå instinkten att rulla till inre kant – flutz är det vanligaste tekniska felet på elitnivå.',
+      'Explosiv och precis tåplantning utan att kompromissa med kantens riktning.',
+    ],
+    pitfalls: [
+      'Flutz (kantbyte till inre kant) – det vanligaste felet bland elitåkare världen över.',
+      'Underrotation kombinerat med flutz ger maximal poängförlust.',
+    ],
+    relatedIds: ['lutz-3'],
+  },
+  {
+    id: 'axel-4',
+    isNew: true,
+    name: 'Kvadrupel Axel',
+    englishName: 'Quad Axel',
+    category: 'hopp',
+    subcategory: 'kanthopp',
+    subcategoryLabel: 'Kanthopp',
+    difficulty: 'elit',
+    description:
+      'Kvadrupel Axel är konståkningens ultimata hopp – 4,5 rotationer från framåt yttre kant. Det kräver en extrem kombination av fart, höjd, explosivitet och komprimering som befinner sig i gränsen för vad som är mänskligt möjligt på is. Per 2024 har endast Illia Malinin landat det i tävling.',
+    tips: [
+      'Allt i tekniken måste vara maximerat: fart, kant, timing, komprimering – utan undantag.',
+      'Träna trippel Axel till absolut perfektion innan kvadrupeln ens övervägs.',
+      'Arbeta med coach och off-ice trampolin för att bygga upp rotationshastighetens känsla.',
+    ],
+    pitfalls: [
+      'Att försöka hoppet utan solid trippel Axel – risk för allvarlig skada.',
+      'Underrotation av något slag är katastrofalt på denna nivå.',
+    ],
+    relatedIds: ['axel-3'],
+  },
+
+  // ─── PIRUETTER – STÅENDE (nya) ───────────────────────────────────────────────
+  {
+    id: 'y-spin',
+    isNew: true,
+    name: 'Y-piruett',
+    englishName: 'Y-Spin',
+    category: 'piruetter',
+    subcategory: 'stående-piruett',
+    subcategoryLabel: 'Stående piruetter',
+    difficulty: 'avancerad',
+    description:
+      'Y-piruetten är en ståpiruett-variant där åkaren lyfter fria benet åt sidan och upp ovanför huvudhöjd, och griper om klingan eller stöveln för att hålla benets vertikala Y-position. Kräver extrem höftflexibilitet och en stabil piruettaxel trots den assymetriska belastningen.',
+    tips: [
+      'Bygg upp piruettens hastighet innan du lyfter benet – lägg inte Y-positionen i ingången.',
+      'Grip om klingan, inte bara stöveln, för att nå maximal höjd.',
+      'Håll piruettbenets knä rakt och vikten centrerad på klingesmitten.',
+    ],
+    pitfalls: [
+      'Att tappa piruettaxeln när benet lyfts – den assymetriska tyngden drar kroppen åt sidan.',
+      'Otillräcklig höftflexibilitet som ger en låg Y-position.',
+      'Att gripa för nära ankeln och skapa ett böjt knä istället för en rak linje.',
+    ],
+    relatedIds: ['biellmann-spin', 'layback-spin'],
+  },
+  {
+    id: 'a-frame-spin',
+    isNew: true,
+    name: 'A-frame-piruett',
+    englishName: 'A-Frame Spin',
+    category: 'piruetter',
+    subcategory: 'stående-piruett',
+    subcategoryLabel: 'Stående piruetter',
+    difficulty: 'medel',
+    description:
+      'A-frame-piruetten utförs med båda armarna utsträckta horisontellt åt varsitt håll – som bokstaven A eller ett kors. De utsträckta armarna saktar ner rotationen men skapar en distinkt, bred siluett. Övergången till en snabbare position genom att dra in armarna är ett effektfullt stilistiskt grepp.',
+    tips: [
+      'Håll båda armarna exakt i samma höjd och nivå.',
+      'Behåll en stark upprätt hållning trots armbelastningen.',
+      'Planera position-övergången från A-frame till snabbare position – den ger en dramatisk accelerationseffekt.',
+    ],
+    pitfalls: [
+      'Att ena armen sjunker lägre än den andra.',
+      'Att luta överkroppen framåt eller bakåt när armarna är utsträckta.',
+    ],
+    relatedIds: ['uppright-basic', 'scratch-spin'],
+  },
+  {
+    id: 'haircutter-spin',
+    isNew: true,
+    name: 'Haircutter-piruett',
+    englishName: 'Haircutter Spin',
+    category: 'piruetter',
+    subcategory: 'stående-piruett',
+    subcategoryLabel: 'Stående piruetter',
+    difficulty: 'medel',
+    description:
+      'Haircutter-piruetten är en stilistisk ståpiruett-variant där åkaren lyfter en arm uppåt och böjer den i armbågen så att handen sänks ned över huvudet – som om man klipper håret. Positionen används som ett koreografiskt inslag och kräver precision i armens placering.',
+    tips: [
+      'Håll armbågen högt och handen i en naturlig böjd position över huvudet.',
+      'Behåll balansen trots att armens placering ändrar kroppens tyngdpunkt lätt.',
+    ],
+    pitfalls: [
+      'Att armen sjunker ned för tidigt ur positionen.',
+      'Att den böjda armbågens förskjutning av tyngdpunkten stör piruettaxeln.',
+    ],
+    relatedIds: ['uppright-basic', 'scratch-spin'],
+  },
+
+  // ─── PIRUETTER – SITTPIRUETTER (nya) ─────────────────────────────────────────
+  {
+    id: 'svamp-spin',
+    isNew: true,
+    name: 'Svamppiruett',
+    englishName: 'Cannonball Spin',
+    category: 'piruetter',
+    subcategory: 'sittpiruett',
+    subcategoryLabel: 'Sittpiruetter',
+    difficulty: 'avancerad',
+    description:
+      'Svamppiruetten startar från sittpiruett och åkaren drar fria benet hårt mot bröstet och viker överkroppen framåt så att hela kroppen komprimeras till en tajt boll. Denna extrema komprimering skapar en dramatisk ökning av rotationshastigheten.',
+    tips: [
+      'Starta från en solid sittpiruett med god hastighet – komprimeringseffekten förutsätter fart.',
+      'Dra knät skarp in mot bröstet i ett snabbt drag.',
+      'Håll överkroppen böjd över knät under hela bollpositionen.',
+    ],
+    pitfalls: [
+      'Att inte dra knät tillräckligt nära och tappa kompressionseffekten.',
+      'Att tappa balansen vid övergången till bollpositionen.',
+    ],
+    relatedIds: ['sit-spin', 'cannonball-spin'],
+  },
+  {
+    id: 'shoot-the-duck-spin',
+    isNew: true,
+    name: 'Räkan',
+    englishName: 'Shoot the Duck Spin',
+    category: 'piruetter',
+    subcategory: 'sittpiruett',
+    subcategoryLabel: 'Sittpiruetter',
+    difficulty: 'medel',
+    description:
+      'Räkan är en sittpiruett-variant där fria benet sträcks rakt framåt nära isen medan åkaren sitter djupt på det bärande benets böjda knä. Positionen kräver starka quadricepsmuskler, god ankelstabilitet och balans i ett ovanligt lågt läge.',
+    tips: [
+      'Det sträckta benet ska hållas lågt och rakt, nära isens yta.',
+      'Håll det bärande knät djupt böjt under hela piruetten.',
+      'Sträck tårna på det fria benet för en ren linje.',
+    ],
+    pitfalls: [
+      'Att fria benet stiger uppåt och förvandlas till en vanlig sittpiruett.',
+      'Att det bärande knät reser sig för tidigt.',
+      'Att tappa balansen i den djupa squatpositionen.',
+    ],
+    relatedIds: ['sit-spin', 'shoot-the-duck'],
+  },
+
+  // ─── PIRUETTER – KAMELPIRUETTER (nya) ────────────────────────────────────────
+  {
+    id: 'back-camel-spin',
+    isNew: true,
+    name: 'Bakåt kamelpiruett',
+    englishName: 'Back Camel Spin',
+    category: 'piruetter',
+    subcategory: 'kamelpiruett',
+    subcategoryLabel: 'Kamelpiruetter',
+    difficulty: 'avancerad',
+    description:
+      'Bakre kamelpiruett utförs på det icke-dominanta benet (höger fot för moturs-roterande åkare) med fria benet sträckt bakåt i arabesque. Det är betydligt svårare än den vanliga kamelpiruetten då det svagare benet kräver mer aktiv balansering och kantbindning.',
+    tips: [
+      'Öva bakre ståpiruett (back spin) grundligt innan du lägger till kamelpositionen.',
+      'Ta av från en stark bakre yttre kant – ingångskurvan är avgörande.',
+      'Lyft fria benet aktivt till höfthöjd direkt vid ingången.',
+    ],
+    pitfalls: [
+      'Att fria benet sjunker under höfthöjd och ger en låg kamelposition.',
+      'Att piruetta på tåspetsen istället för klingesmitten.',
+      'Att tappa balansen direkt i ingången på det icke-dominanta benet.',
+    ],
+    relatedIds: ['camel-spin', 'back-spin'],
+  },
+  {
+    id: 'catch-foot-camel',
+    isNew: true,
+    name: 'Catch Foot-kamelpiruett',
+    englishName: 'Catch Foot Camel Spin',
+    category: 'piruetter',
+    subcategory: 'kamelpiruett',
+    subcategoryLabel: 'Kamelpiruetter',
+    difficulty: 'avancerad',
+    description:
+      'Catch Foot-kamelpiruetten börjar i vanlig kamelpiruett och åkaren sträcker sig bakåt för att gripa om fria fotens klinga eller stövel med en eller båda händerna. Greppet håller fria benet i en förlängd arabesque medan kroppen behåller kamelns T-position.',
+    tips: [
+      'Bygg upp god hastighet i kamelpiruetten innan du sträcker dig efter foten.',
+      'Grip om klingan snarare än stöveln för att nå längre och hålla benet högt.',
+      'Håll höfterna jämna och axlarna i linje under greppet.',
+    ],
+    pitfalls: [
+      'Att piruetten saktar ned drastiskt när man sträcker sig efter foten.',
+      'Att tappa kamelns T-position när foten grips.',
+      'Att böja knäna för att nå foten istället för att sträcka ryggen.',
+    ],
+    relatedIds: ['camel-spin', 'layover-camel'],
+  },
+  {
+    id: 'pearl-spin',
+    isNew: true,
+    name: 'Pearl-piruett',
+    englishName: 'Pearl Spin',
+    category: 'piruetter',
+    subcategory: 'kamelpiruett',
+    subcategoryLabel: 'Kamelpiruetter',
+    difficulty: 'avancerad',
+    description:
+      'Pearl-piruetten kombinerar element från liggande bakåtpiruett och kamelpiruett. Åkaren lyfter fria benet högt framåt medan överkroppen böjs bakåt och åt sidan, vilket skapar en elegant, öppen siluett. Kräver både rygg- och höftflexibilitet samt stabil piruettaxel.',
+    tips: [
+      'Bygg upp piruettens hastighet i upprätt position innan du öppnar kroppen.',
+      'Lyft fria benet aktivt framåt och böj ryggen bakåt i ett koordinerat rörelsepar.',
+      'Håll höfterna framåtvända trots kroppens öppning.',
+    ],
+    pitfalls: [
+      'Att fria benet sjunker ned under positionen.',
+      'Otillräcklig ryggflexibilitet som ger en svag bakåtbåge.',
+      'Att tappa piruettaxeln när kroppen öppnas.',
+    ],
+    relatedIds: ['layback-spin', 'camel-spin'],
+  },
+
+  // ─── PIRUETTER – FLYGANDE (nya) ──────────────────────────────────────────────
+  {
+    id: 'flying-upright-spin',
+    isNew: true,
+    name: 'Flygande ståpiruett',
+    englishName: 'Flying Upright Spin',
+    category: 'piruetter',
+    subcategory: 'flygande-piruett',
+    subcategoryLabel: 'Flygande piruetter',
+    difficulty: 'avancerad',
+    description:
+      'Flygande ståpiruett inleds med ett litet hopp från framåt ingång där benen samlas i luften, och landningen sker direkt in i en upprätt piruett. Det är det renaste och mest eleganta av de flygande piruetterna och kräver en precis och kontrollerad landning.',
+    tips: [
+      'Hoppet ska vara uppåt och lätt framåt – inte lodrätt.',
+      'Dra in armarna omedelbart vid landningen för att starta piruetten.',
+      'Landningsbenet absorberar med ett lätt knäböj.',
+    ],
+    pitfalls: [
+      'Att landa för hårt och döda piruettmomentummet.',
+      'Att inte initiera piruetten direkt vid landningen utan vänta.',
+    ],
+    relatedIds: ['uppright-basic', 'flying-camel'],
+  },
+
+  // ─── PIRUETTER – KOMBINATIONER (nya) ─────────────────────────────────────────
+  {
+    id: 'sit-upright-combo',
+    isNew: true,
+    name: 'Kombinerad sitt- och ståpiruett',
+    englishName: 'Sit-Upright Combination Spin',
+    category: 'piruetter',
+    subcategory: 'kombinationspiruett',
+    subcategoryLabel: 'Kombinationspiruetter',
+    difficulty: 'avancerad',
+    description:
+      'Kombinationspiruetten inkluderar sittpiruett- och ståpiruettpositioner i en enda kontinuerlig rotation. Övergången från djup sittposition till upprätt position accelererar piruetten och ger ett dynamiskt moment i programmet.',
+    tips: [
+      'Tajma övergången från sitt till upprätt för att skapa en tydlig accelerationseffekt.',
+      'Håll piruettaxeln fast genom hela positionsbytet.',
+      'Djupare sittposition i ingången ger mer dramatisk acceleration vid resningen.',
+    ],
+    pitfalls: [
+      'Att tappa hastigheten i övergångsmomentet.',
+      'Att stepa bort från piruettcentrumet när man reser sig från sittposition.',
+    ],
+    relatedIds: ['sit-spin', 'uppright-basic', 'combination-spin'],
+  },
+  {
+    id: 'camel-sit-combo',
+    isNew: true,
+    name: 'Kombinerad kamel- och sittpiruett',
+    englishName: 'Camel-Sit Combination Spin',
+    category: 'piruetter',
+    subcategory: 'kombinationspiruett',
+    subcategoryLabel: 'Kombinationspiruetter',
+    difficulty: 'avancerad',
+    description:
+      'En av de klassiska kombinationspiruetterna: åkaren börjar i kamelposition och övergår till sittpiruett utan att bryta rotationen. Övergången sker genom att böja piruettbenets knä och föra fria benet framåt. Kräver kontroll och flyt i positionsbyte.',
+    tips: [
+      'Övergången ska vara mjuk och flödande – inte ett ryckt positionsbyte.',
+      'Ha tillräcklig hastighet i kamelpiruetten för att bära igenom sittpiruetten.',
+      'Fria benet ska aktivt föras framåt till sittposition, inte falla ned.',
+    ],
+    pitfalls: [
+      'Att tappa hastigheten och piruettaxeln i övergångsmomentet.',
+      'Att sittpiruettens djup är otillräckligt efter övergången.',
+    ],
+    relatedIds: ['camel-spin', 'sit-spin', 'combination-spin'],
+  },
+
+  // ─── SVÄNGAR – ETTFOTSSVÄNGAR (nya) ──────────────────────────────────────────
+  {
+    id: 'inside-three-turn',
+    isNew: true,
+    name: 'Innerskärstrea',
+    englishName: 'Inside Three Turn',
+    category: 'svängar',
+    subcategory: 'ettfotssvängar',
+    subcategoryLabel: 'Ettfotssvängar',
+    difficulty: 'nybörjare',
+    description:
+      'Innerskärstrea är en ettfotsväng som byter riktning och kant på inre kanten. Åkaren glider på en inre kant (framåt eller bakåt), roterar och lämnar svängen på den inre kanten i motsatt riktning. Isspåret liknar siffran 3. Det är den inre varianten av tresvängen och lika grundläggande.',
+    tips: [
+      'Håll den inre kanten tydlig under hela ingången innan svängen.',
+      'Håll fria foten nära piruettfoten under svängen.',
+      'Låt kroppens naturliga rotation guida svängen – tvinga den inte.',
+    ],
+    pitfalls: [
+      'Att rulla ut till yttre kanten och göra en ytterskärstrea istället.',
+      'Att sätta ned fria foten direkt efter svängen.',
+      'Att kasta axlarna för att tvinga fram svängen.',
+    ],
+    relatedIds: ['three-turn', 'mohawk'],
+  },
+
+  // ─── SVÄNGAR – TVÅFOTSSVÄNGAR (nya) ──────────────────────────────────────────
+  {
+    id: 'outside-mohawk',
+    isNew: true,
+    name: 'Yttermohawk',
+    englishName: 'Outside Mohawk',
+    category: 'svängar',
+    subcategory: 'tvåfotssvängar',
+    subcategoryLabel: 'Tvåfotssvängar',
+    difficulty: 'nybörjare',
+    description:
+      'Yttermohawken är en tvåfotsöverföring som byter riktning på yttre kanter – framåt yttre till bakåt yttre. Den öppna höftpositionen skapar ett bredare, mer öppet steg än innermohawken. Används ofta som ingångssteg före Axelhopp och i isdansstegsekvenser.',
+    tips: [
+      'Öppna höfterna tydligt när den nya foten placeras.',
+      'Viktsöverföringen ska vara mjuk och kontrollerad utan paus.',
+      'Håll fria benet kontrollerat efter steget.',
+    ],
+    pitfalls: [
+      'Att placera foten i fel vinkel och snubbla.',
+      'Att öppna axlarna för kraftigt och tappa balansen.',
+    ],
+    relatedIds: ['mohawk', 'inside-mohawk', 'three-turn'],
+  },
+  {
+    id: 'inside-mohawk',
+    isNew: true,
+    name: 'Innermohawk',
+    englishName: 'Inside Mohawk',
+    category: 'svängar',
+    subcategory: 'tvåfotssvängar',
+    subcategoryLabel: 'Tvåfotssvängar',
+    difficulty: 'grundläggande',
+    description:
+      'Innermohawken är en tvåfotsöverföring på inre kanter – framåt inre till bakåt inre. Den stängda höftpositionen gör den något mer tekniskt krävande än yttermohawken. Det är ett fundamentalt steg som används i ingångar till hopp och piruetter.',
+    tips: [
+      'Håll höfterna relativt stängda – öppna dem inte som i yttermohawken.',
+      'Placera den nya foten i häl-mot-tå eller parallell linjering.',
+      'Överflytta vikten fullständigt innan du skjuter ifrån.',
+    ],
+    pitfalls: [
+      'Att höfterna öppnas som i en yttermohawk och ändrar kanttypen.',
+      'Att placera foten med ett glapp istället för nära.',
+    ],
+    relatedIds: ['mohawk', 'outside-mohawk', 'choctaw'],
+  },
+  {
+    id: 'outside-choctaw',
+    isNew: true,
+    name: 'Ytterchoctaw',
+    englishName: 'Outside Choctaw',
+    category: 'svängar',
+    subcategory: 'tvåfotssvängar',
+    subcategoryLabel: 'Tvåfotssvängar',
+    difficulty: 'medel',
+    description:
+      'Ytterchoctawet är ett tvåfotssteg som byter både riktning och kanttyp – från framåt yttre till bakåt inre kant (eller vice versa). Det klassificeras som ett "svårt steg" i ISUs stegserieprotokoll. Det aktiva kantbytet under steget kräver muskulär kontroll och kant-känslighet.',
+    tips: [
+      'Känn det aktiva kantbytet när vikten övergår – du byter bokstavligen från yttre till inre kant.',
+      'Håll fria foten nära isen under steget.',
+      'Öka farten gradvis när grunden är säkert inlärd.',
+    ],
+    pitfalls: [
+      'Att göra en yttermohawk istället genom att inte byta kant.',
+      'Att placera foten i fel vinkel och tappa flödet.',
+    ],
+    relatedIds: ['choctaw', 'inside-choctaw', 'mohawk'],
+  },
+  {
+    id: 'inside-choctaw',
+    isNew: true,
+    name: 'Innerchoctaw',
+    englishName: 'Inside Choctaw',
+    category: 'svängar',
+    subcategory: 'tvåfotssvängar',
+    subcategoryLabel: 'Tvåfotssvängar',
+    difficulty: 'medel',
+    description:
+      'Innerchoctawet byter riktning och kanttyp – från framåt inre till bakåt yttre kant. Likt alla choctaw-steg räknas det som ett svårt steg i ISU och används flitigt i isdansprogram och singlestegsekvenser. Kantbytet kräver aktiv ankelanpassning.',
+    tips: [
+      'Rulla aktivt från inre till yttre kant när foten sätts ned.',
+      'Håll båda fötterna kort på isen under steget – snabb viktsöverföring.',
+      'Fria benet spårar nära isen efter steget.',
+    ],
+    pitfalls: [
+      'Att hålla samma kanttyp och göra en innermohawk istället.',
+      'Dålig fotplaceringsvinkel som ger instabilitet.',
+    ],
+    relatedIds: ['choctaw', 'outside-choctaw', 'mohawk'],
+  },
+
+  // ─── STEG & ÖVERGÅNGAR ───────────────────────────────────────────────────────
+  {
+    id: 'chasse',
+    isNew: true,
+    name: 'Chassé',
+    englishName: 'Chassé',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'nybörjare',
+    description:
+      'Chassén är ett trestegsglidande rörelsemönster där den ena foten glider upp mot den andra och sedan tar den andra foten ett steg vidare – "chase steps". Det är ett av de mest grundläggande länkstegen i konståkning och isdans, och används konstant som övergångssteg mellan element.',
+    tips: [
+      'Håll stegen lätta och jämna – bevara den glidande kvaliteten.',
+      'Låt glidfoten faktiskt nå den andra foten innan du stegar vidare.',
+      'Behåll god hållning genom chassé-sekvenser.',
+    ],
+    pitfalls: [
+      'Tungt fotsättande som bryter glidkvaliteten.',
+      'Ojämn rytm mellan de tre slagen.',
+    ],
+    relatedIds: ['progressive', 'crossovers'],
+  },
+  {
+    id: 'crossovers',
+    isNew: true,
+    name: 'Kryssteg',
+    englishName: 'Crossovers',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'nybörjare',
+    description:
+      'Krysstegen är det fundamentala skridskortsteget för att ta kurvor med fart. Den yttre foten korsar framför den inre foten, som sedan tar ett steg åt sidan. Detta skapar en kontinuerlig looprörelsé runt en cirkel och är bland de första färdigheterna som lärs ut till nybörjare.',
+    tips: [
+      'Tryck starkt från den inre kanten av den korsande foten.',
+      'Håll det korsade benet lågt nära isen.',
+      'Bibehåll en konsekvent lutning in mot cirkeln.',
+    ],
+    pitfalls: [
+      'Att inte korsa tillräckligt framför det andra benet.',
+      'Att skjuta från tåspetsen istället för klingkanten.',
+      'Att luta för hårt in i cirkeln och tappa balansen.',
+    ],
+    relatedIds: ['back-crossovers', 'chasse'],
+  },
+  {
+    id: 'back-crossovers',
+    isNew: true,
+    name: 'Bakåt kryssteg',
+    englishName: 'Back Crossovers',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'grundläggande',
+    description:
+      'Bakåt krysstegen är den omvända varianten av krysstegen, utförd medan man åker bakåt runt en cirkel. Den inre foten korsar bakom den yttre foten och skapar samma looprörelsé men i omvänd riktning. De är avgörande för fartgenerering inför bakre hopp och piruetter.',
+    tips: [
+      'Den korsande foten går bakom (inte framför) den yttre foten.',
+      'Tryck kraftfullt från den inre kanten och titta över axeln i rörelseriktningen.',
+      'Håll cirkelns kurva konsekvent.',
+    ],
+    pitfalls: [
+      'Att korsa framför istället för bakom (blir ett framåt kryssteg).',
+      'Att skrapa med tåspetsen istället för att skjuta med klingen.',
+    ],
+    relatedIds: ['crossovers', 'three-turn'],
+  },
+  {
+    id: 'cross-rolls',
+    isNew: true,
+    name: 'Crossrolls',
+    englishName: 'Cross Rolls',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'grundläggande',
+    description:
+      'Crossrolls är en sekvens av svepande steg där varje fot korsar från ena sidan till den andra på alternerande yttre kanter. Till skillnad från krysstegen som kurvar i en cirkel, följer crossrolls en rak eller svagt kurvad bana med en rytmisk svajande rörelse. Vanliga i koreografiska sekvenser.',
+    tips: [
+      'Varje steg rullar från en yttre kant till den andra med en svängande viktöverföring.',
+      'Håll kroppen svajande rytmiskt med varje steg.',
+      'Håll ett långt, flödande steg.',
+    ],
+    pitfalls: [
+      'Att stega platt istället för upp på yttre kanten.',
+      'Att tappa den kontinuerliga rullande kvaliteten.',
+    ],
+    relatedIds: ['crossovers', 'swing-roll'],
+  },
+  {
+    id: 'progressive',
+    isNew: true,
+    name: 'Progressive',
+    englishName: 'Progressive',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'nybörjare',
+    description:
+      'Progressive (även kallad "run") är en trestegsstegsekvens: steg framåt, för den andra foten bredvid, skjut sedan framåt igen. Det genererar fart rakt framåt och är ett av de vanligaste länkstegen i program. Kallas ibland "tresteget".',
+    tips: [
+      'Det andra steget vidrör knappt isen innan skjutet – håll momentumet.',
+      'Behåll framåtrörelses momentum mellan varje steg.',
+      'Håll överkroppen centrerad över glidfoten.',
+    ],
+    pitfalls: [
+      'Att det andra steget är för tungt och dödar farten.',
+      'Att överdriva skjutets riktning och tappa linjen.',
+    ],
+    relatedIds: ['chasse', 'swing-roll'],
+  },
+  {
+    id: 'toe-step',
+    isNew: true,
+    name: 'Tåsteg',
+    englishName: 'Toe Steps',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'grundläggande',
+    description:
+      'Tåsteg innebär att man placerar tåspetsen av ena foten mot isen och skjuter eller pivoterar från den. De skapar en staccato, rytmisk karaktär och används i stegsekvenser för koreografisk betoning. Tåspetsen används som en momentan kontaktpunkt, inte för hopp.',
+    tips: [
+      'Tåspetsens kontakt med isen ska vara kort och lätt – sjunk inte in i den.',
+      'Använd tåsteget för att skapa en tydlig rytmisk betoning i stegsekvensen.',
+    ],
+    pitfalls: [
+      'Att sjunka tungt ned på tåspetsen och bryta flödet.',
+      'Att tåsteg bryter sekvensens flöde istället för att betona den.',
+    ],
+    relatedIds: ['progressive', 'chasse'],
+  },
+  {
+    id: 'slalom',
+    isNew: true,
+    name: 'Slalom',
+    englishName: 'Slalom',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'grundläggande',
+    description:
+      'Slalom på skridskor innebär att åka i ett slingrande, ormliknande mönster på två fötter genom att förflytta vikten från kant till kant medan kroppen och fötterna är framåtvända. Det tränar kantkänslighet och kroppskontroll och används både som träningsövning och i koreografi.',
+    tips: [
+      'Förflytta vikten mjukt från sida till sida.',
+      'Håll överkroppen relativt still medan underkroppen skapar slalommönstret.',
+      'Hitta en jämn rytm i kantväxlingarna.',
+    ],
+    pitfalls: [
+      'Att använda armarna och överkroppen för mycket för att styra.',
+      'Stela anklar som förhindrar sanna kantbyten.',
+    ],
+    relatedIds: ['crossovers', 'power-pulls'],
+  },
+  {
+    id: 'power-pulls',
+    isNew: true,
+    name: 'Power Pulls',
+    englishName: 'Power Pulls',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'medel',
+    description:
+      'Power Pulls utförs på ett ben – åkaren glider framåt eller bakåt medan man upprepade gånger drar klingan från yttre till inre kant (eller vice versa) med hjälp av höft- och knärörelser. De genererar fart och tränar djup kantkontroll. Det karakteristiska skärljudet från klingan ger dem deras namn.',
+    tips: [
+      'Driv varje drag från höft och knä – inte bara ankeln.',
+      'Maximera djupet på varje kant innan du drar tvärs över.',
+      'Håll en jämn rytm i dragsekvensen.',
+    ],
+    pitfalls: [
+      'Att dra enbart med ankeln – höft och knä måste vara drivande.',
+      'Grunda kanter som ger liten kraftverkan.',
+    ],
+    relatedIds: ['crossovers', 'slalom'],
+  },
+  {
+    id: 'swing-roll',
+    isNew: true,
+    name: 'Swing Roll',
+    englishName: 'Swing Roll',
+    category: 'steg',
+    subcategory: 'grundsteg',
+    subcategoryLabel: 'Grundsteg',
+    difficulty: 'grundläggande',
+    description:
+      'Swing Roll är ett glidsteg på ett ben där fria benet svingar förbi glidfoten i en graciös, pendelliknande båge. Det betonar flöde, extension och musikalisk uttrycksfullhet. Swing Rolls alternerar fötter i en sekvens av svängande, räckande steg.',
+    tips: [
+      'Fria benets sving ska vara fullt och utsträckt.',
+      'Sträck tårna under hela svingen.',
+      'Håll gliden tillräckligt lång för att känna flödet.',
+    ],
+    pitfalls: [
+      'Korta, hackiga sving utan utsträckning.',
+      'Att stega ned för tidigt innan svingen nått sin topp.',
+    ],
+    relatedIds: ['progressive', 'cross-rolls'],
+  },
+
+  // ─── STEG – AVANCERADE ───────────────────────────────────────────────────────
+  {
+    id: 'cluster',
+    isNew: true,
+    name: 'Cluster',
+    englishName: 'Cluster',
+    category: 'steg',
+    subcategory: 'avancerade steg',
+    subcategoryLabel: 'Avancerade steg',
+    difficulty: 'avancerad',
+    description:
+      'Ett cluster är en snabb sekvens av svängar, steg och kantbyten packade tätt ihop i snabb följd. Clusters förekommer i stegsekvenser som ett utbrott av teknisk komplexitet – ofta en kombination av flera bracket-, counter-, rocker- eller loop-svängar i ett fåtal takter. Kräver snabba reflexer och precis kantkontroll.',
+    tips: [
+      'Öva varje komponentväng separat, sedan länka dem långsamt innan du ökar farten.',
+      'Slappna av i överkroppen för att tillåta de snabba rörelserna i underkroppen.',
+    ],
+    pitfalls: [
+      'Att rusa och tappa kantkvaliteten i de enskilda svängarna.',
+      'En spänd överkropp som stör det snabba footwork.',
+    ],
+    relatedIds: ['bracket', 'counter', 'rocker', 'twizzle'],
+  },
+  {
+    id: 'toe-twizzle',
+    isNew: true,
+    name: 'Toe Twizzle',
+    englishName: 'Toe Twizzle',
+    category: 'steg',
+    subcategory: 'avancerade steg',
+    subcategoryLabel: 'Avancerade steg',
+    difficulty: 'avancerad',
+    description:
+      'Toe Twizzle är en resande rotationssväng där åkaren planterar tåspetsen mot isen och pivoterar en snabb rotation runt den som pivotpunkt, medan resans rörelse fortsätter. Till skillnad från en vanlig twizzle på klingesmitten ger tåspetsen ett skarpt, staccatoartat inslag i rotationen.',
+    tips: [
+      'Tåspetsen planteras kortvarigt och fungerar som pivotpunkt – inte en stopp.',
+      'Kroppen roterar runt den snabbt och lämnar omedelbart klingan.',
+    ],
+    pitfalls: [
+      'Att plantera tåspetsen för tungt och stoppa resans rörelse.',
+      'Att inte fullfölja det fulla varvet innan man lämnar tåspetsen.',
+    ],
+    relatedIds: ['twizzle', 'cluster'],
+  },
+  {
+    id: 'bracket-twizzle',
+    isNew: true,
+    name: 'Bracket Twizzle',
+    englishName: 'Bracket Twizzle',
+    category: 'steg',
+    subcategory: 'avancerade steg',
+    subcategoryLabel: 'Avancerade steg',
+    difficulty: 'avancerad',
+    description:
+      'Bracket Twizzle kombinerar bracket-svängens motrotationsmekanik med twizzlens resande flerrotalitionskaraktär. Åkaren roterar mot kurvans ytterkant under flera varv medan rörelsen fortsätter tvärs över isen – det kräver starkt kantmotstånd under hela rotationen.',
+    tips: [
+      'Bibehåll motrotationsmotståndet under alla varv i twizzeln.',
+      'Håll resans rörelse tvärs isen – twizzeln ska inte stanna och bli en piruett.',
+    ],
+    pitfalls: [
+      'Att förlora bracket-mekaniken och göra en vanlig twizzle.',
+      'Att resan stannar upp under rotationerna.',
+    ],
+    relatedIds: ['bracket', 'twizzle', 'cluster'],
+  },
+  {
+    id: 'counter-twizzle',
+    isNew: true,
+    name: 'Counter Twizzle',
+    englishName: 'Counter Twizzle',
+    category: 'steg',
+    subcategory: 'avancerade steg',
+    subcategoryLabel: 'Avancerade steg',
+    difficulty: 'avancerad',
+    description:
+      'Counter Twizzle är en resande flerrotalitionssväng med counter-svängens mekanik – riktningsbyte utan kantbyte, med rotation mot kurvans ytterkant. Det är bland de svåraste twizzle-varianterna och kräver extremt starka kanter under flerrotalitioner medan kroppen förflyttar sig.',
+    tips: [
+      'Bemästra den enskilda counter-svängen fullständigt innan du försöker med fler rotationer.',
+      'Kanten måste förbli konstant under alla rotationer.',
+    ],
+    pitfalls: [
+      'Att kanten brister under rotationerna.',
+      'Otillräcklig rörelse tvärs isen – den ska resa, inte spinna.',
+    ],
+    relatedIds: ['counter', 'twizzle', 'cluster'],
+  },
+  {
+    id: 'rocker-twizzle',
+    isNew: true,
+    name: 'Rocker Twizzle',
+    englishName: 'Rocker Twizzle',
+    category: 'steg',
+    subcategory: 'avancerade steg',
+    subcategoryLabel: 'Avancerade steg',
+    difficulty: 'avancerad',
+    description:
+      'Rocker Twizzle är en resande flerrotalitionssväng med rocker-svängens karaktär – gungstolsliknande riktningsbyte utan kantbyte, med rotation med kurvans riktning. Kombinationen av reserörelse och multiple rotationer med rocker-mekanik gör detta till ett av de mer avancerade stegsekvens-elementen.',
+    tips: [
+      'Känn gungrörelsens kvalitet i varje rotation.',
+      'Håll klingan på sin mittpunkt under resan.',
+    ],
+    pitfalls: [
+      'Att förlora rocker-mekaniken och göra en vanlig twizzle.',
+      'Resan stannar upp under rotationerna.',
+    ],
+    relatedIds: ['rocker', 'twizzle', 'cluster'],
+  },
+
+  // ─── GLIDÖVNINGAR – SPIRALER (nya) ───────────────────────────────────────────
+  {
+    id: 'y-spiral',
+    isNew: true,
+    name: 'Y-spiral',
+    englishName: 'Y-Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'avancerad',
+    description:
+      'Y-spiralen är ett glidmoment där åkaren lyfter fria benet åt sidan och upp ovanför huvudhöjd, och griper om klingan för att hålla benets vertikala Y-position under gliden. Kräver extrem lateral höftflexibilitet och exceptionell balans på glidfoten medan kroppen hålls i den assymetriska Y-positionen.',
+    tips: [
+      'Bygg upp positionen från en vanlig spiral och lyft gradvis benet åt sidan.',
+      'Grip om klingan, inte bara stöveln, för maximal höjd.',
+      'Håll glidsidans kant djup och stabil – Y-positionen förskjuter tyngdpunkten.',
+    ],
+    pitfalls: [
+      'Otillräcklig lateral höftflexibilitet som ger en låg Y-position.',
+      'Att tappa glidfotens kant under lyftfasen.',
+    ],
+    relatedIds: ['spiral', 'biellmann-spiral'],
+  },
+  {
+    id: 'catch-foot-spiral',
+    isNew: true,
+    name: 'Catch Foot-spiral',
+    englishName: 'Catch Foot Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'avancerad',
+    description:
+      'Catch Foot-spiralen utförs med fria foten hållen av en eller båda händerna under gliden. Foten kan sträckas åt sidan, bakåt eller uppåt beroende på greppets vinkel. Det kräver flexibilitet, balans och styrka för att bibehålla positionen under en hel glidfas.',
+    tips: [
+      'Nå bakåt efter foten medan du redan är i arabesqueposition.',
+      'Grip om klingan (inte bara stöveln) för ett stadigt grepp.',
+      'Håll glidfotens kant jämn under hela grepp-fasen.',
+    ],
+    pitfalls: [
+      'Positionen kollapsar när balansen förskjuts vid greppet.',
+      'Att böja knäna för att nå foten istället för att sträcka ryggen.',
+    ],
+    relatedIds: ['spiral', 'biellmann-spiral'],
+  },
+  {
+    id: 'penche-spiral',
+    isNew: true,
+    name: 'Penché-spiral',
+    englishName: 'Penché Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'avancerad',
+    description:
+      'Penché-spiralen (från franskans "incliner" – luta) innebär att överkroppen sänks djupt framåt och nedåt mot isen medan fria benet stiger upp bakåt – mot en vertikal spretposition. Ju mer torson sänks, desto högre stiger benet. Kräver extrem hamstringflexibilitet och god kant under glidmomentets tryck.',
+    tips: [
+      'Skjut aktivt upp fria benet högre allt eftersom torson sänks.',
+      'Håll glidfotens kant fast under hela rörelsen.',
+      'Bygg upp positionen gradvis från en vanlig arabesque-spiral.',
+    ],
+    pitfalls: [
+      'Att tappa glidfotens kant när tyngden förflyttas framåt.',
+      'Otillräcklig flexibilitet som begränsar hur djupt torson kan sänkas.',
+    ],
+    relatedIds: ['spiral', 'charlotte-spiral'],
+  },
+
+  // ─── GLIDÖVNINGAR – ÖVRIGA (nya) ─────────────────────────────────────────────
+  {
+    id: 'shoot-the-duck',
+    isNew: true,
+    name: 'Shoot the Duck',
+    englishName: 'Shoot the Duck',
+    category: 'glidövningar',
+    subcategory: 'bredsteg',
+    subcategoryLabel: 'Bredstegsövningar',
+    difficulty: 'grundläggande',
+    description:
+      'Shoot the Duck är ett glidmoment där åkaren sätter sig djupt på ett böjt ben medan det andra benet sträcks rakt framåt nära isen. Till skillnad från sittpiruettsvarianten reser åkaren sig tvärs isen i denna position. Kräver starka quadricepsmuskler och god ankelstabilitet.',
+    tips: [
+      'Sänk dig ned i squaten kontrollerat och sträck fria benet framåt lågt och rakt.',
+      'Håll glidfotens hela klinga i kontakt med isen.',
+    ],
+    pitfalls: [
+      'Att glidfotens häl lyfts från isen.',
+      'Att fria benet böjs eller lyfts för högt.',
+    ],
+    relatedIds: ['shoot-the-duck-spin', 'lunge'],
+  },
+  {
+    id: 'drag',
+    isNew: true,
+    name: 'Drag',
+    englishName: 'Drag',
+    category: 'glidövningar',
+    subcategory: 'bredsteg',
+    subcategoryLabel: 'Bredstegsövningar',
+    difficulty: 'grundläggande',
+    description:
+      'Drag är ett glidmoment där åkaren sträcker ett ben bakåt med klingan lätt släpande längs isens yta medan man glider på det andra benet. Det skapar en lång, svepande linje och används som ett länkrörelse eller hållen position i koreografi.',
+    tips: [
+      'Håll det släpande bladet lätt i kontakt med isen utan att pressa ned det tungt.',
+      'Håll en upprätt eller lätt framåtlutande hållning.',
+    ],
+    pitfalls: [
+      'Att pressa det släpande bladet för hårt mot isen och sakta ned.',
+      'Att böja knät på det bakre benet.',
+    ],
+    relatedIds: ['lunge', 'ina-bauer'],
+  },
+  {
+    id: 'lunge',
+    isNew: true,
+    name: 'Lunge',
+    englishName: 'Lunge',
+    category: 'glidövningar',
+    subcategory: 'bredsteg',
+    subcategoryLabel: 'Bredstegsövningar',
+    difficulty: 'grundläggande',
+    description:
+      'Lungerörelsen på skridskor är en position där åkaren böjer ett knä djupt medan det andra benet är fullt utsträckt framåt eller åt sidan – liknande en balettsteg. Den utförs under glid och används som en artistisk position eller ingång till andra element.',
+    tips: [
+      'Sänk dig i lungeposition med kontroll och håll det utsträckta benet rakt.',
+      'Håll överkroppen upprätt.',
+    ],
+    pitfalls: [
+      'Att tappa balansen när man sänker sig i lunge.',
+      'Att det utsträckta benet böjs.',
+    ],
+    relatedIds: ['shoot-the-duck', 'drag'],
+  },
+  {
+    id: 'bauer-spiral',
+    isNew: true,
+    name: 'Bauer Spiral',
+    englishName: 'Bauer Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'avancerad',
+    description:
+      'Bauer Spiral kombinerar spretörnpositionen (båda fötterna på isen, tårna utåtvridna) med en spiralliknande utsträckning av överkroppen eller ett ben. Det kräver extensiv höftutåtrotation och flexibilitet, och skapar en unik dubbelfotsposition med artistisk extension.',
+    tips: [
+      'Etablera spretörnpositionen stadigt innan du lägger till utsträckning.',
+      'Håll båda fötterna i spårade parallella kanter under hela elementet.',
+    ],
+    pitfalls: [
+      'Otillräcklig höftutåtrotation som destabiliserar spretörnet.',
+      'En fots kant sviktar vid lyftfasen.',
+    ],
+    relatedIds: ['spread-eagle', 'spiral'],
+  },
+  {
+    id: 'arabesque',
+    isNew: true,
+    name: 'Arabesque',
+    englishName: 'Arabesque',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'medel',
+    description:
+      'Arabesqueglidrörelsen är direkt hämtad från balettens arabesque: överkroppen upprätt eller lätt framåtlutad, fria benet lyft bakåt vid höfthöjd eller ovanför. Den skiljer sig från spiralen i sin mer upprätta torso och betoning på balettisk form framför extrem höjd.',
+    tips: [
+      'Håll stödknäet mjukt och centrerat över klingan.',
+      'Öppen bröstkorg och nedtryckta axlar ger den klassiska arabesquelinjen.',
+      'Fria benet lyfts aktivt från höften bakåt och uppåt.',
+    ],
+    pitfalls: [
+      'Att runda ryggen – arabesquetorson ska vara öppen och lång.',
+      'Att böja fria benets knä.',
+    ],
+    relatedIds: ['spiral', 'forward-spiral'],
+  },
+  {
+    id: 'fan-spiral',
+    isNew: true,
+    name: 'Fan Spiral',
+    englishName: 'Fan Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'medel',
+    description:
+      'Fan Spiral är en sekvens av spiralpositioner som sveper runt en gemensam mittpunkt – åkaren utför en serie spiralglidar som kurverar runt centret, som ett fläktformat mönster. Varje spiralglid kurvar runt mittpunkten med fria benets riktning relativ till centret varierandes.',
+    tips: [
+      'Håll jämnt kantdjup på varje kurva i fläkten.',
+      'Fria benet ska hållas högt och stabilt genom varje kurva.',
+    ],
+    pitfalls: [
+      'Ojämna kanter som ger ett oregelbundet fläktmönster.',
+      'Fria benet sjunker ned mellan kurvorna.',
+    ],
+    relatedIds: ['spiral', 'arabesque'],
+  },
+  {
+    id: 'side-spiral',
+    isNew: true,
+    name: 'Side Spiral',
+    englishName: 'Side Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'medel',
+    description:
+      'Side Spiral utförs med fria benet lyft åt sidan istället för bakåt. Åkaren glider på ett ben medan det andra benet lyfts ut till sidan vid höfthöjd eller ovanför, i en sidoarabesqueposition. Det kräver lateral höftflexibilitet snarare än den bakre flexibiliteten i en vanlig spiral.',
+    tips: [
+      'Öppna höften utåt och uppåt för att nå sidolyftet.',
+      'Håll glidknäet centrerat över klingan.',
+      'Sträck båda tårna tydligt.',
+    ],
+    pitfalls: [
+      'Att fria benet inte klarar höfthöjd på grund av begränsad lateral flexibilitet.',
+      'Att torson roterar för att kompensera för bristande sidoflexibilitet.',
+    ],
+    relatedIds: ['spiral', 'y-spiral'],
+  },
+  {
+    id: 'forward-spiral',
+    isNew: true,
+    name: 'Forward Spiral',
+    englishName: 'Forward Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'grundläggande',
+    description:
+      'Forward Spiral är det vanligaste och första inlärda spiralelementen – ett glidmoment framåt på ett ben med fria benet sträckt bakåt vid höfthöjd eller ovanför. Det är grunden för alla mer avancerade spiralvarianter och det element som mest liknar balettens arabesque på is.',
+    tips: [
+      'Lyft fria benet aktivt från höften – låt det inte bara falla bakåt.',
+      'Håll glidknäet mjukt och överkroppen utsträckt.',
+      'Sträck tårna på fria foten tydligt.',
+    ],
+    pitfalls: [
+      'Fria benet under höfthöjd – spiralen kräver synlig höjd.',
+      'Böjt knä på fria benet.',
+      'Att runda ryggen och hänga med överkroppen.',
+    ],
+    relatedIds: ['spiral', 'arabesque', 'backward-spiral'],
+  },
+  {
+    id: 'backward-spiral',
+    isNew: true,
+    name: 'Backward Spiral',
+    englishName: 'Backward Spiral',
+    category: 'glidövningar',
+    subcategory: 'spiral',
+    subcategoryLabel: 'Spiraler',
+    difficulty: 'medel',
+    description:
+      'Backward Spiral utförs under bakåtglidning på ett ben med fria benet lyft bakåt – vilket nu är i rörelseriktningen bakåt. Det skapar ett ovanligt perspektiv och kräver stark balans på bakåtgliden kombinerat med spiralpositionens flexibilitet.',
+    tips: [
+      'Etablera en stark bakåtglid först, lyft sedan gradvis fria benet.',
+      'Titta över axeln i rörelseriktningen för att hålla kursen.',
+      'Bygg upp positionen gradvis – kombinationen av bakåtbalans och benlyft är krävande.',
+    ],
+    pitfalls: [
+      'Att tappa bakåtgliden när man koncentrerar sig på benlyftet.',
+      'Otillräcklig extension av fria benet.',
+    ],
+    relatedIds: ['forward-spiral', 'spiral'],
   },
 ];

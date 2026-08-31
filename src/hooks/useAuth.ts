@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
+import { useStore } from '../store/useStore';
 
-// Capture before Supabase potentially clears the hash
 const IS_MAGIC_LINK_LANDING = typeof window !== 'undefined' && (
   window.location.hash.includes('type=magiclink') ||
   window.location.hash.includes('type=recovery') ||
@@ -11,7 +11,6 @@ const IS_MAGIC_LINK_LANDING = typeof window !== 'undefined' && (
 
 function isMagicLinkToken(accessToken: string): boolean {
   try {
-    // JWTs use base64url — replace chars before decoding
     const base64 = accessToken.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
     const payload = JSON.parse(atob(base64));
     return payload.amr?.some((m: { method: string }) => m.method === 'otp') ?? false;
@@ -26,11 +25,7 @@ export function useAuth() {
   const [emailVerified, setEmailVerified] = useState(false);
 
   const fetchVerified = async (userId: string) => {
-    const { data } = await supabase
-      .from('profiles')
-      .select('email_verified')
-      .eq('id', userId)
-      .single();
+    const { data } = await supabase.from('profiles').select('email_verified').eq('id', userId).single();
     setEmailVerified(data?.email_verified ?? false);
   };
 
@@ -44,11 +39,8 @@ export function useAuth() {
       const u = data.session?.user ?? null;
       setUser(u);
       if (u) {
-        if (IS_MAGIC_LINK_LANDING) {
-          markVerified(u.id);
-        } else {
-          fetchVerified(u.id);
-        }
+        useStore.getState().loadUserData(u.id);
+        IS_MAGIC_LINK_LANDING ? markVerified(u.id) : fetchVerified(u.id);
       }
       setLoading(false);
     });
@@ -56,13 +48,18 @@ export function useAuth() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       const u = session?.user ?? null;
       setUser(u);
-      if (!u) { setEmailVerified(false); return; }
 
-      const isMagic = IS_MAGIC_LINK_LANDING ||
-        (session ? isMagicLinkToken(session.access_token) : false);
+      if (!u) {
+        setEmailVerified(false);
+        useStore.getState().clearUserData();
+        return;
+      }
 
-      if (event === 'SIGNED_IN' && isMagic) {
-        markVerified(u.id);
+      if (event === 'SIGNED_IN') {
+        useStore.getState().clearAuthPrompt();
+        await useStore.getState().loadUserData(u.id);
+        const isMagic = IS_MAGIC_LINK_LANDING || isMagicLinkToken(session!.access_token);
+        isMagic ? markVerified(u.id) : fetchVerified(u.id);
       } else if (event !== 'INITIAL_SESSION') {
         fetchVerified(u.id);
       }

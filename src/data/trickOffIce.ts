@@ -1290,4 +1290,1059 @@ export const TRICK_OFF_ICE: Record<string, OffIceExercises> = {
       'Hamstringsträck – extrem benlängd.',
     ],
   },
+
+  // ── Hopp — nya ──────────────────────────────────────────────────────────────
+
+  'bunny-hop': {
+    strength: [
+      'Tåhöjningar – bygger styrka för tåpicksavhoppet.',
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Plankan – bygger kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – bygger explosivitet.',
+      'Sidohopp – tränar laterala hopp.',
+    ],
+    stretch: [
+      'Vadssträck – förbättrar vristens rörlighet.',
+      'Hip flexor-sträck – öppnar höften.',
+      'Quadssträck – löser framsidan av benet.',
+    ],
+    teknik: [
+      'Hoppimitation på golv – övar avhopp och landning.',
+    ],
+  },
+
+  'mazurka': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Sidoutfall – stärker abduktorerna för bensparken.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Sidohopp – tränar den laterala rörelsen.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – öppnar höften för benets rörelse.',
+      'Vadssträck – förbättrar vristen.',
+      'Quadssträck – löser framsidan.',
+    ],
+    teknik: [
+      'Benspark-imitation – tränar sidorörelsen av det fria benet.',
+    ],
+  },
+
+  'half-flip': {
+    strength: [
+      'Tåhöjningar – stärker tåpicksarbetet.',
+      'Ettbenssquat – stärker stöd- och avhoppsbenet.',
+      'Plankan – kärnstabilitet för rotationen.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Sidohopp – landningsstabilitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Vadssträck – vristens rörlighet.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Halvvarvimitation – övar half-flipens rotation på golvet.',
+    ],
+  },
+
+  'ballet-jump': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Arabesquebalans – tränar den eleganta lyftpositionen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Dansjump – tränar rytm och kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – öppnar höften för benlyft.',
+      'Hamstringsträck – ökar benets räckvidd bakåt.',
+      'Vadssträck – förbättrar vristen.',
+    ],
+    teknik: [
+      'Imitation av arabesk i luften – visualiserar formen.',
+    ],
+  },
+
+  'stag-jump': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Högt knälyft – stärker höftböjarna för stagpositionen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Knälyft i löpning – stärker höftböjarna.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – öppnar höften för det böjda benet.',
+      'Quadssträck – löser framsidan av benet.',
+      'Hamstringsträck – baksidan av det sträckta benet.',
+    ],
+    teknik: [
+      'Stagimitation – övar positionen med ett böjt och ett sträckt ben.',
+    ],
+  },
+
+  'butterfly-jump': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Bröstryggsrotation – för den horisontella kroppspositionen.',
+      'Plankan – kärnstabilitet för den platta rotationen.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Sidohopp – tränar den laterala rörelsens kraft.',
+    ],
+    stretch: [
+      'Thorax-rotation – löser upp ryggens rotation.',
+      'Hip flexor-sträck – öppnar höften.',
+      'Axelsträck – frigör överkroppens rörelse.',
+    ],
+    teknik: [
+      'Fjärilsimitation – övar hoppets roterande, horisontella form.',
+    ],
+  },
+
+  'falling-leaf': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Sidoutfall – stärker abduktorerna.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Sidohopp – simulerar det laterala avhoppet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Vadssträck – vristen.',
+      'Quadssträck – framsidan av benet.',
+    ],
+    teknik: [
+      'Sidohopp med halvvarv – grundform av falling leaf.',
+    ],
+  },
+
+  'toe-loop-4': {
+    strength: [
+      'Djup ettbenssquat med snabb uppresning – simulerar den explosiva takeoff.',
+      'Vertikalhopp med omedelbar kompression i luften – tränar kvad-timing.',
+      'Plankan med rotation – kärnstabilitet för 4 varv.',
+      'Vadhöjningar explosivt – maximal plantarflexion.',
+    ],
+    cardio: [
+      'Hoppreppa med maximal intensitet – explosivitet.',
+      'Intervallsprints – tränar den anaeroba kapaciteten.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften för det extrema avhoppet.',
+      'Piriformissträck – minskar spänning i höftrotatorer.',
+      'Bröststräck – maximalt armsvep vid avhopp.',
+    ],
+    teknik: [
+      'Hoppimitation med kompression – övar det explosiva avhoppet och den snabba kompressionen.',
+      'Filma och analysera – teknisk analys av rotationshastighet och kompression.',
+    ],
+  },
+
+  'salchow-4': {
+    strength: [
+      'Djup ettbenssquat – avhoppsbenet vid bakre inre kant.',
+      'Horisontellt bensvep med motståndsband – simulerar det kraftfulla svepet.',
+      'Plankan med rotation – 4 varv kräver exceptionell kärnstabilitet.',
+      'Vadhöjningar explosivt – avhoppskraft.',
+    ],
+    cardio: [
+      'Hoppreppa med maximal intensitet – explosivitet.',
+      'Intervallsprints – anaerob kapacitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Piriformissträck – minskar spänning.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Bensvep-imitation med motståndsband – stärker och övar det kraftfulla svepet.',
+    ],
+  },
+
+  'loop-4': {
+    strength: [
+      'Djup ettbenssquat på yttre kant – simulerar loop-avhoppet utan tåpick.',
+      'Explosiva vertikalhopp – maximal höjd och kompression.',
+      'Plankan med rotation – kärnstabilitet för 4 varv.',
+      'Vadhöjningar explosivt – avhoppskraft.',
+    ],
+    cardio: [
+      'Hoppreppa – maximal explosivitet.',
+      'Intervallsprints – anaerob kapacitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Piriformissträck – minskar spänning.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Vertikalhopp med omedelbar kompression – tränar loop-kompressionen.',
+    ],
+  },
+
+  'flip-4': {
+    strength: [
+      'Djup ettbenssquat på inre kant – flip-avhoppets specifika styrka.',
+      'Explosiva vertikalhopp – kraft och höjd.',
+      'Plankan med rotation – kärnstabilitet.',
+      'Tåpicksdrivna hopp – tränar tåpicksanvändningen.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Intervallsprints – anaerob kapacitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Piriformissträck – minskar spänning.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar flip-ingång och kompression.',
+    ],
+  },
+
+  'lutz-4': {
+    strength: [
+      'Djup ettbenssquat på yttre kant – lutz kräver yttre kant hela vägen till avhoppet.',
+      'Motståndsband rotation – tränar axelkontroll mot flutz.',
+      'Plankan med rotation – kärnstabilitet.',
+      'Vadhöjningar explosivt – avhoppskraft.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet.',
+      'Intervallsprints – anaerob kapacitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet.',
+      'Piriformissträck – minskar spänning.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Lutz-imitation med fokus på yttre kant – motverkar flutz-tendens.',
+    ],
+  },
+
+  'axel-4': {
+    strength: [
+      'Djup ettbenssquat med explosiv uppresning – avhoppsbenet.',
+      'Explosiva vertikalhopp – maximal kraft och höjd.',
+      'Plankan med rotation – kärnstabilitet för 4,5 varv.',
+      'Vadhöjningar explosivt – avhoppskraft.',
+    ],
+    cardio: [
+      'Hoppreppa – maximal explosivitet.',
+      'Intervallsprints – anaerob kapacitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – höftens rörlighet för det framåthoppande avhoppet.',
+      'Piriformissträck – minskar spänning.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar axel-ingång och den unika framåt-takeoff.',
+      'Filma och analysera – teknisk analys av rotationshastighet.',
+    ],
+  },
+
+  // ── Piruetter — nya ──────────────────────────────────────────────────────────
+
+  'y-spin': {
+    strength: [
+      'Benlyft åt sidan med motståndsband – stärker abduktorerna för Y-positionen.',
+      'Ettbensbalans med armlyft – tränar Y-piruettens stabilitet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighetsträning och kroppskontroll.',
+      'Balansövningar på ett ben – skapar stabilitetsgrundval.',
+    ],
+    stretch: [
+      'Benlyft-sträck åt sidan – hip abductor stretch.',
+      'Hamstringsträck – räckvidd för Y-lyftet.',
+      'Höftöppnare – frigör höftleden.',
+    ],
+    teknik: [
+      'Y-balans på golvet – håll Y-positionen stående utan att piruetera.',
+    ],
+  },
+
+  'a-frame-spin': {
+    strength: [
+      'Sidoutfall – stärker abduktorer och höfterna.',
+      'Benlyft åt sidan – stärker det fria benets lyft.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet och kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip abductor stretch – öppnar upp för sidolyft.',
+      'Axelsträck – frigör armarnas position.',
+      'Hip flexor-sträck – frigör höften.',
+    ],
+    teknik: [
+      'A-frame-balans på golvet – håll positionen med armar och ben utåt.',
+    ],
+  },
+
+  'haircutter-spin': {
+    strength: [
+      'Bakre benlyft med motståndsband – stärker gluteus och bakre höft.',
+      'Axelstabilisatorer – håller axeln vid baksida-greppet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighets- och bakåtböjningsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Quadssträck djupt – öppnar framsidan för haircutter-greppet.',
+      'Axelsträck – frigör axeln vid baksida-greppet.',
+      'Hip flexor-sträck – frigör höften.',
+    ],
+    teknik: [
+      'Haircutter-balans på golvet – håll greppet och bakåtlyftpositionen.',
+    ],
+  },
+
+  'svamp-spin': {
+    strength: [
+      'Djup sittpiruett-squat – stärker sittpiruettens grundposition.',
+      'Magmuskelövningar – kärnkraft för kompressionen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – kondition.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften för kompressionen.',
+      'Ryggsträck – öppnar ryggen för bollpositionen.',
+      'Quadssträck – framsidan av benet.',
+    ],
+    teknik: [
+      'Bollimitation – träna att komprimera till bollposition på golvet.',
+    ],
+  },
+
+  'shoot-the-duck-spin': {
+    strength: [
+      'Djup squat på ett ben – stärker stödbenet i låg position.',
+      'Benlyft framåt – håller det sträckta benet horisontellt.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – kontroll i låg position.',
+    ],
+    stretch: [
+      'Djup ankelstödd squat – rörlighet i vristen för låg position.',
+      'Hip flexor-sträck – frigör höften.',
+      'Hamstringsträck – räckvidd för det sträckta benet.',
+    ],
+    teknik: [
+      'Shoot-the-duck på golvet – träna att sänka sig och hålla det sträckta benet.',
+    ],
+  },
+
+  'back-camel-spin': {
+    strength: [
+      'Bakre benlyft med motståndsband – stärker höft och gluteus för kamelposition.',
+      'Överkroppsextension – stärker ländryggen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Thorax-extension – öppnar bröstryggen.',
+      'Hip flexor-sträck – frigör höften.',
+      'Quadssträck – framsidan av stödbenet.',
+    ],
+    teknik: [
+      'Bakre kamelbalans – håll kamelpositionen stående utan att piruetera.',
+    ],
+  },
+
+  'catch-foot-camel': {
+    strength: [
+      'Bakre benlyft med greppövning – simulerar catch foot-greppet.',
+      'Axelstabilisatorer – håller axeln vid greppet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – bakåtböjnings- och rörlighetsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Catch foot-sträck liggande – gradvis förbereder greppets rörlighet.',
+      'Quadssträck djupt – framsidan av det greppade benet.',
+      'Axelsträck – frigör axeln vid greppet.',
+    ],
+    teknik: [
+      'Catch foot-balans stående – håll greppet och positionen utan att piruetera.',
+    ],
+  },
+
+  'pearl-spin': {
+    strength: [
+      'Benlyft utåt och framåt – stärker abduktorerna för pearl-positionen.',
+      'Axelstabilisatorer – vid greppet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip abductor stretch – öppnar för benets sidorörelse.',
+      'Catch foot-sträck – förbereder greppet.',
+      'Thorax-sträck – öppnar överkroppen.',
+    ],
+    teknik: [
+      'Pearl-balans stående – håll positionen statiskt.',
+    ],
+  },
+
+  'flying-upright-spin': {
+    strength: [
+      'Ettbenssquat – stärker avhoppsbenet.',
+      'Plankan – kärnstabilitet.',
+      'Vadhöjningar – stärker avhoppet.',
+    ],
+    cardio: [
+      'Hoppreppa – explosivitet och kondition.',
+      'Balansövningar – snabb centring efter landning.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – förbättrar vristen.',
+      'Bröststräck – armsvingen.',
+    ],
+    teknik: [
+      'Hoppimitation – övar avhoppet och den snabba centringen i luften.',
+    ],
+  },
+
+  'sit-upright-combo': {
+    strength: [
+      'Djup squat – stärker sittpiruettens grundposition.',
+      'Vadhöjningar på ett ben – stärker centringen i ståpiruetten.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Hoppreppa – kondition.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Djup squat-sträck – rörlighet i höft och knä.',
+      'Vadssträck – vristens rörlighet.',
+      'Hip flexor-sträck – frigör höften.',
+    ],
+    teknik: [
+      'Kombinationsövergång – övar det mjuka bytet från sittposition till stående.',
+    ],
+  },
+
+  'camel-sit-combo': {
+    strength: [
+      'Bakre benlyft – stärker kamelns grundposition.',
+      'Djup squat – stärker sittpiruettens grundposition.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighetsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften för kamelns bakåtlutning.',
+      'Djup squat-sträck – rörlighet för sittpiruetten.',
+      'Thorax-extension – öppnar bröstryggen för kameln.',
+    ],
+    teknik: [
+      'Kombinationsövergång – övar det mjuka bytet från kamel till sittposition.',
+    ],
+  },
+
+  // ── Svängar — nya ────────────────────────────────────────────────────────────
+
+  'inside-three-turn': {
+    strength: [
+      'Ettbensbalans med inre kant – tränar insidekantkontrollen.',
+      'Vriden plankan – kärnstabilitet för tresväng.',
+      'Höftabduktorer – stabiliserar stödbenet.',
+    ],
+    cardio: [
+      'Yoga flow – kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Bröststräck – frigör överkroppen.',
+    ],
+    teknik: [
+      'Tresvängsimitation på golvet – övar axlarnas roll och kantbytet.',
+    ],
+  },
+
+  'outside-mohawk': {
+    strength: [
+      'Ettbensbalans – stärker stödbenet vid viktövergången.',
+      'Sidoutfall – stärker abduktorerna.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Balansövningar – ettbensbalans.',
+      'Yoga flow – kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Ljumskesträck – öppnar höften för den öppna ställningen.',
+    ],
+    teknik: [
+      'Mohawkimitation på golvet – övar viktövergången och fotplaceringen.',
+    ],
+  },
+
+  'inside-mohawk': {
+    strength: [
+      'Ettbensbalans – stärker stödbenet.',
+      'Sidoutfall – stärker abduktorerna.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Balansövningar – ettbensbalans.',
+      'Yoga flow – kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Ljumskesträck – öppnar höften.',
+    ],
+    teknik: [
+      'Inside mohawk-imitation på golvet – övar kantbytet och viktövergången.',
+    ],
+  },
+
+  'outside-choctaw': {
+    strength: [
+      'Ettbensbalans – stärker stödbenet vid den komplexa övergången.',
+      'Höftrotatorer med motståndsband – stärker höftens rotation.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Balansövningar – ettbensbalans.',
+      'Yoga flow – kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Ljumskesträck – öppnar höften för choctawens öppna ställning.',
+      'Piriformissträck – minskar spänning i höftrotatorer.',
+    ],
+    teknik: [
+      'Choctawimitation på golvet – övar höftrotationen och kantbytet.',
+    ],
+  },
+
+  'inside-choctaw': {
+    strength: [
+      'Ettbensbalans – stärker stödbenet.',
+      'Höftrotatorer med motståndsband – stärker rotation.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Balansövningar – ettbensbalans.',
+      'Yoga flow – kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Ljumskesträck – öppnar höften.',
+      'Piriformissträck – minskar spänning.',
+    ],
+    teknik: [
+      'Inside choctaw-imitation på golvet – övar höftrotationen och kantbytet.',
+    ],
+  },
+
+  // ── Steg — nya ───────────────────────────────────────────────────────────────
+
+  'chasse': {
+    strength: [
+      'Ettbensbalans – stärker stödbenet.',
+      'Vadhöjningar – driver glidet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Dans- och stegövningar – rytmkänsla och uthållighet.',
+      'Lätt jogg med fokus på stegteknik.',
+    ],
+    stretch: [
+      'Vadssträck – vristens rörlighet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Quadssträck – framsidan av benet.',
+    ],
+  },
+
+  'crossovers': {
+    strength: [
+      'Sidoutfall – stärker abduktorer och krysstegsdriften.',
+      'Ettbensbalans på yttre kant – tränar kantarbetet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Sidohopp – tränar den laterala rörelsen.',
+      'Lätt jogg med fokus på stegteknik.',
+    ],
+    stretch: [
+      'Ljumskesträck – öppnar höften för krysstegget.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'back-crossovers': {
+    strength: [
+      'Bakre sidoutfall – stärker bakåtrörelsens kraft.',
+      'Ettbensbalans bakåt – tränar bakre kantarbetet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Bakre sidohopp – tränar bakåtrörelsens explosivitet.',
+      'Lätt jogg bakåt med fokus på stegteknik.',
+    ],
+    stretch: [
+      'Ljumskesträck – öppnar höften.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'cross-rolls': {
+    strength: [
+      'Djupa sidoutfall – stärker de vippande kantövergångarna.',
+      'Ettbensbalans med viktöverföring – tränar kantbytet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Dansövningar – rytm och musikalitet.',
+      'Sidohopp – tränar lateral rörelse.',
+    ],
+    stretch: [
+      'Ljumskesträck – öppnar höften.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'progressive': {
+    strength: [
+      'Drivande utfall – stärker push-off-kraften i varje steg.',
+      'Ettbensbalans – stärker glidningarna.',
+      'Vadhöjningar – driver glidet.',
+    ],
+    cardio: [
+      'Löpning med fokus på drivkraft – bygger det progressiva stegets kraft.',
+      'Hoppreppa – explosivitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Quadssträck – framsidan av drivbenet.',
+    ],
+  },
+
+  'toe-step': {
+    strength: [
+      'Tåhöjningar – stärker tåpicksarbetet.',
+      'Ettbensbalans – stärker stödbenet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Dansövningar – koordination och rytm.',
+      'Hoppreppa – explosivitet på tårna.',
+    ],
+    stretch: [
+      'Vadssträck – vristens rörlighet.',
+      'Tå- och fotvalvssträck – förbättrar tåpicksarbetet.',
+      'Hip flexor-sträck – frigör höften.',
+    ],
+  },
+
+  'slalom': {
+    strength: [
+      'Sidoutfall – stärker de laterala vändningarna.',
+      'Djup squat med rotation – tränar höfternas svängning.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Sidohopp – lateral rörelse och uthållighet.',
+      'Intervallövningar – kondition för upprepade vändningar.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Ljumskesträck – öppnar höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'power-pulls': {
+    strength: [
+      'Djup ettbenssquat – stärker det laddande benet.',
+      'Motståndsband-pull – simulerar dragrörelsen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Intervallsprints – explosiv kraft.',
+      'Hoppreppa – kondition.',
+    ],
+    stretch: [
+      'Quadssträck – framsidan av det drivande benet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'swing-roll': {
+    strength: [
+      'Benlyft framåt med motståndsband – stärker benets svängrörelse.',
+      'Ettbensbalans – stärker glidet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Dansövningar – musikalitet och rytmkänsla.',
+      'Yoga flow – kroppskontroll.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften för svängrörelsen.',
+      'Hamstringsträck – baksidan av det svängande benet.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'cluster': {
+    strength: [
+      'Kombinerade balansövningar – snabb växling mellan ettbenspositioner.',
+      'Vriden plankan – kärnstabilitet för komplexa stegsekvenser.',
+      'Sidoutfall – stärker abduktorerna.',
+    ],
+    cardio: [
+      'Stegsekvenser på golvet – kondition och koordination.',
+      'Dansövningar – musikalitet.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Bröststräck – frigör överkroppen.',
+    ],
+    teknik: [
+      'Kluster-sekvens på golvet – övar de tätt länkade stegen i slow-motion.',
+    ],
+  },
+
+  'toe-twizzle': {
+    strength: [
+      'Tåhöjningar med rotation – stärker tåpicksbalansvridningen.',
+      'Ettbensbalans på tå – tränar twizzlens stabila punkt.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Dansövningar – koordination och rytm.',
+      'Hoppreppa – kondition.',
+    ],
+    stretch: [
+      'Vadssträck – vristens rörlighet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Bröststräck – frigör armarnas position.',
+    ],
+    teknik: [
+      'Tåtwizzle på golvet – övar rotationen på tåpicken utan skridskor.',
+    ],
+  },
+
+  'bracket-twizzle': {
+    strength: [
+      'Ettbensbalans med rotation – tränar twizzeln.',
+      'Vriden plankan – kärnstabilitet.',
+      'Sidoutfall – stärker abduktorerna.',
+    ],
+    cardio: [
+      'Dansövningar – musikalitet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Bröststräck – frigör överkroppen.',
+    ],
+    teknik: [
+      'Bracket-twizzle på golvet – övar ingången och rotationen.',
+    ],
+  },
+
+  'counter-twizzle': {
+    strength: [
+      'Ettbensbalans med rotation – tränar twizzeln.',
+      'Vriden plankan – kärnstabilitet.',
+      'Höftrotatorer med motståndsband – stärker counterns rotation.',
+    ],
+    cardio: [
+      'Dansövningar – musikalitet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Piriformissträck – minskar spänning i höftrotatorer.',
+    ],
+    teknik: [
+      'Counter-twizzle på golvet – övar ingången och rotationen.',
+    ],
+  },
+
+  'rocker-twizzle': {
+    strength: [
+      'Ettbensbalans med rotation – tränar twizzeln.',
+      'Vriden plankan – kärnstabilitet.',
+      'Höftrotatorer med motståndsband – stärker rockerns kraft.',
+    ],
+    cardio: [
+      'Dansövningar – musikalitet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+      'Bröststräck – frigör överkroppen.',
+    ],
+    teknik: [
+      'Rocker-twizzle på golvet – övar ingången och rotationen.',
+    ],
+  },
+
+  // ── Glidövningar — nya ───────────────────────────────────────────────────────
+
+  'y-spiral': {
+    strength: [
+      'Benlyft åt sidan med motståndsband – stärker abduktorerna för Y-greppet.',
+      'Ettbensbalans med arm- och benlyft – tränar Y-spiralens stabilitet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighetsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Benlyft-sträck åt sidan – hip abductor stretch.',
+      'Hamstringsträck – räckvidd för Y-lyftet.',
+      'Höftöppnare – frigör höftleden.',
+    ],
+  },
+
+  'catch-foot-spiral': {
+    strength: [
+      'Bakre benlyft – stärker gluteus och bakre höft.',
+      'Axelstabilisatorer – håller axeln vid greppet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighetsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Catch foot-sträck liggande – förbereder greppets rörlighet.',
+      'Quadssträck djupt – framsidan av det greppade benet.',
+      'Axelsträck – frigör axeln vid greppet.',
+    ],
+  },
+
+  'penche-spiral': {
+    strength: [
+      'Bakre benlyft till extrem höjd – stärker gluteus och bakre höft.',
+      'Överkroppsextension – stärker ländryggen.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighets- och stärkningsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Djup hamstringsträck – extrem räckvidd bakåt.',
+      'Hip flexor-sträck – frigör höften.',
+      'Thorax-extension – öppnar bröstryggen.',
+    ],
+  },
+
+  'shoot-the-duck': {
+    strength: [
+      'Djup squat på ett ben – stärker stödbenet i låg position.',
+      'Benlyft framåt – håller det sträckta benet horisontellt.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – kontroll i låg position.',
+    ],
+    stretch: [
+      'Djup ankelstödd squat – rörlighet i vristen.',
+      'Hip flexor-sträck – frigör höften.',
+      'Hamstringsträck – räckvidd för det sträckta benet.',
+    ],
+  },
+
+  'drag': {
+    strength: [
+      'Ettbensbalans bakåt – stärker stödbenet vid bakåtglidning.',
+      'Höftextension med motståndsband – stärker det draggande benets kontroll.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Quadssträck – framsidan av det draggande benet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'lunge': {
+    strength: [
+      'Djupt utfall – stärker benen för lungerörelsen.',
+      'Ettbensbalans – stärker stödbenet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Djup hip flexor-sträck – frigör höften för det bakre benet.',
+      'Quadssträck – framsidan av det bakre benet.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'bauer-spiral': {
+    strength: [
+      'Djupt sidoutfall – stärker yttre kantarbetet i Bauerpositionen.',
+      'Bakre benlyft – stärker spiralens lyft.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighetsträning.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Spagattisträck – öppnar höfterna för Bauerpositionen.',
+      'Hip abductor stretch – öppnar yttre höften.',
+      'Hamstringsträck – räckvidd för spiraldelen.',
+    ],
+  },
+
+  'arabesque': {
+    strength: [
+      'Arabesquebalans på golvet – tränar den statiska positionen.',
+      'Bakre benlyft – stärker gluteus och bakre höft.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – balans och kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hamstringsträck – räckvidd bakåt.',
+      'Hip flexor-sträck – frigör höften.',
+      'Quadssträck – framsidan av stödbenet.',
+    ],
+  },
+
+  'fan-spiral': {
+    strength: [
+      'Benlyft-svängning med motståndsband – stärker benets cirkulära rörelse.',
+      'Ettbensbalans med kantarbete – stärker spiralens stödben.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet och kroppskontroll.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hamstringsträck – räckvidd bakåt.',
+      'Hip flexor-sträck – frigör höften för svängrörelsen.',
+      'Adduktorsträck – öppnar bensidan.',
+    ],
+  },
+
+  'side-spiral': {
+    strength: [
+      'Benlyft åt sidan med motståndsband – stärker abduktorerna.',
+      'Ettbensbalans – stärker stödbenet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hip abductor stretch – öppnar yttre höften för sidolyftet.',
+      'Adduktorsträck – frigör insidan av benet.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'forward-spiral': {
+    strength: [
+      'Bakre benlyft – stärker gluteus och bakre höft.',
+      'Ettbensbalans framåt – stärker stödbenet.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hamstringsträck – räckvidd bakåt för det lyfta benet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
+
+  'backward-spiral': {
+    strength: [
+      'Ettbensbalans bakåt – stärker stödbenet vid bakåtglidning.',
+      'Benlyft – stärker det lyfta benets position.',
+      'Plankan – kärnstabilitet.',
+    ],
+    cardio: [
+      'Yoga flow – rörlighet.',
+      'Balansövningar – ettbensbalans.',
+    ],
+    stretch: [
+      'Hamstringsträck – räckvidd för det lyfta benet.',
+      'Hip flexor-sträck – frigör höften.',
+      'Vadssträck – vristens rörlighet.',
+    ],
+  },
 };

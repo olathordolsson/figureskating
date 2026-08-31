@@ -499,4 +499,443 @@ export const TRICK_STEPS: Record<string, string[]> = {
     'Håll positionen med stark kärna och god balans.',
     'Kom upp kontrollerat med stark benpress.',
   ],
+
+  // ─── HOPP — nya ─────────────────────────────────────────────────────────────
+
+  'bunny-hop': [
+    'Glid framåt på ett ben och böj knäet lätt.',
+    'Ta av från tåpicken och hoppa kort upp i luften.',
+    'Sträck båda benen momentant i luften.',
+    'Landa på tåpicken av det fria benet och rulla till hälkanten.',
+    'Glid ut framåt på hälkanten med kontroll.',
+  ],
+
+  'mazurka': [
+    'Glid framåt och ta av från tåpicken på det ena benet.',
+    'Spark det fria benet ut åt sidan i luften.',
+    'Landa på tåpicken av avhoppsbenet och rulla till hälkanten.',
+    'Glid ut framåt med god balans.',
+  ],
+
+  'half-flip': [
+    'Glid bakåt på ett ben.',
+    'Placera tåpicken av det fria benet i isen bakom dig.',
+    'Ta av uppåt och rotera ett halvvarv.',
+    'Landa på tåpicken av det avhoppande benet, framåtglidande.',
+    'Rulla till hälkanten och glid ut framåt.',
+  ],
+
+  'ballet-jump': [
+    'Glid framåt och böj knäet på avhoppsbenet.',
+    'Ta av uppåt och sträck det fria benet framåt-uppåt i en arabesk-liknande rörelse.',
+    'Håll en elegant, utsträckt position i luften.',
+    'Landa mjukt på det fria benet och glid ut.',
+  ],
+
+  'stag-jump': [
+    'Bygg upp fart framåt och böj avhoppsbenet.',
+    'Ta av uppåt och böj det framre benet i luften – knä högt, fot nära knäet.',
+    'Sträck det bakre benet rakt ut bakåt.',
+    'Håll stagpositionen i luften med elegant formgivning.',
+    'Landa kontrollerat och glid ut.',
+  ],
+
+  'butterfly-jump': [
+    'Glid framåt och ta av från tåpicken.',
+    'Sväng båda benen ut åt sidan och bakåt i en cirkulär rörelse.',
+    'Rotera ett halvvarv med kroppen nästan horisontell i luften.',
+    'Landa på ett ben med det andra utsträckt och ta dig upp till stående.',
+    'Glid ut med god kontroll.',
+  ],
+
+  'falling-leaf': [
+    'Glid bakåt och ta av från bakre yttre kanten.',
+    'Hoppa åt sidan och sväng det fria benet i en halvcirkel.',
+    'Landa på tåpicken av det fria benet och rulla till hälkanten.',
+    'Glid ut framåt.',
+  ],
+
+  'toe-loop-4': [
+    'Bygg maximal fart i en djup, välhållen ingångskurva bakåt.',
+    'Placera tåpicken av det fria benet med precision och ladda avhoppsbenet maximalt.',
+    'Ta av explosivt och komprimera kroppen omedelbart – 4 fulla varv.',
+    'Håll kompressionen tills rotationen är klar.',
+    'Öppna ut snabbt och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  'salchow-4': [
+    'Bygg maximal fart i djup bakre inre kantingång.',
+    'Ladda vänster knä explosivt med fullt bensvep.',
+    'Ta av uppåt med all kraft och komprimera omedelbart – 4 fulla varv.',
+    'Håll fullständig kompression.',
+    'Öppna och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  'loop-4': [
+    'Bygg maximal fart bakåt på höger bakre yttre kant.',
+    'Ladda knäet djupt och ta av explosivt utan hjälp av tåpick.',
+    'Komprimera kroppen fullständigt – 4 fulla varv.',
+    'Håll kompressionen – vid 4 varv krävs exceptionell rotationshastighet.',
+    'Öppna och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  'flip-4': [
+    'Bygg maximal fart bakåt och placera tåpicken av höger fot i isen.',
+    'Ta av explosivt från vänster inre kant med tåpickens hjälp.',
+    'Komprimera omedelbart och fullständigt – 4 fulla varv.',
+    'Håll kompressionen under hela rotationen.',
+    'Öppna och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  'lutz-4': [
+    'Bygg maximal fart i lång bakre yttre kantingång på vänster skridsko.',
+    'Placera höger tåpick i isen och ta av explosivt mot kantens riktning.',
+    'Komprimera kroppen fullständigt och omedelbart – 4 fulla varv.',
+    'Håll fullständig kompression och motverka flutztendens.',
+    'Öppna och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  'axel-4': [
+    'Bygg maximal fart i djup yttre kantingång framåt.',
+    'Ta av explosivt framåt – unikt bland hopp – med maximalt bensvep och armsving.',
+    'Komprimera omedelbart och fullständigt – 4,5 fulla varv.',
+    'Håll kompressionen under hela rotationen.',
+    'Öppna och landa mjukt på höger bakre yttre kant.',
+  ],
+
+  // ─── PIRUETTER — nya ────────────────────────────────────────────────────────
+
+  'y-spin': [
+    'Starta piruetten i standard ståpiruettposition.',
+    'När piruetten stabiliserats, ta tag i det fria benets fot.',
+    'Lyft benet uppåt och ut åt sidan tills det formar ett Y.',
+    'Håll positionen med stark kärna och god balans på skridskobladet.',
+    'Sänk benet kontrollerat och avsluta piruetten.',
+  ],
+
+  'a-frame-spin': [
+    'Starta piruetten med armarna nära kroppen.',
+    'Öppna armarna horisontellt och det fria benet ut åt sidan.',
+    'Håll A-frame-positionen med armarna och benet på samma höjd.',
+    'Rotationen saktas av den öppnade positionen – det är normalt.',
+    'Avsluta piruetten kontrollerat.',
+  ],
+
+  'haircutter-spin': [
+    'Börja i en ståpiruett med god centring.',
+    'Böj det fria benet bakåt och ta tag i foten.',
+    'Dra foten upp bakom ryggen, mot nacken eller skuldran.',
+    'Håll positionen med stark kärna och flexibla höftböjare.',
+    'Sänk benet kontrollerat och avsluta piruetten.',
+  ],
+
+  'svamp-spin': [
+    'Börja i en sittpiruett i standardposition.',
+    'Lägg det fria benet tätt mot bröstet och krama ihop kroppen till en boll.',
+    'Håll armarna runt benen och kärnan spänd.',
+    'Rotationen snabbas upp av den kompakta positionen.',
+    'Sträck ut och avsluta piruetten kontrollerat.',
+  ],
+
+  'shoot-the-duck-spin': [
+    'Börja i en sittpiruett på ett böjt ben.',
+    'Sträck det fria benet rakt framåt längs isen.',
+    'Sjunk ned tills stödbenets lår är parallellt med isen.',
+    'Håll det fria benet rakt och kärnan stark.',
+    'Kom upp kontrollerat och avsluta piruetten.',
+  ],
+
+  'back-camel-spin': [
+    'Starta piruetten bakåt på vänster bakre yttre kant.',
+    'Lyft det fria benet bakåt och uppåt till kamelposition.',
+    'Håll kroppen horisontell med stark kärna och sträckt form.',
+    'Håll det fria benets höft ned och tå pekande uppåt.',
+    'Avsluta kontrollerat.',
+  ],
+
+  'catch-foot-camel': [
+    'Börja i en kamelpiruett med det fria benet utsträckt bakåt.',
+    'Ta tag i foten eller vristen av det fria benet.',
+    'Dra foten uppåt och bakåt för att öka bakåtböjning och höfthöjd.',
+    'Håll positionen med god balans och sträckt kropp.',
+    'Släpp taget och avsluta kamelpiruetten.',
+  ],
+
+  'pearl-spin': [
+    'Starta i en kamelpiruett.',
+    'Ta tag i det fria benets fot och böj benet.',
+    'Lyft benet upp utåt-framåt för att forma en cirkel vid sidan.',
+    'Håll överkroppen horisontell under hela rörelsen.',
+    'Avsluta kontrollerat.',
+  ],
+
+  'flying-upright-spin': [
+    'Bygg upp fart och ta av som ett litet hopp.',
+    'Landa i en ståpiruett direkt efter hoppet, utan mellanglidning.',
+    'Centrera snabbt och dra in armarna för maximal rotationshastighet.',
+    'Håll piruetten stabil och centrad.',
+    'Avsluta kontrollerat.',
+  ],
+
+  'sit-upright-combo': [
+    'Starta i en sittpiruett med välcentrerad rotation.',
+    'Kom upp kontrollerat till en ståpiruett utan att tappa centreringen.',
+    'Dra in armarna i ståpiruetten för att öka hastigheten.',
+    'Håll minst 6 varv totalt.',
+    'Avsluta piruetten kontrollerat.',
+  ],
+
+  'camel-sit-combo': [
+    'Starta i en kamelpiruett med horisontell kroppshållning.',
+    'Övergå mjukt till sittpiruett genom att böja stödbenet och sänka dig.',
+    'Centrera i sittposition och håll det fria benet sträckt.',
+    'Håll minst 6 varv totalt.',
+    'Avsluta kontrollerat.',
+  ],
+
+  // ─── SVÄNGAR — nya ──────────────────────────────────────────────────────────
+
+  'inside-three-turn': [
+    'Glid framåt på inre kanten av ett ben.',
+    'Rotera överkroppen lätt inåt mot rotationsriktningen.',
+    'Vänd foten och kroppen 180° – kanten byter från inre till yttre.',
+    'Avsluta på bakre yttre kant på samma ben.',
+    'Håll skuldrorna stilla under svängen för kontroll.',
+  ],
+
+  'outside-mohawk': [
+    'Glid framåt på yttre kanten av ett ben.',
+    'Placera det andra fotens insida vinkelrätt framför den glidande foten.',
+    'Flytta vikten till det nya benet och glid bakåt på yttre kant.',
+    'Håll höfterna öppna och skuldrorna stabila under övergången.',
+  ],
+
+  'inside-mohawk': [
+    'Glid framåt på inre kanten av ett ben.',
+    'Placera det fria benets insida parallellt med avhoppsbenet.',
+    'Flytta vikten och glid bakåt på inre kant.',
+    'Håll höfterna öppna och kroppen i jämvikt under övergången.',
+    'Undvik att luta dig inåt vid viktövergången.',
+  ],
+
+  'outside-choctaw': [
+    'Glid framåt på yttre kanten av ett ben.',
+    'Placera det fria benets insida bakom det glidande benet.',
+    'Byt fot och riktning – glid bakåt på inre kant av det nya benet.',
+    'Höfterna vänder under övergången – det är det som skiljer choctaw från mohawk.',
+    'Håll skuldrorna stabila och kontrollera kantbytet.',
+  ],
+
+  'inside-choctaw': [
+    'Glid framåt på inre kanten av ett ben.',
+    'Placera det fria benets insida bredvid det glidande benet.',
+    'Byt fot och riktning – glid bakåt på yttre kant av det nya benet.',
+    'Höfterna vänder under övergången.',
+    'Håll skuldrorna kontrollerade och kantbytet tydligt.',
+  ],
+
+  // ─── STEG — nya ─────────────────────────────────────────────────────────────
+
+  'chasse': [
+    'Glid framåt på ett ben.',
+    'Samla det fria benet bredvid det glidande benet.',
+    'Flytta vikten momentant till det insamlade benet.',
+    'Skjut det ursprungliga benet ut framåt och glid vidare.',
+    'Håll hälarna nära varandra vid samlingen.',
+  ],
+
+  'crossovers': [
+    'Glid på en cirkel med yttre benet som ledande ben.',
+    'Lyft det inre benet och placera det framför och utanpå det yttre benet.',
+    'Flytta vikten till det korsade benet och skjut det yttre benet åt sidan.',
+    'Upprepa rytmiskt med god kroppshållning.',
+    'Håll axlarna parallella med cirkelns tangentlinje.',
+  ],
+
+  'back-crossovers': [
+    'Glid bakåt på en cirkel.',
+    'Kors det yttre benet framför det inre benet under glidningen.',
+    'Flytta vikten och driv ifrån med det inre benets kantarbete.',
+    'Upprepa med god rytm och kraft.',
+    'Håll överkroppen upprätt och skuldrorna stabila.',
+  ],
+
+  'cross-rolls': [
+    'Glid på en cirkel med djupa, vippande kantövergångar.',
+    'Rulla från en kant till en annan med ett naturligt körörspel av benen.',
+    'Kors det fria benet vid varje övergång.',
+    'Betona det musikaliska, dansanta uttrycket i varje roll.',
+  ],
+
+  'progressive': [
+    'Glid framåt på ett ben.',
+    'Ta ett steg framåt och skjut det bakre benet för att driva.',
+    'Samla benen kort och lägg sedan tyngden på det nya glidande benet.',
+    'Upprepa med god körörspel och rytm.',
+    'Håll glidningarna långa och drivna.',
+  ],
+
+  'toe-step': [
+    'Glid på ett ben och lägg tåpicken av det fria benet på isen.',
+    'Tryck ned och driv från tåpicken som ett steg.',
+    'Flytta vikten till det tåpicksteggade benet.',
+    'Upprepa i rytmisk sekvens.',
+  ],
+
+  'slalom': [
+    'Glid framåt med tyngdpunkten centrerad.',
+    'Böj knäna och vrid höfterna för att initiera en svängning åt ena hållet.',
+    'Omedelbart efter, svinga till det andra hållet i mjuk S-kurva.',
+    'Upprepa rytmiskt med god kantbalans.',
+    'Håll överkroppen relativt stilla – rörelsen kommer från höfter och knän.',
+  ],
+
+  'power-pulls': [
+    'Glid på ett ben och böj knäet djupt.',
+    'Dra det fria benets tåpick längs isen för att bromsa och ladda.',
+    'Driv tillbaka upp och accelerera med kantarbete.',
+    'Upprepa rörelsemönstret med explosiv kraft.',
+    'Håll överkroppen stabil under hela rörelsen.',
+  ],
+
+  'swing-roll': [
+    'Glid på ett ben i en väldefinierad kant.',
+    'Svinga det fria benet framåt i en stor, kontrollerad rörelse.',
+    'Byt kant och glid vidare med ett mjukt rull-steg.',
+    'Betonad svängrörelse ger det musikaliska uttrycket.',
+  ],
+
+  'cluster': [
+    'Planera en sekvens av steg och svängar i tät följd.',
+    'Utför tre-svängen, sedan mohawk eller choctaw i snabb sekvens.',
+    'Länka stegen utan pausglidning emellan.',
+    'Håll balansen och kantarbetet stabilt genom hela sekvensen.',
+    'Betonar kontroll och musikalitet i ett komprimerat format.',
+  ],
+
+  'toe-twizzle': [
+    'Börja på tåpicken av ett ben med god balans.',
+    'Initiera rotationen med armsvingen.',
+    'Utför ett eller flera varv på tåpicken.',
+    'Håll kroppen upprätt och kärnan stark.',
+    'Avsluta med kontrollerad utdrift från tåpicken.',
+  ],
+
+  'bracket-twizzle': [
+    'Initiera twizzeln med en bracketsväng som ingång.',
+    'Bär rotationshastigheten från bracketen in i twizzeln.',
+    'Utför ett eller flera varv på kanten.',
+    'Avsluta kontrollerat med en mjuk utdrift.',
+  ],
+
+  'counter-twizzle': [
+    'Initiera twizzeln med en countersväng.',
+    'Bär in rotationsmomentet från countern i twizzeln.',
+    'Utför rotationerna med kanten djupt tryckt.',
+    'Kontrollerad avslutning.',
+  ],
+
+  'rocker-twizzle': [
+    'Initiera twizzeln från en rockersväng.',
+    'Bär in rörelsen från rockerns kraftfulla kantbyte.',
+    'Utför ett eller flera varv på kanten.',
+    'Avsluta med mjuk utdrift.',
+  ],
+
+  // ─── GLIDÖVNINGAR — nya ─────────────────────────────────────────────────────
+
+  'y-spiral': [
+    'Glid på ett ben i spiralposition med god kant.',
+    'Ta tag i det fria benets fot eller ankeln.',
+    'Lyft benet uppåt och ut åt sidan tills det formar ett Y – höfthöjd eller högre.',
+    'Håll överkroppen framåtlutad och kanten djup.',
+    'Håll positionen minst tre sekunder.',
+  ],
+
+  'catch-foot-spiral': [
+    'Glid på ett ben i spiralposition.',
+    'Ta tag i det fria benets fot med handen på samma sida.',
+    'Sträck ut benet bakåt-uppåt med hjälp av greppet.',
+    'Håll överkroppen horisontell och kanten stabil.',
+    'Håll positionen med god balans.',
+  ],
+
+  'penche-spiral': [
+    'Glid på ett ben i spiralposition.',
+    'Luta överkroppen djupt framåt och lyft det fria benet maksimalt bakåt.',
+    'Uppnå en position nära vertikal med det fria benet (90° eller mer).',
+    'Håll kanten djup och kärnan stark.',
+    'Kontrollera positionen med armar framåt för balansen.',
+  ],
+
+  'shoot-the-duck': [
+    'Glid på ett ben och börja böja knäet djupt.',
+    'Sträck det fria benet rakt framåt.',
+    'Sjunk ned tills stödbenets lår är parallellt med isen.',
+    'Håll ryggen rak och det fria benet horisontellt.',
+    'Kom upp kontrollerat med benets kraft.',
+  ],
+
+  'drag': [
+    'Glid bakåt på ett ben.',
+    'Lägg det fria benets tå mot isen och dra den längs banan.',
+    'Håll det draggande benet sträckt eller lätt böjt.',
+    'Håll överkroppen upprätt och armarna elegant.',
+    'Avsluta genom att lyfta det fria benet igen.',
+  ],
+
+  'lunge': [
+    'Glid framåt och sjunk ned i ett djupt utfall på ett ben.',
+    'Det bakre benets knä nuddar isen.',
+    'Håll överkroppen upprätt och blicken framåt.',
+    'Håll balansen med armarna naturligt utåt.',
+    'Kom upp kontrollerat med avhoppningsbenet.',
+  ],
+
+  'bauer-spiral': [
+    'Glid med benen brett isär i en Bauer-position (yttre kanter utåt).',
+    'Lyft det ena benet bakåt och uppåt till spiralposition.',
+    'Håll den andra foten djupt tryckt i yttre kanten.',
+    'Håll överkroppen horisontell och formgivningen elegant.',
+    'Kom ur positionen mjukt.',
+  ],
+
+  'arabesque': [
+    'Glid framåt på ett ben.',
+    'Lyft det fria benet rakt bakåt till höfthöjd.',
+    'Håll överkroppen upprätt eller lätt framåtlutad.',
+    'Armarna hålls elegant – en framåt, en åt sidan.',
+    'Håll positionen med stabil kant och god balans.',
+  ],
+
+  'fan-spiral': [
+    'Glid på ett ben i spiralposition med högt bakre ben.',
+    'Sväng det fria benet i en halvcirkel (fan) från bakåt till sidan och runt.',
+    'Håll kanten stabil under hela svängrörelsen.',
+    'Håll överkroppen stilla och kontrollera svängen med kärnan.',
+  ],
+
+  'side-spiral': [
+    'Glid på ett ben.',
+    'Lyft det fria benet åt sidan i en abduktionsrörelse.',
+    'Höj benet till höft- eller axelhöjd vid sidan.',
+    'Håll överkroppen upprätt och kanten djup.',
+    'Håll positionen med elegant formgivning.',
+  ],
+
+  'forward-spiral': [
+    'Glid framåt på ett ben på inre eller yttre kant.',
+    'Lyft det fria benet rakt bakåt minst till höfthöjd.',
+    'Håll överkroppen framåtlutad och kanten djup.',
+    'Sträck båda benen och peka tårna.',
+    'Håll positionen minst tre sekunder.',
+  ],
+
+  'backward-spiral': [
+    'Glid bakåt på ett ben.',
+    'Lyft det fria benet rakt framåt eller bakåt beroende på stil.',
+    'Håll kanten djup och överkroppen välbalanserad.',
+    'Peka tårna och sträck benet elegant.',
+    'Håll positionen med stabil glidning och god balans.',
+  ],
 };
