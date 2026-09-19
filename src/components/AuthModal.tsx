@@ -149,35 +149,6 @@ export function AuthModal({ onClose }: { onClose: () => void }) {
             {tab === 'login' ? 'Välkommen tillbaka' : 'Skapa ditt konto'}
           </h2>
 
-          {/* Social buttons */}
-          <div className="space-y-3 mb-5">
-            <button
-              onClick={() => handleOAuth('google')}
-              disabled={!!loading}
-              className="w-full flex items-center justify-center gap-3 rounded-2xl py-3.5 text-sm font-semibold transition-opacity"
-              style={{ background: '#fff', color: '#111', opacity: loading ? 0.6 : 1 }}
-            >
-              <GoogleIcon />
-              {loading === 'google' ? 'Öppnar…' : 'Fortsätt med Google'}
-            </button>
-            <button
-              onClick={() => handleOAuth('apple')}
-              disabled={!!loading}
-              className="w-full flex items-center justify-center gap-3 rounded-2xl py-3.5 text-sm font-semibold transition-opacity"
-              style={{ background: '#111', color: '#fff', border: '1px solid #2A2A2A', opacity: loading ? 0.6 : 1 }}
-            >
-              <AppleIcon />
-              {loading === 'apple' ? 'Öppnar…' : 'Fortsätt med Apple'}
-            </button>
-          </div>
-
-          {/* Divider */}
-          <div className="flex items-center gap-3 mb-5">
-            <div className="flex-1 h-px" style={{ background: '#2A2A2A' }} />
-            <span className="text-xs font-medium" style={{ color: '#444' }}>eller</span>
-            <div className="flex-1 h-px" style={{ background: '#2A2A2A' }} />
-          </div>
-
           {/* Email + password */}
           <div className="space-y-3 mb-4">
             <div>
