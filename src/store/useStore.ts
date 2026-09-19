@@ -2,6 +2,9 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { CategoryId } from '../data/tricks';
 import { supabase } from '../lib/supabase';
+import { toastStore } from '../lib/toast';
+
+const DB_ERROR = 'Kunde inte spara — kontrollera anslutningen';
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 
@@ -77,7 +80,8 @@ type Store = {
 let noteTimer: ReturnType<typeof setTimeout> | null = null;
 
 const pushItems = (programId: string, items: ProgramItem[], debounce = false) => {
-  const run = () => supabase.from('programs').update({ items }).eq('id', programId).then();
+  const run = () => supabase.from('programs').update({ items }).eq('id', programId)
+    .then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
   if (!debounce) { run(); return; }
   if (noteTimer) clearTimeout(noteTimer);
   noteTimer = setTimeout(run, 800);
@@ -139,8 +143,8 @@ export const useStore = create<Store>()(
         if (!userId) { set({ showAuthPrompt: true }); return; }
         const adding = !favorites.has(id);
         set((s) => { const n = new Set(s.favorites); adding ? n.add(id) : n.delete(id); return { favorites: n }; });
-        if (adding) supabase.from('favorited_tricks').insert({ user_id: userId, trick_id: id }).then();
-        else supabase.from('favorited_tricks').delete().eq('user_id', userId).eq('trick_id', id).then();
+        if (adding) supabase.from('favorited_tricks').insert({ user_id: userId, trick_id: id }).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
+        else supabase.from('favorited_tricks').delete().eq('user_id', userId).eq('trick_id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       toggleLearned: (id) => {
@@ -148,8 +152,8 @@ export const useStore = create<Store>()(
         if (!userId) { set({ showAuthPrompt: true }); return; }
         const adding = !learned.has(id);
         set((s) => { const n = new Set(s.learned); adding ? n.add(id) : n.delete(id); return { learned: n }; });
-        if (adding) supabase.from('learned_tricks').insert({ user_id: userId, trick_id: id }).then();
-        else supabase.from('learned_tricks').delete().eq('user_id', userId).eq('trick_id', id).then();
+        if (adding) supabase.from('learned_tricks').insert({ user_id: userId, trick_id: id }).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
+        else supabase.from('learned_tricks').delete().eq('user_id', userId).eq('trick_id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       toggleExerciseFavorite: (id) => {
@@ -157,8 +161,8 @@ export const useStore = create<Store>()(
         if (!userId) { set({ showAuthPrompt: true }); return; }
         const adding = !favoritedExercises.has(id);
         set((s) => { const n = new Set(s.favoritedExercises); adding ? n.add(id) : n.delete(id); return { favoritedExercises: n }; });
-        if (adding) supabase.from('favorited_exercises').insert({ user_id: userId, exercise_id: id }).then();
-        else supabase.from('favorited_exercises').delete().eq('user_id', userId).eq('exercise_id', id).then();
+        if (adding) supabase.from('favorited_exercises').insert({ user_id: userId, exercise_id: id }).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
+        else supabase.from('favorited_exercises').delete().eq('user_id', userId).eq('exercise_id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       setTab: (tab) => set({ activeTab: tab, selectedTrickId: null, selectedProgramId: null, activeCategory: null }),
@@ -175,32 +179,32 @@ export const useStore = create<Store>()(
         const id = uid();
         const items: ProgramItem[] = (initialTrickIds ?? []).map((trickId) => ({ id: uid(), type: 'trick' as const, trickId }));
         set((s) => ({ programs: [...s.programs, { id, name, items, createdAt: Date.now() }], openInEditMode: true }));
-        supabase.from('programs').insert({ id, user_id: userId, name, items }).then();
+        supabase.from('programs').insert({ id, user_id: userId, name, items }).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
         return id;
       },
 
       deleteProgram: (id) => {
         const { userId } = get();
         set((s) => ({ programs: s.programs.filter((p) => p.id !== id), selectedProgramId: null }));
-        if (userId) supabase.from('programs').delete().eq('id', id).then();
+        if (userId) supabase.from('programs').delete().eq('id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       renameProgram: (id, name) => {
         const { userId } = get();
         set((s) => ({ programs: s.programs.map((p) => (p.id === id ? { ...p, name } : p)) }));
-        if (userId) supabase.from('programs').update({ name }).eq('id', id).then();
+        if (userId) supabase.from('programs').update({ name }).eq('id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       setSpotifyUrl: (id, url) => {
         const { userId } = get();
         set((s) => ({ programs: s.programs.map((p) => (p.id === id ? { ...p, spotifyUrl: url } : p)) }));
-        if (userId) supabase.from('programs').update({ spotify_url: url }).eq('id', id).then();
+        if (userId) supabase.from('programs').update({ spotify_url: url }).eq('id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       setSpotifyMeta: (id, meta) => {
         const { userId } = get();
         set((s) => ({ programs: s.programs.map((p) => (p.id === id ? { ...p, spotifyMeta: meta ?? undefined } : p)) }));
-        if (userId) supabase.from('programs').update({ spotify_meta: meta }).eq('id', id).then();
+        if (userId) supabase.from('programs').update({ spotify_meta: meta }).eq('id', id).then(({ error }) => { if (error) toastStore.error(DB_ERROR); });
       },
 
       addElement: (programId, trickId) => {

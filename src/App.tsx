@@ -6,6 +6,7 @@ import { TrickDetail } from './components/TrickDetail';
 import { ExerciseDetail } from './components/ExerciseDetail';
 import { InstallPrompt } from './components/InstallPrompt';
 import { Tutorial } from './components/Tutorial';
+import { Toast } from './components/Toast';
 import { AuthModal } from './components/AuthModal';
 import { AccountSheet } from './components/AccountSheet';
 import { Browse } from './pages/Browse';
@@ -64,6 +65,7 @@ export default function App() {
       </main>
 
       <BottomNav />
+      <Toast />
       <InstallPrompt />
 
       {selectedTrickId  && <TrickDetail />}
