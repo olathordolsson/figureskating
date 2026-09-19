@@ -4,20 +4,6 @@ import { supabase } from '../lib/supabase';
 
 type Tab = 'login' | 'register';
 
-const GoogleIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-    <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/>
-    <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
-    <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
-    <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
-  </svg>
-);
-
-const AppleIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
-    <path d="M14.045 9.469c-.02-2.01 1.64-2.98 1.714-3.028-1.032-1.357-2.49-1.473-2.96-1.458-1.242-.124-2.442.742-3.075.742-.633 0-1.591-.729-2.622-.708-1.334.02-2.572.788-3.259 1.99-1.4 2.432-.357 6.013 1.01 7.979.668.964 1.455 2.042 2.49 2.003 1.003-.04 1.38-.645 2.594-.645 1.213 0 1.557.645 2.614.624 1.08-.02 1.757-.977 2.416-1.946.764-1.112 1.077-2.193 1.094-2.249-.023-.01-2.095-.807-2.116-3.304zM11.98 3.37c.554-.672.927-1.607.825-2.537-.796.033-1.76.531-2.329 1.203-.51.59-.958 1.536-.838 2.44.891.07 1.795-.454 2.342-1.106z"/>
-  </svg>
-);
 
 export function AuthModal({ onClose }: { onClose: () => void }) {
   const [tab, setTab] = useState<Tab>('login');
@@ -37,15 +23,6 @@ export function AuthModal({ onClose }: { onClose: () => void }) {
   const handleClose = () => {
     setVisible(false);
     setTimeout(onClose, 350);
-  };
-
-  const handleOAuth = async (provider: 'google' | 'apple') => {
-    setError('');
-    setLoading(provider);
-    await supabase.auth.signInWithOAuth({
-      provider,
-      options: { redirectTo: window.location.origin },
-    });
   };
 
   const handleSubmit = async () => {
